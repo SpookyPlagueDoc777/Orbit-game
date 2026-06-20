@@ -1,14 +1,32 @@
 [gd_scene format=3 uid="uid://cbp01vsjbcswu"]
 
 [ext_resource type="Script" uid="uid://cdqfab7csu16f" path="res://Code/Game/game_scene.gd" id="1_ctr27"]
+[ext_resource type="PackedScene" uid="uid://bb6amt7kskmfb" path="res://Scenes/Game/GameClass/satellite.tscn" id="2_c53t7"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
 
 [node name="GameScene" type="Node2D" unique_id=1484544398]
 script = ExtResource("1_ctr27")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1303857469]
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1016955510]
+
+[node name="Node2D" type="Node2D" parent="." unique_id=1177193644]
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Node2D" unique_id=1303857469]
 scale = Vector2(450, 450)
 mesh = SubResource("SphereMesh_g4v7s")
 
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1016955510]
+[node name="Satellites" type="Node2D" parent="Node2D" unique_id=765053489]
+
+[node name="Satellite" parent="Node2D/Satellites" unique_id=188818874 instance=ExtResource("2_c53t7")]
+position = Vector2(251.84459, -163.01627)
+satellitename = "Satelitus"
+health = 100.0
+orbitradius = 400.0
+baseangle = 5.7087181712677175
+
+[node name="Satellite2" parent="Node2D/Satellites" unique_id=1265870302 instance=ExtResource("2_c53t7")]
+position = Vector2(251.84459, -163.01627)
+satellitename = "Satelitus"
+health = 100.0
+orbitradius = 1200.0

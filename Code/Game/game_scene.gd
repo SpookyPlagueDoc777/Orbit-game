@@ -32,10 +32,9 @@ func _input(event: InputEvent) -> void:
 			if event.button_index == MOUSE_BUTTON_MIDDLE:
 				panning = false
 	if event is InputEventMouseMotion && panning:
-		camera.position = camerapos + panoffset - camera.get_local_mouse_position()
+		camera.position = camerapos - (camera.get_local_mouse_position() - panoffset)
 
 func zoom_at(zoom_scale: float):
-	var localpos = camera.get_local_mouse_position()
+	var oldglobal = camera.get_global_mouse_position()
 	camera.zoom *= Vector2(zoom_scale, zoom_scale)
-	print(get_local_mouse_position())
-	camera.offset = get_global_mouse_position() + localpos * camera.zoom
+	camera.position -= camera.get_global_mouse_position()-oldglobal
