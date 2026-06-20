@@ -15,3 +15,13 @@ mesh = SubResource("BoxMesh_g4v7s")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004951536]
 shape = SubResource("RectangleShape2D_g4v7s")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1996097424]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=965411197]
+shape = SubResource("RectangleShape2D_g4v7s")
+disabled = true
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

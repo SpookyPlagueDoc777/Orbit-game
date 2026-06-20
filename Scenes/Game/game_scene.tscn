@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cdqfab7csu16f" path="res://Code/Game/game_scene.gd" id="1_ctr27"]
 [ext_resource type="PackedScene" uid="uid://bb6amt7kskmfb" path="res://Scenes/Game/GameClass/satellite.tscn" id="2_c53t7"]
+[ext_resource type="Texture2D" uid="uid://dfytms5eflyln" path="res://Textures/Planet_X.png" id="2_ihfs7"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
 
@@ -10,22 +11,28 @@ script = ExtResource("1_ctr27")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1016955510]
 
-[node name="Node2D" type="Node2D" parent="." unique_id=1177193644]
+[node name="Planet" type="Node2D" parent="." unique_id=1177193644]
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Node2D" unique_id=1303857469]
+[node name="Sprite2D" type="Sprite2D" parent="Planet" unique_id=1514046262]
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("2_ihfs7")
+offset = Vector2(0, -75)
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Planet" unique_id=1303857469]
+visible = false
 scale = Vector2(450, 450)
 mesh = SubResource("SphereMesh_g4v7s")
 
-[node name="Satellites" type="Node2D" parent="Node2D" unique_id=765053489]
+[node name="Satellites" type="Node2D" parent="Planet" unique_id=765053489]
 
-[node name="Satellite" parent="Node2D/Satellites" unique_id=188818874 instance=ExtResource("2_c53t7")]
+[node name="Satellite" parent="Planet/Satellites" unique_id=188818874 instance=ExtResource("2_c53t7")]
 position = Vector2(251.84459, -163.01627)
 satellitename = "Satelitus"
 health = 100.0
 orbitradius = 400.0
 baseangle = 5.7087181712677175
 
-[node name="Satellite2" parent="Node2D/Satellites" unique_id=1265870302 instance=ExtResource("2_c53t7")]
+[node name="Satellite2" parent="Planet/Satellites" unique_id=1265870302 instance=ExtResource("2_c53t7")]
 position = Vector2(251.84459, -163.01627)
 satellitename = "Satelitus"
 health = 100.0
