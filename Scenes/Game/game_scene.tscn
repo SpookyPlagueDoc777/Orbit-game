@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cbp01vsjbcswu"]
+
+[ext_resource type="Script" uid="uid://cdqfab7csu16f" path="res://Code/Game/game_scene.gd" id="1_ctr27"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
+
+[node name="GameScene" type="Node2D" unique_id=1484544398]
+script = ExtResource("1_ctr27")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=1303857469]
+scale = Vector2(450, 450)
+mesh = SubResource("SphereMesh_g4v7s")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1016955510]

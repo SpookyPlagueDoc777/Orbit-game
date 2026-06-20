@@ -1,0 +1,41 @@
+extends Node2D
+
+@onready var camera: Camera2D = $Camera2D
+
+var panning: bool = false
+var panoffset: Vector2
+var camerapos: Vector2
+var zoomscale: float
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
+	pass
+
+func _input(event: InputEvent) -> void:
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+				zoomscale = 1.5
+				zoom_at(zoomscale)
+			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+				zoomscale = 0.6666666666666667
+				zoom_at(zoomscale)
+			if event.button_index == MOUSE_BUTTON_MIDDLE:
+				panoffset = camera.get_local_mouse_position()
+				camerapos = camera.get_screen_center_position()
+				panning = true
+		elif event.is_released():
+			if event.button_index == MOUSE_BUTTON_MIDDLE:
+				panning = false
+	if event is InputEventMouseMotion && panning:
+		camera.position = camerapos + panoffset - camera.get_local_mouse_position()
+
+func zoom_at(zoom_scale: float):
+	var localpos = camera.get_local_mouse_position()
+	camera.zoom *= Vector2(zoom_scale, zoom_scale)
+	print(get_local_mouse_position())
+	camera.offset = get_global_mouse_position() + localpos * camera.zoom
