@@ -2,11 +2,27 @@
 
 [ext_resource type="PackedScene" uid="uid://cqi64luim3n66" path="res://Scenes/UI/game_ui.tscn" id="1_oo0cf"]
 [ext_resource type="PackedScene" uid="uid://cbp01vsjbcswu" path="res://Scenes/Game/game_scene.tscn" id="1_y60n4"]
+[ext_resource type="Shader" uid="uid://bkv0sr4y78cc5" path="res://Shaders/local_root.gdshader" id="2_buqo1"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bgvvt"]
+shader = ExtResource("2_buqo1")
+shader_parameter/wiggle = 0.03
+shader_parameter/wiggle_speed = 25.0
+shader_parameter/smear = 0.2000000095
+shader_parameter/blur_samples = 6
 
 [node name="MainNode" type="Node" unique_id=499770951]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2020283220]
 
 [node name="GameUI" parent="CanvasLayer" unique_id=138886182 instance=ExtResource("1_oo0cf")]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1313862375]
+material = SubResource("ShaderMaterial_bgvvt")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="GameScene" parent="." unique_id=1484544398 instance=ExtResource("1_y60n4")]
