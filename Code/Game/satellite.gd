@@ -6,6 +6,7 @@ class_name satellite
 @export var satellitename: String
 @export var health: float
 @export var orbitradius: float
+@export var facesplanet: bool
 var baseangle: float = PI/4
 
 @export_category("Satellite Energy")
@@ -32,8 +33,10 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if launchanimation == false:
+	if !launchanimation:
 		orbit_planet()
+	if facesplanet:
+		spin_satellite()
 
 func orbit_planet() -> void:
 	baseangle = fmod(baseangle + orbitspeed * get_process_delta_time() / orbitradius, (2 * PI))
@@ -41,6 +44,8 @@ func orbit_planet() -> void:
 	position.x = orbitradius * cos(baseangle - PI/2)
 	position.y = orbitradius * sin(baseangle - PI/2)
 
+func spin_satellite() -> void:
+	rotation = baseangle
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	health -= 1

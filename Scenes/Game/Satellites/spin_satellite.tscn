@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dlbawowx6xel6"]
+
+[ext_resource type="Script" uid="uid://dy6e0mmokopuc" path="res://Code/Game/Satellites/spin_satellite.gd" id="1_mopy8"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7fx7k"]
+
+[node name="SpinSatellite" type="CharacterBody2D" unique_id=458181133]
+script = ExtResource("1_mopy8")
+facesplanet = true
+satenergylaunch = 100
+satspinprod = 0.005
+metadata/_custom_type_script = "uid://rv83iop2l27h"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1405285174]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1916028964]
+shape = SubResource("RectangleShape2D_7fx7k")
+disabled = true

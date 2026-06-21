@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://kybt02uh27cp"]
+
+[ext_resource type="Script" uid="uid://gnv01piwjawu" path="res://Code/Game/Satellites/shield_satellite.gd" id="1_b1dg2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q8tne"]
+
+[node name="ShieldSatellite" type="CharacterBody2D" unique_id=1269225202]
+script = ExtResource("1_b1dg2")
+satellitename = "Shield Satellite"
+health = 2.0
+facesplanet = true
+satenergylaunch = 600
+metadata/_custom_type_script = "uid://rv83iop2l27h"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=915091031]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1237059990]
+shape = SubResource("RectangleShape2D_q8tne")
+disabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=613355035]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1843550513]
+shape = SubResource("RectangleShape2D_q8tne")
+disabled = true

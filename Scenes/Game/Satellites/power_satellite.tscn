@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://bvkw14d2odqso"]
+
+[ext_resource type="Script" uid="uid://fjqayqmqk0qy" path="res://Code/Game/Satellites/power_satellite.gd" id="1_eujg2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1pcel"]
+
+[node name="PowerSatellite" type="CharacterBody2D" unique_id=1376342862]
+script = ExtResource("1_eujg2")
+metadata/_custom_type_script = "uid://rv83iop2l27h"
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=649261807]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=386251047]
+shape = SubResource("RectangleShape2D_1pcel")
+disabled = true

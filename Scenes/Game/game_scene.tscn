@@ -1,8 +1,9 @@
 [gd_scene format=3 uid="uid://cbp01vsjbcswu"]
 
 [ext_resource type="Script" uid="uid://cdqfab7csu16f" path="res://Code/Game/game_scene.gd" id="1_ctr27"]
-[ext_resource type="PackedScene" uid="uid://bb6amt7kskmfb" path="res://Scenes/Game/GameClass/satellite.tscn" id="2_c53t7"]
 [ext_resource type="Texture2D" uid="uid://dn6kxyxnclhqe" path="res://Textures/Planet X.png" id="2_ihfs7"]
+[ext_resource type="PackedScene" uid="uid://bvkw14d2odqso" path="res://Scenes/Game/Satellites/power_satellite.tscn" id="3_7r8ec"]
+[ext_resource type="PackedScene" uid="uid://kybt02uh27cp" path="res://Scenes/Game/Satellites/shield_satellite.tscn" id="4_83mwp"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
 
@@ -26,12 +27,6 @@ mesh = SubResource("SphereMesh_g4v7s")
 
 [node name="Satellites" type="Node2D" parent="Planet" unique_id=765053489]
 
-[node name="Satellite" parent="Planet/Satellites" unique_id=188818874 instance=ExtResource("2_c53t7")]
-satellitename = "Satelitus"
-health = 100.0
-orbitradius = 400.0
+[node name="PowerSatellite" parent="Planet/Satellites" unique_id=1376342862 instance=ExtResource("3_7r8ec")]
 
-[node name="Satellite2" parent="Planet/Satellites" unique_id=1265870302 instance=ExtResource("2_c53t7")]
-satellitename = "Satelitus"
-health = 100.0
-orbitradius = 1200.0
+[node name="ShieldSatellite" parent="Planet/Satellites" unique_id=1269225202 instance=ExtResource("4_83mwp")]
