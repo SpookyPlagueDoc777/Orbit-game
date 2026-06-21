@@ -2,20 +2,16 @@
 
 [ext_resource type="Script" uid="uid://rv83iop2l27h" path="res://Code/Game/satellite.gd" id="1_hqybh"]
 
-[sub_resource type="BoxMesh" id="BoxMesh_g4v7s"]
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 
 [node name="Satellite" type="CharacterBody2D" unique_id=1265870302]
 script = ExtResource("1_hqybh")
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="." unique_id=342940062]
-scale = Vector2(20, 20)
-mesh = SubResource("BoxMesh_g4v7s")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004951536]
 shape = SubResource("RectangleShape2D_g4v7s")
 disabled = true
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=305538316]
 
 [node name="Area2D" type="Area2D" parent="." unique_id=1996097424]
 collision_mask = 2

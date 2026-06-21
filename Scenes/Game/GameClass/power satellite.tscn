@@ -1,0 +1,89 @@
+[gd_scene format=3 uid="uid://bhfcckkywuxst"]
+
+[ext_resource type="PackedScene" uid="uid://bb6amt7kskmfb" path="res://Scenes/Game/GameClass/satellite.tscn" id="1_3hss1"]
+[ext_resource type="Texture2D" uid="uid://m1cwwnee04y8" path="res://Textures/Satellites/Power satellite.png" id="2_318yn"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jgfts"]
+atlas = ExtResource("2_318yn")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fbwrp"]
+atlas = ExtResource("2_318yn")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5j85e"]
+atlas = ExtResource("2_318yn")
+region = Rect2(20, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7nbmu"]
+atlas = ExtResource("2_318yn")
+region = Rect2(30, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g1m4t"]
+atlas = ExtResource("2_318yn")
+region = Rect2(40, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xssof"]
+atlas = ExtResource("2_318yn")
+region = Rect2(50, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_okh4c"]
+atlas = ExtResource("2_318yn")
+region = Rect2(60, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcq16"]
+atlas = ExtResource("2_318yn")
+region = Rect2(70, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l3xep"]
+atlas = ExtResource("2_318yn")
+region = Rect2(80, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tiyt7"]
+atlas = ExtResource("2_318yn")
+region = Rect2(90, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hqybh"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jgfts")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fbwrp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5j85e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7nbmu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g1m4t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xssof")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_okh4c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcq16")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l3xep")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tiyt7")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Satellite" unique_id=1265870302 instance=ExtResource("1_3hss1")]
+
+[node name="AnimatedSprite2D" parent="." index="1" unique_id=305538316]
+sprite_frames = SubResource("SpriteFrames_hqybh")
+autoplay = "default"
+frame_progress = 0.75767636
