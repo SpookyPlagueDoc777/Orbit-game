@@ -11,12 +11,12 @@
 script = ExtResource("1_ctr27")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1016955510]
-zoom = Vector2(0.2, 0.2)
+position = Vector2(0, -50)
 
 [node name="Planet" type="Node2D" parent="." unique_id=1177193644]
 
 [node name="Sprite2D" type="Sprite2D" parent="Planet" unique_id=1514046262]
-scale = Vector2(8, 8)
+scale = Vector2(7, 7)
 texture = ExtResource("2_ihfs7")
 offset = Vector2(0, -7)
 
