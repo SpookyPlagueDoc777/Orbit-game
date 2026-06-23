@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cbkkpafgmgfkr"
-path="res://.godot/imported/UI box.png-a60ecef93560bd158046d952112b868c.ctex"
+uid="uid://cj0rdqwg1vpmn"
+path="res://.godot/imported/spin speed icon.png-888b89ab520bc30e383f3a28834aff8a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Textures/UI box.png"
-dest_files=["res://.godot/imported/UI box.png-a60ecef93560bd158046d952112b868c.ctex"]
+source_file="res://Textures/UI/spin speed icon.png"
+dest_files=["res://.godot/imported/spin speed icon.png-888b89ab520bc30e383f3a28834aff8a.ctex"]
 
 [params]
 

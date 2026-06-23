@@ -7,6 +7,7 @@ var panoffset: Vector2
 var camerapos: Vector2
 var zoomscale: float
 # Called when the node enters the scene tree for the first time.
+
 func _ready() -> void:
 	pass # Replace with function body.
 

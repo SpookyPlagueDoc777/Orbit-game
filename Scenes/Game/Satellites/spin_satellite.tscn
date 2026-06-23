@@ -1,6 +1,43 @@
 [gd_scene format=3 uid="uid://dlbawowx6xel6"]
 
 [ext_resource type="Script" uid="uid://dy6e0mmokopuc" path="res://Code/Game/Satellites/spin_satellite.gd" id="1_mopy8"]
+[ext_resource type="Texture2D" uid="uid://b1wam20ihd7kx" path="res://Textures/Satellites/Spin satellite.png" id="2_7fx7k"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2naso"]
+atlas = ExtResource("2_7fx7k")
+region = Rect2(0, 0, 20, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_itoqd"]
+atlas = ExtResource("2_7fx7k")
+region = Rect2(20, 0, 20, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kduaj"]
+atlas = ExtResource("2_7fx7k")
+region = Rect2(40, 0, 20, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t3mob"]
+atlas = ExtResource("2_7fx7k")
+region = Rect2(60, 0, 20, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rcfym"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2naso")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_itoqd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kduaj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t3mob")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7fx7k"]
 
@@ -12,6 +49,9 @@ satspinprod = 0.005
 metadata/_custom_type_script = "uid://rv83iop2l27h"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1405285174]
+sprite_frames = SubResource("SpriteFrames_rcfym")
+autoplay = "default"
+frame_progress = 0.61589104
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1916028964]
 shape = SubResource("RectangleShape2D_7fx7k")

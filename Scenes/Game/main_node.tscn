@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://4wn3uv8oi2ep"]
 
 [ext_resource type="Shader" uid="uid://c8v3r1e4aqnys" path="res://Shaders/main_node.gdshader" id="1_3qm64"]
+[ext_resource type="Script" uid="uid://b0026xcjw3k28" path="res://Code/Game/main_node.gd" id="1_jp4ly"]
 [ext_resource type="PackedScene" uid="uid://cqi64luim3n66" path="res://Scenes/UI/game_ui.tscn" id="1_oo0cf"]
 [ext_resource type="PackedScene" uid="uid://cbp01vsjbcswu" path="res://Scenes/Game/game_scene.tscn" id="1_y60n4"]
 [ext_resource type="PackedScene" uid="uid://bgsgsmwi7fk7e" path="res://Scenes/UI/settings_menu_new.tscn" id="2_mht2n"]
@@ -10,7 +11,7 @@
 shader = ExtResource("1_3qm64")
 shader_parameter/density = 175.0
 shader_parameter/layer_parascale = 4
-shader_parameter/speedx = 1.4901199918426758e-07
+shader_parameter/speedx = 1.490119991842676e-07
 shader_parameter/speedy = 0.0
 shader_parameter/star_horizontal_wave = 0.0
 shader_parameter/star_size = 3.0
@@ -33,6 +34,10 @@ shader_parameter/cloud_color_shifty = 0.0
 shader_parameter/background_color = Color(0.08062599, 0.002795482, 0.22340646, 1)
 
 [node name="MainNode" type="Node" unique_id=499770951]
+script = ExtResource("1_jp4ly")
+
+[node name="Timer" type="Timer" parent="." unique_id=445109862]
+autostart = true
 
 [node name="Spaceeee" type="CanvasLayer" parent="." unique_id=343197361]
 layer = -1
@@ -58,3 +63,7 @@ visible = false
 
 [node name="GameScene" parent="." unique_id=1484544398 instance=ExtResource("1_y60n4")]
 z_index = 1
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="CanvasLayer/GameUI"]

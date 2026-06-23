@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://cbp01vsjbcswu"]
 
 [ext_resource type="Script" uid="uid://cdqfab7csu16f" path="res://Code/Game/game_scene.gd" id="1_ctr27"]
-[ext_resource type="Texture2D" uid="uid://dn6kxyxnclhqe" path="res://Textures/Planet X.png" id="2_ihfs7"]
+[ext_resource type="Texture2D" uid="uid://lkkx1tnic3l" path="res://Textures/PLanet x but beeeeg.png" id="2_7r8ec"]
 [ext_resource type="PackedScene" uid="uid://bvkw14d2odqso" path="res://Scenes/Game/Satellites/power_satellite.tscn" id="3_7r8ec"]
 [ext_resource type="PackedScene" uid="uid://kybt02uh27cp" path="res://Scenes/Game/Satellites/shield_satellite.tscn" id="4_83mwp"]
 
@@ -16,9 +16,8 @@ position = Vector2(0, -50)
 [node name="Planet" type="Node2D" parent="." unique_id=1177193644]
 
 [node name="Sprite2D" type="Sprite2D" parent="Planet" unique_id=1514046262]
-scale = Vector2(7, 7)
-texture = ExtResource("2_ihfs7")
-offset = Vector2(0, -7)
+texture = ExtResource("2_7r8ec")
+offset = Vector2(0, -15)
 
 [node name="MeshInstance2D" type="MeshInstance2D" parent="Planet" unique_id=1303857469]
 visible = false
