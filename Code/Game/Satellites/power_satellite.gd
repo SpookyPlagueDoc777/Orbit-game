@@ -6,12 +6,14 @@ func _ready() -> void:
 	satellitename = "Power Satellite"
 	health = 2
 	facesplanet = false
-	orbitradius = 400
+	orbitradius = 150
 	
 	## Satellite stats
 	satenergyprod = 5
 	satenergylaunch = 100
 	satspinprod = 0
 	
+	launch()
+	
 func _process(delta: float) -> void:
-	pass
+	update_position()
