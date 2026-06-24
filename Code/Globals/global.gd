@@ -7,7 +7,7 @@ const planetmass: int = 40752
 var is_paused: bool = true
 
 var spin_speed: float = 0
-var energy: int = 300
+var energy: int = 1000
 var time_limit: int = 0
 var quota: float = 0
 

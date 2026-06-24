@@ -18,9 +18,9 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	energy_amount.text = str(Global.energy)
+	energy_amount.text = str(round(Global.energy))
 	current_time.text = str(TimerHours) + "h " + str(TimerMinutes) + "m " + str(TimerSeconds) + "s"
-	current_spin_speed.text = str(Global.spin_speed) + " rad/h"
+	current_spin_speed.text = str(snappedf(Global.spin_speed, 0.001)) + " rad/h"
 	spin_quota.text = str(Global.quota)
 	time_to_meet_quota.text = str(Global.time_limit)
 
@@ -33,7 +33,6 @@ func _on_timer_timeout() -> void:
 	if TimerMinutes == 60:
 		TimerMinutes = 0
 		TimerHours += 1
-
 
 func _on_pause_button_toggled(toggled_on: bool) -> void:
 	timer.paused = !toggled_on

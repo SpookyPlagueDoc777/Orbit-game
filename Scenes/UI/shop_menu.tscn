@@ -577,6 +577,34 @@ offset_left = -96.0
 offset_right = 96.0
 grow_horizontal = 2
 
+[node name="BackButton" type="NinePatchRect" parent="." unique_id=1845986026]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -202.0
+offset_top = -85.0
+offset_right = -148.0
+offset_bottom = -66.0
+scale = Vector2(3, 3)
+texture = ExtResource("2_yw4re")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="BackButton" type="Button" parent="BackButton" unique_id=1249383969]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.9990001
+offset_bottom = 0.01899147
+theme = ExtResource("1_lkt5b")
+toggle_mode = true
+text = "Back"
+
 [connection signal="pressed" from="ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite" to="." method="_on_buy_energy_satellite_pressed"]
 [connection signal="pressed" from="ActualButtons/Satellites/SpinSatellite/BuySpinSatellite" to="." method="_on_buy_spin_satellite_pressed"]
 [connection signal="pressed" from="ActualButtons/Satellites/ShieldSatellite/BuyShieldSatellite" to="." method="_on_buy_shield_satellite_pressed"]

@@ -1,8 +1,8 @@
 extends satellite
 
-
+var second: float = 0
 func _ready() -> void:
-	## Satellite info
+	## Satellite info(Must match export)
 	satellitename = "Shield Satellite"
 	health = 20
 	facesplanet = false
@@ -17,3 +17,10 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	update_position()
+
+func _physics_process(delta: float) -> void:
+	second += delta
+	update_spin(delta)
+	if second > 1:
+		second -= 1
+		update_energy()

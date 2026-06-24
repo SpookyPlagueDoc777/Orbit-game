@@ -15,6 +15,7 @@ var baseangle: float = PI/4
 @export var satspinprod: float
 var orbitspeed: float
 var launchanimation: bool = true
+var tween: Tween = create_tween()
 # Called when the node enters the scene tree for the first time.
 
 func orbit_planet() -> void:
@@ -24,18 +25,23 @@ func orbit_planet() -> void:
 	position.y = orbitradius * sin(baseangle - PI/2)
 
 func launch() -> void:
-	var tween: Tween = create_tween()
 	tween.set_ease(Tween.EASE_IN)
 	tween.set_trans(Tween.TRANS_SINE)
 	$".".position = Vector2(7, -64)
 	orbitspeed = sqrt(Global.G * Global.planetmass / orbitradius)
-	tween.tween_property($".","position", Vector2(orbitradius * cos(baseangle), -orbitradius * sin(baseangle)), sqrt(orbitradius)/5)
+	tween.tween_property($".","position", Vector2(orbitradius * cos(baseangle), -orbitradius * sin(baseangle)), sqrt(orbitradius) * randf_range(0.5,2)/(5*1.75))
 	tween.emit_signal("finished")
 	tween.connect("finished", _on_animation_finished)
 
 func update_position() -> void:
 	if Global.is_paused:
+		if tween.is_valid():
+			if tween.is_running():
+				tween.pause()
 		return
+	if tween.is_valid():
+		if launchanimation:
+			tween.play()
 	if !launchanimation:
 		orbit_planet()
 	if facesplanet:
@@ -51,3 +57,13 @@ func _on_area_2d_area_entered(area: Area2D) -> void:
 
 func _on_animation_finished() -> void:
 	launchanimation = false
+
+func update_spin(delta: float) -> void:
+	if Global.is_paused || launchanimation:
+		return
+	Global.spin_speed += satspinprod * delta
+	
+func update_energy() -> void:
+	if Global.is_paused || launchanimation:
+		return
+	Global.energy += satenergyprod

@@ -96,7 +96,7 @@ text_direction = 1
 layout_mode = 0
 offset_left = 99.48
 offset_top = 0.03999996
-offset_right = 163.48001
+offset_right = 173.48001
 offset_bottom = 21.369999
 scale = Vector2(3, 3)
 texture = ExtResource("1_3fiko")
@@ -336,4 +336,10 @@ toggle_mode = true
 [node name="ShopMenu" parent="Shop_ui" unique_id=565247265 instance=ExtResource("7_p8jce")]
 visible = false
 
+[node name="BackButton" parent="Shop_ui/ShopMenu/BackButton" parent_id_path=PackedInt32Array(565247265, 1845986026) index="0" unique_id=1249383969]
+toggle_mode = false
+
 [connection signal="pressed" from="ShopButton/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Shop_ui/ShopMenu/BackButton/BackButton" to="." method="_on_back_button_pressed"]
+
+[editable path="Shop_ui/ShopMenu"]

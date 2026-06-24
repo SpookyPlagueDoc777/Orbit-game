@@ -90,3 +90,4 @@ z_index = 1
 [connection signal="toggled" from="CanvasLayer/GameUI/PauseButton/PauseButton" to="." method="_on_pause_button_toggled"]
 
 [editable path="CanvasLayer/GameUI"]
+[editable path="CanvasLayer/GameUI/Shop_ui/ShopMenu"]

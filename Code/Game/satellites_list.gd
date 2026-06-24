@@ -24,5 +24,7 @@ func launch_satellite(satellitetype: int) -> void:
 		2:
 			thesatellite = SPIN_SATELLITE.instantiate()
 	if Global.energy >= thesatellite.satenergylaunch:
+		print(Global.energy)
+		print(thesatellite.satenergylaunch)
 		add_child(thesatellite)
 		Global.energy -= thesatellite.satenergylaunch
