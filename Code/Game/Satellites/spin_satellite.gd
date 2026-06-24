@@ -5,8 +5,8 @@ func _ready() -> void:
 	## Satellite info
 	satellitename = "Spin Satellite"
 	health = 5
-	facesplanet = false
-	orbitradius = 150
+	facesplanet = true
+	orbitradius = 100
 	
 	## Satellite stats
 	satenergyprod = 0
@@ -17,3 +17,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	update_position()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	register_hit(area)

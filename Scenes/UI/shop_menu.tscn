@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bv011jc2j3aou"]
 
 [ext_resource type="Theme" uid="uid://dn5wefao8u26i" path="res://Textures/UI/workshop_theme.tres" id="1_lkt5b"]
+[ext_resource type="Script" uid="uid://bi7ectlhijitr" path="res://Code/Ui/shop_menu.gd" id="2_hdw35"]
 [ext_resource type="Texture2D" uid="uid://dimb3bst8s38i" path="res://Textures/UI/UI box.png" id="2_yw4re"]
 [ext_resource type="Texture2D" uid="uid://m1cwwnee04y8" path="res://Textures/Satellites/Power satellite.png" id="3_2d0jm"]
 [ext_resource type="Texture2D" uid="uid://b1wam20ihd7kx" path="res://Textures/Satellites/Spin satellite.png" id="4_lkt5b"]
@@ -283,8 +284,9 @@ anchor_bottom = 0.98
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_lkt5b")
+script = ExtResource("2_hdw35")
 
-[node name="Actual buttons" type="VBoxContainer" parent="." unique_id=824622446]
+[node name="ActualButtons" type="VBoxContainer" parent="." unique_id=824622446]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -299,7 +301,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Actual buttons" unique_id=1577668128]
+[node name="UpgradeRect" type="NinePatchRect" parent="ActualButtons" unique_id=1577668128]
 layout_mode = 2
 size_flags_vertical = 0
 texture = ExtResource("2_yw4re")
@@ -308,7 +310,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="Button" type="Button" parent="Actual buttons/NinePatchRect" unique_id=1037438536]
+[node name="UpgradePurchase" type="Button" parent="ActualButtons/UpgradeRect" unique_id=1037438536]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -318,12 +320,12 @@ grow_vertical = 2
 offset_transform_enabled = true
 text = "upgrade all!"
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Actual buttons" unique_id=1506906877]
+[node name="ShopContainer" type="HBoxContainer" parent="ActualButtons" unique_id=1506906877]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
-[node name="NinePatchRect" type="NinePatchRect" parent="Actual buttons/HBoxContainer" unique_id=595989811]
+[node name="PowerRect" type="NinePatchRect" parent="ActualButtons/ShopContainer" unique_id=595989811]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("2_yw4re")
@@ -332,7 +334,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="Button" type="Button" parent="Actual buttons/HBoxContainer/NinePatchRect" unique_id=7769754]
+[node name="PowerPurchase" type="Button" parent="ActualButtons/ShopContainer/PowerRect" unique_id=7769754]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -342,7 +344,7 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Control" type="Control" parent="Actual buttons/HBoxContainer/NinePatchRect/Button" unique_id=1404888582]
+[node name="Control" type="Control" parent="ActualButtons/ShopContainer/PowerRect/PowerPurchase" unique_id=1404888582]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -352,14 +354,14 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Actual buttons/HBoxContainer/NinePatchRect/Button/Control" unique_id=27105956]
+[node name="PowerSprite" type="AnimatedSprite2D" parent="ActualButtons/ShopContainer/PowerRect/PowerPurchase/Control" unique_id=27105956]
 position = Vector2(-0.5, -1.5)
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_duafg")
 autoplay = "default"
 frame_progress = 0.8181824
 
-[node name="Label" type="Label" parent="Actual buttons/HBoxContainer/NinePatchRect/Button" unique_id=100220193]
+[node name="PowerName" type="Label" parent="ActualButtons/ShopContainer/PowerRect/PowerPurchase" unique_id=100220193]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -376,7 +378,7 @@ text = "Power satellite"
 label_settings = SubResource("LabelSettings_duafg")
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Actual buttons/HBoxContainer/NinePatchRect/Button" unique_id=471812391]
+[node name="PowerCost" type="Label" parent="ActualButtons/ShopContainer/PowerRect/PowerPurchase" unique_id=471812391]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -390,7 +392,7 @@ text = "Energy cost: 100"
 label_settings = SubResource("LabelSettings_4oc0s")
 horizontal_alignment = 1
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="Actual buttons/HBoxContainer" unique_id=776404775]
+[node name="SpinRect" type="NinePatchRect" parent="ActualButtons/ShopContainer" unique_id=776404775]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("2_yw4re")
@@ -399,7 +401,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="Button" type="Button" parent="Actual buttons/HBoxContainer/NinePatchRect2" unique_id=590348112]
+[node name="SpinPurchase" type="Button" parent="ActualButtons/ShopContainer/SpinRect" unique_id=590348112]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -409,7 +411,7 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Control" type="Control" parent="Actual buttons/HBoxContainer/NinePatchRect2/Button" unique_id=1708446540]
+[node name="Control" type="Control" parent="ActualButtons/ShopContainer/SpinRect/SpinPurchase" unique_id=1708446540]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -421,13 +423,13 @@ offset_right = 1.6666565
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Actual buttons/HBoxContainer/NinePatchRect2/Button/Control" unique_id=310436352]
+[node name="SpinSprite" type="AnimatedSprite2D" parent="ActualButtons/ShopContainer/SpinRect/SpinPurchase/Control" unique_id=310436352]
 scale = Vector2(1.5, 1.5)
 sprite_frames = SubResource("SpriteFrames_4oc0s")
 autoplay = "default"
 frame_progress = 0.64631236
 
-[node name="Label" type="Label" parent="Actual buttons/HBoxContainer/NinePatchRect2/Button" unique_id=253006923]
+[node name="SpinName" type="Label" parent="ActualButtons/ShopContainer/SpinRect/SpinPurchase" unique_id=253006923]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -444,7 +446,7 @@ text = "Spin satellite"
 label_settings = SubResource("LabelSettings_duafg")
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Actual buttons/HBoxContainer/NinePatchRect2/Button" unique_id=1623534969]
+[node name="SpinCost" type="Label" parent="ActualButtons/ShopContainer/SpinRect/SpinPurchase" unique_id=1623534969]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -458,7 +460,7 @@ text = "Energy cost: 250"
 label_settings = SubResource("LabelSettings_4oc0s")
 horizontal_alignment = 1
 
-[node name="NinePatchRect3" type="NinePatchRect" parent="Actual buttons/HBoxContainer" unique_id=1998505729]
+[node name="ShieldRect" type="NinePatchRect" parent="ActualButtons/ShopContainer" unique_id=1998505729]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("2_yw4re")
@@ -467,7 +469,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="Button" type="Button" parent="Actual buttons/HBoxContainer/NinePatchRect3" unique_id=275423020]
+[node name="ShieldPurchase" type="Button" parent="ActualButtons/ShopContainer/ShieldRect" unique_id=275423020]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -477,7 +479,7 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Control" type="Control" parent="Actual buttons/HBoxContainer/NinePatchRect3/Button" unique_id=419036327]
+[node name="Control" type="Control" parent="ActualButtons/ShopContainer/ShieldRect/ShieldPurchase" unique_id=419036327]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -487,14 +489,14 @@ anchor_bottom = 0.5
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Actual buttons/HBoxContainer/NinePatchRect3/Button/Control" unique_id=936505322]
+[node name="SHieldSprite" type="AnimatedSprite2D" parent="ActualButtons/ShopContainer/ShieldRect/ShieldPurchase/Control" unique_id=936505322]
 position = Vector2(-0.006668091, 0.66667557)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_yssin")
 autoplay = "default"
 frame_progress = 0.43756607
 
-[node name="Label" type="Label" parent="Actual buttons/HBoxContainer/NinePatchRect3/Button" unique_id=1880667870]
+[node name="ShieldName" type="Label" parent="ActualButtons/ShopContainer/ShieldRect/ShieldPurchase" unique_id=1880667870]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -511,7 +513,7 @@ text = "shield satellite"
 label_settings = SubResource("LabelSettings_duafg")
 horizontal_alignment = 1
 
-[node name="Label2" type="Label" parent="Actual buttons/HBoxContainer/NinePatchRect3/Button" unique_id=1421513152]
+[node name="SheildCost" type="Label" parent="ActualButtons/ShopContainer/ShieldRect/ShieldPurchase" unique_id=1421513152]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -525,7 +527,7 @@ text = "Energy cost: 600"
 label_settings = SubResource("LabelSettings_4oc0s")
 horizontal_alignment = 1
 
-[node name="NinePatchRect2" type="NinePatchRect" parent="Actual buttons" unique_id=1872454829]
+[node name="SatelliteRect" type="NinePatchRect" parent="ActualButtons" unique_id=1872454829]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_yw4re")
@@ -534,7 +536,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="satelliteslist" type="ItemList" parent="Actual buttons/NinePatchRect2" unique_id=1615028618]
+[node name="SatellitesList" type="ItemList" parent="ActualButtons/SatelliteRect" unique_id=1615028618]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -552,3 +554,7 @@ offset_left = -20.0
 offset_right = 20.0
 offset_bottom = 40.0
 grow_horizontal = 2
+
+[connection signal="pressed" from="ActualButtons/ShopContainer/PowerRect/PowerPurchase" to="." method="_on_power_purchase_pressed"]
+[connection signal="pressed" from="ActualButtons/ShopContainer/SpinRect/SpinPurchase" to="." method="_on_spin_purchase_pressed"]
+[connection signal="pressed" from="ActualButtons/ShopContainer/ShieldRect/ShieldPurchase" to="." method="_on_shield_purchase_pressed"]

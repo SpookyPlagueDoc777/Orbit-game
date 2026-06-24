@@ -83,6 +83,8 @@ animations = [{
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1pcel"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fkjd4"]
+
 [node name="PowerSatellite" type="CharacterBody2D" unique_id=1376342862]
 script = ExtResource("1_eujg2")
 satenergylaunch = 100
@@ -96,3 +98,11 @@ frame_progress = 0.5059282
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=386251047]
 shape = SubResource("RectangleShape2D_1pcel")
 disabled = true
+
+[node name="Area2D" type="Area2D" parent="." unique_id=1794994681]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=807907850]
+shape = SubResource("RectangleShape2D_fkjd4")
+
+[connection signal="area_entered" from="Area2D" to="." method="_on_area_2d_area_entered"]

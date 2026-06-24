@@ -17,3 +17,8 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	update_position()
+
+
+func _on_area_2d_area_entered(area: Area2D) -> void:
+	print("leftd")
+	register_hit(area)

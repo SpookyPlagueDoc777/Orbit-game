@@ -4,8 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://lkkx1tnic3l" path="res://Textures/PLanet x but beeeeg.png" id="2_7r8ec"]
 [ext_resource type="PackedScene" uid="uid://bvkw14d2odqso" path="res://Scenes/Game/Satellites/power_satellite.tscn" id="3_7r8ec"]
 [ext_resource type="PackedScene" uid="uid://kybt02uh27cp" path="res://Scenes/Game/Satellites/shield_satellite.tscn" id="4_83mwp"]
-
-[sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
+[ext_resource type="PackedScene" uid="uid://dlbawowx6xel6" path="res://Scenes/Game/Satellites/spin_satellite.tscn" id="5_83mwp"]
 
 [node name="GameScene" type="Node2D" unique_id=1484544398]
 script = ExtResource("1_ctr27")
@@ -20,13 +19,10 @@ zoom = Vector2(1.5, 1.5)
 texture = ExtResource("2_7r8ec")
 offset = Vector2(0, -15)
 
-[node name="MeshInstance2D" type="MeshInstance2D" parent="Planet" unique_id=1303857469]
-visible = false
-scale = Vector2(450, 450)
-mesh = SubResource("SphereMesh_g4v7s")
-
 [node name="Satellites" type="Node2D" parent="Planet" unique_id=765053489]
 
 [node name="PowerSatellite" parent="Planet/Satellites" unique_id=1376342862 instance=ExtResource("3_7r8ec")]
 
 [node name="ShieldSatellite" parent="Planet/Satellites" unique_id=1269225202 instance=ExtResource("4_83mwp")]
+
+[node name="SpinSatellite" parent="Planet/Satellites" unique_id=458181133 instance=ExtResource("5_83mwp")]

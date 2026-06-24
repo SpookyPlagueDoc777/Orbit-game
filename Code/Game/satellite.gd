@@ -40,9 +40,10 @@ func update_position() -> void:
 		spin_satellite()
 
 func spin_satellite() -> void:
-	rotation = baseangle
+	rotation = baseangle + (PI/2)
 
-func _on_area_2d_area_entered(area: Area2D) -> void:
+func register_hit(area: Area2D) -> void:
+	print("oo")
 	health -= 1
 	if health <= 0:
 		get_tree().queue_delete($".")
