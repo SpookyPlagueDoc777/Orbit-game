@@ -27,6 +27,8 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 border_blend = true
 corner_detail = 1
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tuexk"]
+
 [resource]
 Button/font_sizes/font_size = 16
 Button/fonts/font = ExtResource("1_tuexk")
@@ -34,3 +36,4 @@ Button/styles/hover = SubResource("StyleBoxFlat_lkt5b")
 Button/styles/normal = SubResource("StyleBoxEmpty_yssin")
 Button/styles/pressed = SubResource("StyleBoxFlat_hdw35")
 Label/fonts/font = ExtResource("1_tuexk")
+Panel/styles/panel = SubResource("StyleBoxEmpty_tuexk")
