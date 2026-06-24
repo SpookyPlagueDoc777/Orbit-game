@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://m1cwwnee04y8" path="res://Textures/Satellites/Power satellite.png" id="3_2d0jm"]
 [ext_resource type="Texture2D" uid="uid://b1wam20ihd7kx" path="res://Textures/Satellites/Spin satellite.png" id="4_lkt5b"]
 [ext_resource type="Texture2D" uid="uid://btg2cwm0n3ui" path="res://Textures/Satellites/shield satellite.png" id="5_hdw35"]
+[ext_resource type="Texture2D" uid="uid://nyea60dp2bjt" path="res://Textures/UI/Satellite inc.png" id="6_hdw35"]
+[ext_resource type="Texture2D" uid="uid://dxt8g5gymwpn5" path="res://Textures/UI/Left shop banner.png" id="7_40rfe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_km370"]
 atlas = ExtResource("3_2d0jm")
@@ -294,14 +296,14 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -288.47998
-offset_top = -176.00002
+offset_top = -148.00002
 offset_right = -96.07999
-offset_bottom = -13.0000305
+offset_bottom = 0.333313
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
 
-[node name="UpgradeRect" type="NinePatchRect" parent="ActualButtons" unique_id=1577668128]
+[node name="UpgradeAll" type="NinePatchRect" parent="Actual buttons" unique_id=1577668128]
 layout_mode = 2
 size_flags_vertical = 0
 texture = ExtResource("2_yw4re")
@@ -310,7 +312,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="UpgradePurchase" type="Button" parent="ActualButtons/UpgradeRect" unique_id=1037438536]
+[node name="UpgradeAllButton" type="Button" parent="Actual buttons/UpgradeAll" unique_id=1037438536]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -320,12 +322,12 @@ grow_vertical = 2
 offset_transform_enabled = true
 text = "upgrade all!"
 
-[node name="ShopContainer" type="HBoxContainer" parent="ActualButtons" unique_id=1506906877]
+[node name="Satellites" type="HBoxContainer" parent="Actual buttons" unique_id=1506906877]
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 0.5
 
-[node name="PowerRect" type="NinePatchRect" parent="ActualButtons/ShopContainer" unique_id=595989811]
+[node name="EnergySatellite" type="NinePatchRect" parent="Actual buttons/Satellites" unique_id=595989811]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("2_yw4re")
@@ -334,7 +336,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="PowerPurchase" type="Button" parent="ActualButtons/ShopContainer/PowerRect" unique_id=7769754]
+[node name="BuyEnergySatellite" type="Button" parent="Actual buttons/Satellites/EnergySatellite" unique_id=7769754]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -344,7 +346,7 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Control" type="Control" parent="ActualButtons/ShopContainer/PowerRect/PowerPurchase" unique_id=1404888582]
+[node name="Control" type="Control" parent="Actual buttons/Satellites/EnergySatellite/BuyEnergySatellite" unique_id=1404888582]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -361,7 +363,7 @@ sprite_frames = SubResource("SpriteFrames_duafg")
 autoplay = "default"
 frame_progress = 0.8181824
 
-[node name="PowerName" type="Label" parent="ActualButtons/ShopContainer/PowerRect/PowerPurchase" unique_id=100220193]
+[node name="SatelliteName" type="Label" parent="Actual buttons/Satellites/EnergySatellite/BuyEnergySatellite" unique_id=100220193]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -378,7 +380,7 @@ text = "Power satellite"
 label_settings = SubResource("LabelSettings_duafg")
 horizontal_alignment = 1
 
-[node name="PowerCost" type="Label" parent="ActualButtons/ShopContainer/PowerRect/PowerPurchase" unique_id=471812391]
+[node name="EnergyCost" type="Label" parent="Actual buttons/Satellites/EnergySatellite/BuyEnergySatellite" unique_id=471812391]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -392,7 +394,7 @@ text = "Energy cost: 100"
 label_settings = SubResource("LabelSettings_4oc0s")
 horizontal_alignment = 1
 
-[node name="SpinRect" type="NinePatchRect" parent="ActualButtons/ShopContainer" unique_id=776404775]
+[node name="SpinSatellite" type="NinePatchRect" parent="Actual buttons/Satellites" unique_id=776404775]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("2_yw4re")
@@ -401,7 +403,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="SpinPurchase" type="Button" parent="ActualButtons/ShopContainer/SpinRect" unique_id=590348112]
+[node name="BuySpinSatellite" type="Button" parent="Actual buttons/Satellites/SpinSatellite" unique_id=590348112]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -411,7 +413,7 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Control" type="Control" parent="ActualButtons/ShopContainer/SpinRect/SpinPurchase" unique_id=1708446540]
+[node name="Control" type="Control" parent="Actual buttons/Satellites/SpinSatellite/BuySpinSatellite" unique_id=1708446540]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -429,7 +431,7 @@ sprite_frames = SubResource("SpriteFrames_4oc0s")
 autoplay = "default"
 frame_progress = 0.64631236
 
-[node name="SpinName" type="Label" parent="ActualButtons/ShopContainer/SpinRect/SpinPurchase" unique_id=253006923]
+[node name="SatelliteName" type="Label" parent="Actual buttons/Satellites/SpinSatellite/BuySpinSatellite" unique_id=253006923]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -446,7 +448,7 @@ text = "Spin satellite"
 label_settings = SubResource("LabelSettings_duafg")
 horizontal_alignment = 1
 
-[node name="SpinCost" type="Label" parent="ActualButtons/ShopContainer/SpinRect/SpinPurchase" unique_id=1623534969]
+[node name="EnergyCost" type="Label" parent="Actual buttons/Satellites/SpinSatellite/BuySpinSatellite" unique_id=1623534969]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -460,7 +462,7 @@ text = "Energy cost: 250"
 label_settings = SubResource("LabelSettings_4oc0s")
 horizontal_alignment = 1
 
-[node name="ShieldRect" type="NinePatchRect" parent="ActualButtons/ShopContainer" unique_id=1998505729]
+[node name="ShieldSatellite" type="NinePatchRect" parent="Actual buttons/Satellites" unique_id=1998505729]
 layout_mode = 2
 size_flags_horizontal = 3
 texture = ExtResource("2_yw4re")
@@ -469,7 +471,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="ShieldPurchase" type="Button" parent="ActualButtons/ShopContainer/ShieldRect" unique_id=275423020]
+[node name="BuyShieldSatellite" type="Button" parent="Actual buttons/Satellites/ShieldSatellite" unique_id=275423020]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -479,7 +481,7 @@ grow_vertical = 2
 size_flags_horizontal = 6
 size_flags_vertical = 4
 
-[node name="Control" type="Control" parent="ActualButtons/ShopContainer/ShieldRect/ShieldPurchase" unique_id=419036327]
+[node name="Control" type="Control" parent="Actual buttons/Satellites/ShieldSatellite/BuyShieldSatellite" unique_id=419036327]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -496,7 +498,7 @@ sprite_frames = SubResource("SpriteFrames_yssin")
 autoplay = "default"
 frame_progress = 0.43756607
 
-[node name="ShieldName" type="Label" parent="ActualButtons/ShopContainer/ShieldRect/ShieldPurchase" unique_id=1880667870]
+[node name="SatelliteName" type="Label" parent="Actual buttons/Satellites/ShieldSatellite/BuyShieldSatellite" unique_id=1880667870]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5
@@ -513,7 +515,7 @@ text = "shield satellite"
 label_settings = SubResource("LabelSettings_duafg")
 horizontal_alignment = 1
 
-[node name="SheildCost" type="Label" parent="ActualButtons/ShopContainer/ShieldRect/ShieldPurchase" unique_id=1421513152]
+[node name="EnergyCost" type="Label" parent="Actual buttons/Satellites/ShieldSatellite/BuyShieldSatellite" unique_id=1421513152]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -527,7 +529,7 @@ text = "Energy cost: 600"
 label_settings = SubResource("LabelSettings_4oc0s")
 horizontal_alignment = 1
 
-[node name="SatelliteRect" type="NinePatchRect" parent="ActualButtons" unique_id=1872454829]
+[node name="SatellitesList" type="NinePatchRect" parent="Actual buttons" unique_id=1872454829]
 layout_mode = 2
 size_flags_vertical = 3
 texture = ExtResource("2_yw4re")
@@ -536,7 +538,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="SatellitesList" type="ItemList" parent="ActualButtons/SatelliteRect" unique_id=1615028618]
+[node name="SatelliteList" type="ItemList" parent="Actual buttons/SatellitesList" unique_id=1615028618]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -547,14 +549,33 @@ grow_horizontal = 2
 
 [node name="Visuals" type="VBoxContainer" parent="." unique_id=1045901687]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_right = -752.95996
+offset_bottom = -411.08002
 grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
 
-[connection signal="pressed" from="ActualButtons/ShopContainer/PowerRect/PowerPurchase" to="." method="_on_power_purchase_pressed"]
-[connection signal="pressed" from="ActualButtons/ShopContainer/SpinRect/SpinPurchase" to="." method="_on_spin_purchase_pressed"]
-[connection signal="pressed" from="ActualButtons/ShopContainer/ShieldRect/ShieldPurchase" to="." method="_on_shield_purchase_pressed"]
+[node name="TextureRect" type="TextureRect" parent="Visuals" unique_id=1883335352]
+layout_mode = 2
+texture = ExtResource("6_hdw35")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Visuals" unique_id=1437850612]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="Visuals/HBoxContainer" unique_id=605020551]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("7_40rfe")
+
+[node name="Panel" type="Panel" parent="Visuals/HBoxContainer" unique_id=67028203]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.4
+
+[node name="TextureRect2" type="TextureRect" parent="Visuals/HBoxContainer" unique_id=901902128]
+layout_mode = 2
+size_flags_horizontal = 3

@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://di5urho8tiwu1" path="res://Textures/UI/Energy icon.png" id="3_5b8pf"]
 [ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="3_6w80a"]
 [ext_resource type="Theme" uid="uid://dn5wefao8u26i" path="res://Textures/UI/workshop_theme.tres" id="5_lolt2"]
+[ext_resource type="Texture2D" uid="uid://cjph45gt02jai" path="res://Textures/UI/Satellite inc logo tiny.png" id="7_bhxso"]
 [ext_resource type="Texture2D" uid="uid://clm8fa3sfcmmk" path="res://Textures/UI/Timer icon.png" id="7_mnd0w"]
 [ext_resource type="PackedScene" uid="uid://bv011jc2j3aou" path="res://Scenes/UI/shop_menu.tscn" id="7_p8jce"]
 
@@ -19,6 +20,9 @@ font_size = 12
 
 [sub_resource type="LabelSettings" id="LabelSettings_4oc0s"]
 font = ExtResource("3_6w80a")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_n1yeg"]
 font_size = 8
 
 [sub_resource type="LabelSettings" id="LabelSettings_chw7r"]
@@ -197,19 +201,33 @@ patch_margin_bottom = 8
 
 [node name="Button" type="Button" parent="ShopButton" unique_id=882555370]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -12.165001
-offset_top = -12.165001
-offset_right = 12.165001
-offset_bottom = 12.165001
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("5_lolt2")
+icon = ExtResource("7_bhxso")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="ShopButton" unique_id=2111020147]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -19.666666
+offset_top = -17.993288
+offset_right = 20.333332
+offset_bottom = -5.326622
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_lolt2")
 text = "workshop"
+label_settings = SubResource("LabelSettings_n1yeg")
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [node name="Timer" type="NinePatchRect" parent="." unique_id=478082880]
 layout_mode = 1
