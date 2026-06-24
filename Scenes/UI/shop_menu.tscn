@@ -278,10 +278,9 @@ animations = [{
 
 [node name="ShopMenu" type="Control" unique_id=565247265]
 layout_mode = 3
-anchor_left = 0.01
-anchor_top = 0.02
-anchor_right = 0.99
-anchor_bottom = 0.98
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_lkt5b")
@@ -545,35 +544,33 @@ offset_left = -96.0
 offset_right = 96.0
 grow_horizontal = 2
 
-[node name="Visuals" type="VBoxContainer" parent="." unique_id=1045901687]
+[node name="Control" type="Control" parent="." unique_id=784231603]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -1.0
-offset_right = -752.95996
-offset_bottom = -411.08002
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(3, 3)
 
-[node name="TextureRect" type="TextureRect" parent="Visuals" unique_id=1883335352]
-layout_mode = 2
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=1883335352]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -555.0
+offset_top = 15.0
+offset_right = 558.25977
+offset_bottom = 163.04004
+grow_horizontal = 2
 texture = ExtResource("6_hdw35")
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Visuals" unique_id=1437850612]
-layout_mode = 2
-
-[node name="TextureRect" type="TextureRect" parent="Visuals/HBoxContainer" unique_id=605020551]
-layout_mode = 2
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=605020551]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -475.0
+offset_right = 249.0
+grow_vertical = 0
 size_flags_horizontal = 3
 texture = ExtResource("7_40rfe")
-
-[node name="Panel" type="Panel" parent="Visuals/HBoxContainer" unique_id=67028203]
-layout_mode = 2
-size_flags_horizontal = 3
-size_flags_stretch_ratio = 2.4
-
-[node name="TextureRect2" type="TextureRect" parent="Visuals/HBoxContainer" unique_id=901902128]
-layout_mode = 2
-size_flags_horizontal = 3
