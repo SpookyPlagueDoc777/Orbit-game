@@ -58,6 +58,26 @@ visible = false
 
 [node name="GameUI" parent="CanvasLayer" unique_id=138886182 instance=ExtResource("1_oo0cf")]
 
+[node name="ShopButton" parent="CanvasLayer/GameUI" index="3" unique_id=1671849289]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -95.99988
+offset_top = -127.65991
+offset_right = -63.999878
+offset_bottom = -85.0
+grow_horizontal = 0
+
+[node name="NinePatchRect4" parent="CanvasLayer/GameUI" index="5" unique_id=2098349597]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -465.02
+offset_top = -125.95996
+offset_right = -155.01999
+offset_bottom = -83.95996
+grow_horizontal = 2
+
 [node name="Root_pause" parent="CanvasLayer" unique_id=477685508 instance=ExtResource("4_3qm64")]
 visible = false
 

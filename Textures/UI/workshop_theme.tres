@@ -1,0 +1,36 @@
+[gd_resource type="Theme" format=3 uid="uid://dn5wefao8u26i"]
+
+[ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="1_tuexk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkt5b"]
+bg_color = Color(0.6313726, 0.58431375, 0.89411765, 0.5254902)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yssin"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdw35"]
+bg_color = Color(0.7294118, 0.9098039, 0.14901961, 0.5294118)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_detail = 1
+
+[resource]
+Button/font_sizes/font_size = 16
+Button/fonts/font = ExtResource("1_tuexk")
+Button/styles/hover = SubResource("StyleBoxFlat_lkt5b")
+Button/styles/normal = SubResource("StyleBoxEmpty_yssin")
+Button/styles/pressed = SubResource("StyleBoxFlat_hdw35")
+Label/fonts/font = ExtResource("1_tuexk")

@@ -85,6 +85,7 @@ animations = [{
 
 [node name="PowerSatellite" type="CharacterBody2D" unique_id=1376342862]
 script = ExtResource("1_eujg2")
+satenergylaunch = 100
 metadata/_custom_type_script = "uid://rv83iop2l27h"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=649261807]

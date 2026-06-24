@@ -1,9 +1,13 @@
 [gd_scene format=3 uid="uid://cqi64luim3n66"]
 
 [ext_resource type="Texture2D" uid="uid://dimb3bst8s38i" path="res://Textures/UI/UI box.png" id="1_3fiko"]
+[ext_resource type="Script" uid="uid://cx47qg063vps4" path="res://Code/Ui/game_ui.gd" id="1_plf53"]
 [ext_resource type="Texture2D" uid="uid://cj0rdqwg1vpmn" path="res://Textures/UI/spin speed icon.png" id="2_vo2tu"]
 [ext_resource type="Texture2D" uid="uid://di5urho8tiwu1" path="res://Textures/UI/Energy icon.png" id="3_5b8pf"]
 [ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="3_6w80a"]
+[ext_resource type="Theme" uid="uid://dn5wefao8u26i" path="res://Textures/UI/workshop_theme.tres" id="5_lolt2"]
+[ext_resource type="Texture2D" uid="uid://clm8fa3sfcmmk" path="res://Textures/UI/Timer icon.png" id="7_mnd0w"]
+[ext_resource type="PackedScene" uid="uid://bv011jc2j3aou" path="res://Scenes/UI/shop_menu.tscn" id="7_p8jce"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wxim1"]
 font = ExtResource("3_6w80a")
@@ -34,6 +38,7 @@ offset_right = 0.040039063
 offset_bottom = -0.08001709
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_plf53")
 
 [node name="SpinIndicator" type="NinePatchRect" parent="." unique_id=84642573]
 layout_mode = 0
@@ -128,7 +133,7 @@ anchor_top = 1.0
 anchor_bottom = 1.0
 offset_top = -127.95999
 offset_right = 32.0
-offset_bottom = -85.29999
+offset_bottom = -85.30005
 grow_vertical = 0
 scale = Vector2(3, 3)
 texture = ExtResource("1_3fiko")
@@ -139,13 +144,14 @@ patch_margin_bottom = 8
 
 [node name="VBoxContainer" type="VBoxContainer" parent="SpinQuotaMenager" unique_id=323054256]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 40.0
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -16.0
+offset_bottom = 16.0
 grow_horizontal = 2
+grow_vertical = 2
 
 [node name="SpinQuota" type="Label" parent="SpinQuotaMenager/VBoxContainer" unique_id=624288827]
 layout_mode = 2
@@ -172,14 +178,47 @@ text = "left to meet quota"
 label_settings = SubResource("LabelSettings_4oc0s")
 horizontal_alignment = 1
 
+[node name="ShopButton" type="NinePatchRect" parent="." unique_id=1671849289]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1033.48
+offset_top = -127.95999
+offset_right = 1065.48
+offset_bottom = -85.30005
+grow_vertical = 0
+scale = Vector2(3, 3)
+texture = ExtResource("1_3fiko")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Button" type="Button" parent="ShopButton" unique_id=882555370]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -12.165001
+offset_top = -12.165001
+offset_right = 12.165001
+offset_bottom = 12.165001
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_lolt2")
+text = "workshop"
+
 [node name="Timer" type="NinePatchRect" parent="." unique_id=478082880]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -95.52002
-offset_right = -63.52002
-offset_bottom = 16.0
+offset_left = -204.0
+offset_right = -136.0
+offset_bottom = 19.0
 grow_horizontal = 0
 scale = Vector2(3, 3)
 texture = ExtResource("1_3fiko")
@@ -190,27 +229,39 @@ patch_margin_bottom = 8
 
 [node name="CurrentTime" type="Label" parent="Timer" unique_id=566765429]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 17.160004
+offset_top = -6.3333335
+offset_right = -0.83999634
+offset_bottom = 6.333334
 grow_horizontal = 2
+grow_vertical = 2
 text = "Timer"
 label_settings = SubResource("LabelSettings_chw7r")
 horizontal_alignment = 1
 
-[node name="NinePatchRect4" type="NinePatchRect" parent="." unique_id=2098349597]
+[node name="TextureRect" type="TextureRect" parent="Timer" unique_id=1737186141]
+layout_mode = 0
+offset_left = 2.333313
+offset_top = 2.3333344
+offset_right = 42.333313
+offset_bottom = 42.333336
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("7_mnd0w")
+
+[node name="SatellitesList" type="NinePatchRect" parent="." unique_id=2098349597]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
+anchors_preset = -1
+anchor_top = 0.794
+anchor_right = 1.0
 anchor_bottom = 1.0
 offset_left = 99.48
-offset_top = -127.95993
-offset_right = 442.48
+offset_top = 0.1720581
+offset_right = -719.18665
 offset_bottom = -85.29993
-grow_vertical = 0
 scale = Vector2(3, 3)
 texture = ExtResource("1_3fiko")
 patch_margin_left = 8
@@ -218,15 +269,28 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="Label" type="Label" parent="NinePatchRect4" unique_id=467945418]
+[node name="Label" type="Label" parent="SatellitesList" unique_id=467945418]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_right = 20.0
-offset_bottom = 23.0
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 6.3333335
 grow_horizontal = 2
 text = "Satellites list"
 label_settings = SubResource("LabelSettings_yssin")
 horizontal_alignment = 1
+
+[node name="ItemList" type="ItemList" parent="SatellitesList/Label" unique_id=1573260976]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Shop_ui" type="Node" parent="." unique_id=1862393372]
+
+[node name="ShopMenu" parent="Shop_ui" unique_id=565247265 instance=ExtResource("7_p8jce")]
+visible = false
+
+[connection signal="pressed" from="ShopButton/Button" to="." method="_on_button_pressed"]
