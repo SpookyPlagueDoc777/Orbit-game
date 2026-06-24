@@ -34,13 +34,15 @@ func launch() -> void:
 	tween.connect("finished", _on_animation_finished)
 
 func update_position() -> void:
+	if Global.is_paused:
+		return
 	if !launchanimation:
 		orbit_planet()
 	if facesplanet:
 		spin_satellite()
 
 func spin_satellite() -> void:
-	rotation = baseangle
+	rotation = baseangle + PI/2
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	health -= 1

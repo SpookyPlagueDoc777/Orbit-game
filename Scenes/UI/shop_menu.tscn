@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bv011jc2j3aou"]
 
 [ext_resource type="Theme" uid="uid://dn5wefao8u26i" path="res://Textures/UI/workshop_theme.tres" id="1_lkt5b"]
+[ext_resource type="Script" uid="uid://dyt1uu1orwhpb" path="res://Scenes/UI/shop_menu.gd" id="2_8gxsv"]
 [ext_resource type="Texture2D" uid="uid://dimb3bst8s38i" path="res://Textures/UI/UI box.png" id="2_yw4re"]
 [ext_resource type="Texture2D" uid="uid://m1cwwnee04y8" path="res://Textures/Satellites/Power satellite.png" id="3_2d0jm"]
 [ext_resource type="Texture2D" uid="uid://b1wam20ihd7kx" path="res://Textures/Satellites/Spin satellite.png" id="4_lkt5b"]
@@ -284,265 +285,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("1_lkt5b")
-
-[node name="Actual buttons" type="VBoxContainer" parent="." unique_id=824622446]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -288.47998
-offset_top = -148.00002
-offset_right = -96.07999
-offset_bottom = 0.333313
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(3, 3)
-
-[node name="UpgradeAll" type="NinePatchRect" parent="Actual buttons" unique_id=1577668128]
-layout_mode = 2
-size_flags_vertical = 0
-texture = ExtResource("2_yw4re")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
-
-[node name="UpgradeAllButton" type="Button" parent="Actual buttons/UpgradeAll" unique_id=1037438536]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-offset_transform_enabled = true
-text = "upgrade all!"
-
-[node name="Satellites" type="HBoxContainer" parent="Actual buttons" unique_id=1506906877]
-layout_mode = 2
-size_flags_vertical = 3
-size_flags_stretch_ratio = 0.5
-
-[node name="EnergySatellite" type="NinePatchRect" parent="Actual buttons/Satellites" unique_id=595989811]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("2_yw4re")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
-
-[node name="BuyEnergySatellite" type="Button" parent="Actual buttons/Satellites/EnergySatellite" unique_id=7769754]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-
-[node name="Control" type="Control" parent="Actual buttons/Satellites/EnergySatellite/BuyEnergySatellite" unique_id=1404888582]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Actual buttons/Satellites/EnergySatellite/BuyEnergySatellite/Control" unique_id=27105956]
-position = Vector2(-0.5, -1.5)
-scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_duafg")
-autoplay = "default"
-frame_progress = 0.8181824
-
-[node name="SatelliteName" type="Label" parent="Actual buttons/Satellites/EnergySatellite/BuyEnergySatellite" unique_id=100220193]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -15.0
-offset_top = -9.000008
-offset_right = 15.0
-offset_bottom = -2.6666718
-grow_horizontal = 2
-grow_vertical = 0
-text = "Power satellite"
-label_settings = SubResource("LabelSettings_duafg")
-horizontal_alignment = 1
-
-[node name="EnergyCost" type="Label" parent="Actual buttons/Satellites/EnergySatellite/BuyEnergySatellite" unique_id=471812391]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = 2.6666718
-offset_right = 20.0
-offset_bottom = 15.666672
-grow_horizontal = 2
-text = "Energy cost: 100"
-label_settings = SubResource("LabelSettings_4oc0s")
-horizontal_alignment = 1
-
-[node name="SpinSatellite" type="NinePatchRect" parent="Actual buttons/Satellites" unique_id=776404775]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("2_yw4re")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
-
-[node name="BuySpinSatellite" type="Button" parent="Actual buttons/Satellites/SpinSatellite" unique_id=590348112]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-
-[node name="Control" type="Control" parent="Actual buttons/Satellites/SpinSatellite/BuySpinSatellite" unique_id=1708446540]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = 1.6666565
-offset_right = 1.6666565
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Actual buttons/Satellites/SpinSatellite/BuySpinSatellite/Control" unique_id=310436352]
-scale = Vector2(1.5, 1.5)
-sprite_frames = SubResource("SpriteFrames_4oc0s")
-autoplay = "default"
-frame_progress = 0.64631236
-
-[node name="SatelliteName" type="Label" parent="Actual buttons/Satellites/SpinSatellite/BuySpinSatellite" unique_id=253006923]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -15.0
-offset_top = -9.000008
-offset_right = 15.0
-offset_bottom = -2.6666718
-grow_horizontal = 2
-grow_vertical = 0
-text = "Spin satellite"
-label_settings = SubResource("LabelSettings_duafg")
-horizontal_alignment = 1
-
-[node name="EnergyCost" type="Label" parent="Actual buttons/Satellites/SpinSatellite/BuySpinSatellite" unique_id=1623534969]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = 2.6666718
-offset_right = 20.0
-offset_bottom = 15.666672
-grow_horizontal = 2
-text = "Energy cost: 250"
-label_settings = SubResource("LabelSettings_4oc0s")
-horizontal_alignment = 1
-
-[node name="ShieldSatellite" type="NinePatchRect" parent="Actual buttons/Satellites" unique_id=1998505729]
-layout_mode = 2
-size_flags_horizontal = 3
-texture = ExtResource("2_yw4re")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
-
-[node name="BuyShieldSatellite" type="Button" parent="Actual buttons/Satellites/ShieldSatellite" unique_id=275423020]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 6
-size_flags_vertical = 4
-
-[node name="Control" type="Control" parent="Actual buttons/Satellites/ShieldSatellite/BuyShieldSatellite" unique_id=419036327]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Actual buttons/Satellites/ShieldSatellite/BuyShieldSatellite/Control" unique_id=936505322]
-position = Vector2(-0.006668091, 0.66667557)
-scale = Vector2(2, 2)
-sprite_frames = SubResource("SpriteFrames_yssin")
-autoplay = "default"
-frame_progress = 0.43756607
-
-[node name="SatelliteName" type="Label" parent="Actual buttons/Satellites/ShieldSatellite/BuyShieldSatellite" unique_id=1880667870]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -15.0
-offset_top = -9.000008
-offset_right = 15.0
-offset_bottom = -2.6666718
-grow_horizontal = 2
-grow_vertical = 0
-text = "shield satellite"
-label_settings = SubResource("LabelSettings_duafg")
-horizontal_alignment = 1
-
-[node name="EnergyCost" type="Label" parent="Actual buttons/Satellites/ShieldSatellite/BuyShieldSatellite" unique_id=1421513152]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -20.0
-offset_top = 2.6666718
-offset_right = 20.0
-offset_bottom = 15.666672
-grow_horizontal = 2
-text = "Energy cost: 600"
-label_settings = SubResource("LabelSettings_4oc0s")
-horizontal_alignment = 1
-
-[node name="SatellitesList" type="NinePatchRect" parent="Actual buttons" unique_id=1872454829]
-layout_mode = 2
-size_flags_vertical = 3
-texture = ExtResource("2_yw4re")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
-
-[node name="SatelliteList" type="ItemList" parent="Actual buttons/SatellitesList" unique_id=1615028618]
-layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -96.0
-offset_right = 96.0
-grow_horizontal = 2
+script = ExtResource("2_8gxsv")
 
 [node name="Control" type="Control" parent="." unique_id=784231603]
 layout_mode = 1
@@ -574,3 +317,266 @@ offset_right = 249.0
 grow_vertical = 0
 size_flags_horizontal = 3
 texture = ExtResource("7_40rfe")
+
+[node name="ActualButtons" type="VBoxContainer" parent="." unique_id=824622446]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -288.47998
+offset_top = -148.00002
+offset_right = -96.07999
+offset_bottom = 0.333313
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(3, 3)
+
+[node name="UpgradeAll" type="NinePatchRect" parent="ActualButtons" unique_id=1577668128]
+layout_mode = 2
+size_flags_vertical = 0
+texture = ExtResource("2_yw4re")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="UpgradeAllButton" type="Button" parent="ActualButtons/UpgradeAll" unique_id=1037438536]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+text = "upgrade all!"
+
+[node name="Satellites" type="HBoxContainer" parent="ActualButtons" unique_id=1506906877]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="EnergySatellite" type="NinePatchRect" parent="ActualButtons/Satellites" unique_id=595989811]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_yw4re")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="BuyEnergySatellite" type="Button" parent="ActualButtons/Satellites/EnergySatellite" unique_id=7769754]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite" unique_id=1404888582]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite/Control" unique_id=27105956]
+position = Vector2(-0.5, -1.5)
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_duafg")
+autoplay = "default"
+frame_progress = 0.8181824
+
+[node name="SatelliteName" type="Label" parent="ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite" unique_id=100220193]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -9.000008
+offset_right = 15.0
+offset_bottom = -2.6666718
+grow_horizontal = 2
+grow_vertical = 0
+text = "Power satellite"
+label_settings = SubResource("LabelSettings_duafg")
+horizontal_alignment = 1
+
+[node name="EnergyCost" type="Label" parent="ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite" unique_id=471812391]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 2.6666718
+offset_right = 20.0
+offset_bottom = 15.666672
+grow_horizontal = 2
+text = "Energy cost: 100"
+label_settings = SubResource("LabelSettings_4oc0s")
+horizontal_alignment = 1
+
+[node name="SpinSatellite" type="NinePatchRect" parent="ActualButtons/Satellites" unique_id=776404775]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_yw4re")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="BuySpinSatellite" type="Button" parent="ActualButtons/Satellites/SpinSatellite" unique_id=590348112]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="ActualButtons/Satellites/SpinSatellite/BuySpinSatellite" unique_id=1708446540]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.6666565
+offset_right = 1.6666565
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ActualButtons/Satellites/SpinSatellite/BuySpinSatellite/Control" unique_id=310436352]
+scale = Vector2(1.5, 1.5)
+sprite_frames = SubResource("SpriteFrames_4oc0s")
+autoplay = "default"
+frame_progress = 0.64631236
+
+[node name="SatelliteName" type="Label" parent="ActualButtons/Satellites/SpinSatellite/BuySpinSatellite" unique_id=253006923]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -9.000008
+offset_right = 15.0
+offset_bottom = -2.6666718
+grow_horizontal = 2
+grow_vertical = 0
+text = "Spin satellite"
+label_settings = SubResource("LabelSettings_duafg")
+horizontal_alignment = 1
+
+[node name="EnergyCost" type="Label" parent="ActualButtons/Satellites/SpinSatellite/BuySpinSatellite" unique_id=1623534969]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 2.6666718
+offset_right = 20.0
+offset_bottom = 15.666672
+grow_horizontal = 2
+text = "Energy cost: 400"
+label_settings = SubResource("LabelSettings_4oc0s")
+horizontal_alignment = 1
+
+[node name="ShieldSatellite" type="NinePatchRect" parent="ActualButtons/Satellites" unique_id=1998505729]
+layout_mode = 2
+size_flags_horizontal = 3
+texture = ExtResource("2_yw4re")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="BuyShieldSatellite" type="Button" parent="ActualButtons/Satellites/ShieldSatellite" unique_id=275423020]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="ActualButtons/Satellites/ShieldSatellite/BuyShieldSatellite" unique_id=419036327]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ActualButtons/Satellites/ShieldSatellite/BuyShieldSatellite/Control" unique_id=936505322]
+position = Vector2(-0.006668091, 0.66667557)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_yssin")
+autoplay = "default"
+frame_progress = 0.43756607
+
+[node name="SatelliteName" type="Label" parent="ActualButtons/Satellites/ShieldSatellite/BuyShieldSatellite" unique_id=1880667870]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -9.000008
+offset_right = 15.0
+offset_bottom = -2.6666718
+grow_horizontal = 2
+grow_vertical = 0
+text = "shield satellite"
+label_settings = SubResource("LabelSettings_duafg")
+horizontal_alignment = 1
+
+[node name="EnergyCost" type="Label" parent="ActualButtons/Satellites/ShieldSatellite/BuyShieldSatellite" unique_id=1421513152]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 2.6666718
+offset_right = 20.0
+offset_bottom = 15.666672
+grow_horizontal = 2
+text = "Energy cost: 600"
+label_settings = SubResource("LabelSettings_4oc0s")
+horizontal_alignment = 1
+
+[node name="SatellitesList" type="NinePatchRect" parent="ActualButtons" unique_id=1872454829]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("2_yw4re")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="SatelliteList" type="ItemList" parent="ActualButtons/SatellitesList" unique_id=1615028618]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -96.0
+offset_right = 96.0
+grow_horizontal = 2
+
+[connection signal="pressed" from="ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite" to="." method="_on_buy_energy_satellite_pressed"]
+[connection signal="pressed" from="ActualButtons/Satellites/SpinSatellite/BuySpinSatellite" to="." method="_on_buy_spin_satellite_pressed"]
+[connection signal="pressed" from="ActualButtons/Satellites/ShieldSatellite/BuyShieldSatellite" to="." method="_on_buy_shield_satellite_pressed"]

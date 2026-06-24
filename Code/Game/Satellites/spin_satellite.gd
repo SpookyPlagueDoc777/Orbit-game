@@ -5,12 +5,12 @@ func _ready() -> void:
 	## Satellite info
 	satellitename = "Spin Satellite"
 	health = 5
-	facesplanet = false
+	facesplanet = true
 	orbitradius = 150
 	
 	## Satellite stats
 	satenergyprod = 0
-	satenergylaunch = 500
+	satenergylaunch = 400
 	satspinprod = 0.0005
 	
 	launch()

@@ -8,26 +8,21 @@ extends Node
 @onready var current_spin_speed: Label = $CanvasLayer/GameUI/SpinIndicator/CurrentSpinSpeed
 
 #timer stuff
-var TimerSeconds = 0
-var TimerMinutes = 0
-var TimerHours = 0
-
-var SpinSpeed = 0
-var energy = 300
-var TimeLimit = 0
-var CurrentQuota = 0
+var TimerSeconds: int = 0
+var TimerMinutes: int = 0
+var TimerHours: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	timer.paused = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	energy_amount.text = str(energy)
+	energy_amount.text = str(Global.energy)
 	current_time.text = str(TimerHours) + "h " + str(TimerMinutes) + "m " + str(TimerSeconds) + "s"
-	current_spin_speed.text = str(SpinSpeed) + " km/h"
-	spin_quota.text = str(CurrentQuota)
-	time_to_meet_quota.text = str(TimeLimit)
+	current_spin_speed.text = str(Global.spin_speed) + " rad/h"
+	spin_quota.text = str(Global.quota)
+	time_to_meet_quota.text = str(Global.time_limit)
 
 
 func _on_timer_timeout() -> void:
@@ -38,3 +33,8 @@ func _on_timer_timeout() -> void:
 	if TimerMinutes == 60:
 		TimerMinutes = 0
 		TimerHours += 1
+
+
+func _on_pause_button_toggled(toggled_on: bool) -> void:
+	timer.paused = !toggled_on
+	Global.is_paused = !toggled_on

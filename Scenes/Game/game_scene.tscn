@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://cdqfab7csu16f" path="res://Code/Game/game_scene.gd" id="1_ctr27"]
 [ext_resource type="Texture2D" uid="uid://lkkx1tnic3l" path="res://Textures/PLanet x but beeeeg.png" id="2_7r8ec"]
 [ext_resource type="PackedScene" uid="uid://bvkw14d2odqso" path="res://Scenes/Game/Satellites/power_satellite.tscn" id="3_7r8ec"]
+[ext_resource type="Script" uid="uid://bli0kttdd7ik5" path="res://Code/Game/satellites_list.gd" id="3_83mwp"]
 [ext_resource type="PackedScene" uid="uid://kybt02uh27cp" path="res://Scenes/Game/Satellites/shield_satellite.tscn" id="4_83mwp"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_g4v7s"]
@@ -26,6 +27,7 @@ scale = Vector2(450, 450)
 mesh = SubResource("SphereMesh_g4v7s")
 
 [node name="Satellites" type="Node2D" parent="Planet" unique_id=765053489]
+script = ExtResource("3_83mwp")
 
 [node name="PowerSatellite" parent="Planet/Satellites" unique_id=1376342862 instance=ExtResource("3_7r8ec")]
 

@@ -68,15 +68,17 @@ offset_right = -63.999878
 offset_bottom = -85.0
 grow_horizontal = 0
 
-[node name="NinePatchRect4" parent="CanvasLayer/GameUI" index="5" unique_id=2098349597]
+[node name="SatellitesList" parent="CanvasLayer/GameUI" index="5" unique_id=2098349597]
 anchors_preset = 7
 anchor_left = 0.5
+anchor_top = 1.0
 anchor_right = 0.5
 offset_left = -465.02
 offset_top = -125.95996
 offset_right = -155.01999
 offset_bottom = -83.95996
 grow_horizontal = 2
+grow_vertical = 0
 
 [node name="Root_pause" parent="CanvasLayer" unique_id=477685508 instance=ExtResource("4_3qm64")]
 visible = false
@@ -85,5 +87,6 @@ visible = false
 z_index = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="toggled" from="CanvasLayer/GameUI/PauseButton/PauseButton" to="." method="_on_pause_button_toggled"]
 
 [editable path="CanvasLayer/GameUI"]

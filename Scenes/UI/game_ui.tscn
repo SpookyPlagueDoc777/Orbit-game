@@ -306,6 +306,31 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="PauseButton" type="NinePatchRect" parent="." unique_id=1317757567]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -266.51996
+offset_top = 0.03999996
+offset_right = -247.18665
+offset_bottom = 19.04
+scale = Vector2(3, 3)
+texture = ExtResource("1_3fiko")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="PauseButton" type="Button" parent="PauseButton" unique_id=1003308732]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.9990001
+offset_bottom = 0.0189991
+theme = ExtResource("5_lolt2")
+toggle_mode = true
+
 [node name="Shop_ui" type="Node" parent="." unique_id=1862393372]
 
 [node name="ShopMenu" parent="Shop_ui" unique_id=565247265 instance=ExtResource("7_p8jce")]
