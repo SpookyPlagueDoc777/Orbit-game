@@ -270,7 +270,7 @@ offset_bottom = 42.333336
 scale = Vector2(0.375, 0.375)
 texture = ExtResource("7_mnd0w")
 
-[node name="SatellitesList" type="NinePatchRect" parent="." unique_id=2098349597]
+[node name="SatelliteList" type="NinePatchRect" parent="." unique_id=2098349597]
 layout_mode = 1
 anchors_preset = -1
 anchor_top = 0.794
@@ -287,24 +287,31 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="Label" type="Label" parent="SatellitesList" unique_id=467945418]
+[node name="VBoxContainer" type="VBoxContainer" parent="SatelliteList" unique_id=1572252469]
 layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 6.3333335
+anchors_preset = -1
+anchor_left = 0.003
+anchor_right = 0.99600005
+anchor_bottom = 0.96900004
+offset_left = 0.068999946
+offset_right = -0.092041016
+offset_bottom = -0.0042304993
 grow_horizontal = 2
-text = "Satellites list"
+grow_vertical = 2
+
+[node name="SatelliteList" type="Label" parent="SatelliteList/VBoxContainer" unique_id=467945418]
+layout_mode = 2
+text = "Satellite list"
 label_settings = SubResource("LabelSettings_yssin")
 horizontal_alignment = 1
 
-[node name="ItemList" type="ItemList" parent="SatellitesList/Label" unique_id=1573260976]
-layout_mode = 1
-anchors_preset = 12
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 0
+[node name="SatelliteScroll" type="ScrollContainer" parent="SatelliteList/VBoxContainer" unique_id=1865125485]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SatelliteContainer" type="VBoxContainer" parent="SatelliteList/VBoxContainer/SatelliteScroll" unique_id=781712359]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="PauseButton" type="NinePatchRect" parent="." unique_id=1317757567]
 layout_mode = 1

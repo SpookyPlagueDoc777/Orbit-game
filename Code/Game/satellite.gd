@@ -4,6 +4,7 @@ class_name satellite
 
 @export_category("Satellite Stats")
 @export var satellitename: String
+@export var satellitetype: String
 @export var health: float
 @export var orbitradius: float
 @export var facesplanet: bool

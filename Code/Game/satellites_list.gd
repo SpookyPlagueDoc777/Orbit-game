@@ -27,4 +27,5 @@ func launch_satellite(satellitetype: int) -> void:
 		print(Global.energy)
 		print(thesatellite.satenergylaunch)
 		add_child(thesatellite)
+		thesatellite.add_to_group("SatelliteGroup")
 		Global.energy -= thesatellite.satenergylaunch

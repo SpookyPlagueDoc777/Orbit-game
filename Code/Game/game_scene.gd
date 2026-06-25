@@ -7,6 +7,7 @@ var panning: bool = false
 var panoffset: Vector2
 var camerapos: Vector2
 var zoomscale: float
+var in_menu: bool
 # Called when the node enters the scene tree for the first time.
 
 func _ready() -> void:
@@ -23,11 +24,16 @@ func _physics_process(delta: float) -> void:
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
+		if get_viewport().get_mouse_position().y > 510:
+			in_menu = true
+		else:
+			in_menu = false
 		if event.is_pressed():
-			if event.button_index == MOUSE_BUTTON_WHEEL_UP:
+			if event.button_index == MOUSE_BUTTON_WHEEL_UP && !in_menu:
+				print(camera.get_local_mouse_position())
 				zoomscale = 1.5
 				zoom_at(zoomscale)
-			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN:
+			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN && !in_menu:
 				zoomscale = 0.6666666666666667
 				zoom_at(zoomscale)
 			if event.button_index == MOUSE_BUTTON_MIDDLE:

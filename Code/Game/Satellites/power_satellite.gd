@@ -4,6 +4,7 @@ var second: float = 0
 func _ready() -> void:
 	## Satellite info(Must match export)
 	satellitename = "Power Satellite"
+	satellitetype = "Power"
 	health = 2
 	facesplanet = false
 	orbitradius = 150
