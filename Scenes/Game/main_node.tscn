@@ -68,7 +68,7 @@ offset_right = -63.999878
 offset_bottom = -85.0
 grow_horizontal = 0
 
-[node name="SatellitesList" parent="CanvasLayer/GameUI" index="5" unique_id=2098349597]
+[node name="SatelliteList" parent="CanvasLayer/GameUI" index="5" unique_id=2098349597]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -88,6 +88,8 @@ z_index = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="toggled" from="CanvasLayer/GameUI/PauseButton/PauseButton" to="." method="_on_pause_button_toggled"]
+[connection signal="timeout" from="CanvasLayer/GameUI/GameOver/GameOverTimer" to="." method="_on_game_over_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/GameUI/GameWon/GameWonTimer" to="." method="_on_game_won_timer_timeout"]
 
 [editable path="CanvasLayer/GameUI"]
 [editable path="CanvasLayer/GameUI/Shop_ui/ShopMenu"]

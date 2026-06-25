@@ -6,25 +6,65 @@ extends Node
 @onready var spin_quota: Label = $CanvasLayer/GameUI/SpinQuotaMenager/VBoxContainer/CurrentQuota
 @onready var time_to_meet_quota: Label = $CanvasLayer/GameUI/SpinQuotaMenager/VBoxContainer/TimeToMeetQuota
 @onready var current_spin_speed: Label = $CanvasLayer/GameUI/SpinIndicator/CurrentSpinSpeed
+@onready var game_over: Label = $CanvasLayer/GameUI/GameOver
+@onready var game_won: Label = $CanvasLayer/GameUI/GameWon
+@onready var game_over_timer: Timer = $CanvasLayer/GameUI/GameOver/GameOverTimer
+@onready var game_won_timer: Timer = $CanvasLayer/GameUI/GameWon/GameWonTimer
+
+
 
 #timer stuff
 var TimerSeconds: int = 0
 var TimerMinutes: int = 0
 var TimerHours: int = 0
 
+func check_quota():
+	var check
+	if snappedf(Global.spin_speed, 0.001) >= Global.quota:
+		check = true
+	else:
+		check = false
+	return check
+
+func check_timer_limit_reached():
+	if TimerHours >= Global.time_limit_h:
+			if TimerMinutes >= Global.time_limit_m:
+					if TimerSeconds >= Global.time_limit_s and check_quota() == false:
+						game_over.visible = true
+						Engine.time_scale = 0.1
+						game_over_timer.start()
+
+func check_quota_reached():
+	if check_quota() == true:
+		game_won.visible = true
+		Engine.time_scale = 0.1
+		game_won_timer.start()
+
+func _on_game_over_timer_timeout() -> void:
+	Engine.time_scale = 1
+	get_tree().reload_current_scene()
+
+func _on_game_won_timer_timeout() -> void:
+	Engine.time_scale = 1
+	get_tree().reload_current_scene()
+
+	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	timer.paused = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+#updating lables
 	energy_amount.text = str(round(Global.energy))
 	current_time.text = str(TimerHours) + "h " + str(TimerMinutes) + "m " + str(TimerSeconds) + "s"
 	current_spin_speed.text = str(snappedf(Global.spin_speed, 0.001)) + " rad/h"
 	spin_quota.text = str(Global.quota)
-	time_to_meet_quota.text = str(Global.time_limit)
-
-
+	time_to_meet_quota.text = str(Global.time_limit_h) + "h " + str(Global.time_limit_m) + "m " + str(Global.time_limit_s) + "s"
+	check_timer_limit_reached()
+	check_quota_reached()
+	
+#timer
 func _on_timer_timeout() -> void:
 	TimerSeconds += 1
 	if TimerSeconds == 60:
