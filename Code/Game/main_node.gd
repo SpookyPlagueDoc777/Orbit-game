@@ -62,7 +62,7 @@ func _process(delta: float) -> void:
 	energy_amount.text = str(round(Global.energy))
 	current_time.text = str(TimerHours) + "h " + str(TimerMinutes) + "m " + str(TimerSeconds) + "s"
 	current_spin_speed.text = str(snappedf(Global.spin_speed, 0.001)) + " rad/h"
-	spin_quota.text = str(Global.quota)
+	spin_quota.text = str(Global.quota) + " rad/h"
 	time_to_meet_quota.text = str(Global.time_limit_h) + "h " + str(Global.time_limit_m) + "m " + str(Global.time_limit_s) + "s"
 	
 #timer

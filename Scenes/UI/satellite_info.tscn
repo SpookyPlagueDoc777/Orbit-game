@@ -281,7 +281,7 @@ size_flags_stretch_ratio = 0.15
 theme = ExtResource("4_yk8gx")
 
 [node name="SatelliteSprite" type="AnimatedSprite2D" parent="." unique_id=253052925]
-position = Vector2(11, 7)
+position = Vector2(13, 7)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"shield_satellite"
 autoplay = "shield_satellite"

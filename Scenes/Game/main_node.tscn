@@ -80,10 +80,6 @@ offset_bottom = -83.95996
 grow_horizontal = 2
 grow_vertical = 0
 
-[node name="TextureRect2" parent="CanvasLayer/GameUI/Shop_ui/ShopMenu/Control" parent_id_path=PackedInt32Array(138886182, 565247265, 784231603) index="1" unique_id=605020551]
-offset_left = 0.0
-offset_right = 249.0
-
 [node name="Root_pause" parent="CanvasLayer" unique_id=477685508 instance=ExtResource("4_3qm64")]
 visible = false
 

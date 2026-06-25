@@ -40,8 +40,6 @@ func update_satellite_list() -> void:
 		var satelitus = SATELLITE_INFO.instantiate()
 		satellite_container.add_child(satelitus)
 		satelitus.update_info(member)
-<<<<<<< Updated upstream
-=======
 		
 	
 	for member in satellite_container2.get_children():
@@ -52,4 +50,3 @@ func update_satellite_list() -> void:
 		satelitus2.update_info(member)
 		
 	print(satellites)
->>>>>>> Stashed changes
