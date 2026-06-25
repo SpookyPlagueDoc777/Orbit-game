@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cjph45gt02jai" path="res://Textures/UI/Satellite inc logo tiny.png" id="7_bhxso"]
 [ext_resource type="Texture2D" uid="uid://clm8fa3sfcmmk" path="res://Textures/UI/Timer icon.png" id="7_mnd0w"]
 [ext_resource type="PackedScene" uid="uid://bv011jc2j3aou" path="res://Scenes/UI/shop_menu.tscn" id="7_p8jce"]
+[ext_resource type="Texture2D" uid="uid://bvkfsrq12bvn3" path="res://Textures/UI/pause button.png" id="9_bhxso"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wxim1"]
 font = ExtResource("3_6w80a")
@@ -334,12 +335,21 @@ patch_margin_bottom = 8
 
 [node name="PauseButton" type="Button" parent="PauseButton" unique_id=1003308732]
 layout_mode = 1
-anchors_preset = -1
-anchor_right = 1.0
-anchor_bottom = 0.9990001
-offset_bottom = 0.0189991
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.6666565
+offset_top = -7.5
+offset_right = 7.3333435
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("5_lolt2")
 toggle_mode = true
+icon = ExtResource("9_bhxso")
+icon_alignment = 1
 
 [node name="Shop_ui" type="Node" parent="." unique_id=1862393372]
 
