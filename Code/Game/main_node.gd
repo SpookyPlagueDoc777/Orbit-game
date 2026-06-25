@@ -12,7 +12,6 @@ extends Node
 @onready var game_won_timer: Timer = $CanvasLayer/GameUI/GameWon/GameWonTimer
 
 
-
 #timer stuff
 var TimerSeconds: int = 0
 var TimerMinutes: int = 0
@@ -61,8 +60,6 @@ func _process(delta: float) -> void:
 	current_spin_speed.text = str(snappedf(Global.spin_speed, 0.001)) + " rad/h"
 	spin_quota.text = str(Global.quota)
 	time_to_meet_quota.text = str(Global.time_limit_h) + "h " + str(Global.time_limit_m) + "m " + str(Global.time_limit_s) + "s"
-	check_timer_limit_reached()
-	check_quota_reached()
 	
 #timer
 func _on_timer_timeout() -> void:
@@ -73,6 +70,9 @@ func _on_timer_timeout() -> void:
 	if TimerMinutes == 60:
 		TimerMinutes = 0
 		TimerHours += 1
+	check_timer_limit_reached()
+	check_quota_reached()
+	
 
 func _on_pause_button_toggled(toggled_on: bool) -> void:
 	timer.paused = !toggled_on

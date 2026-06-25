@@ -27,6 +27,13 @@ border_color = Color(0.8, 0.8, 0.8, 0)
 border_blend = true
 corner_detail = 1
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mnd0w"]
+bg_color = Color(0.36078432, 0.28235295, 0.63529414, 0.49411765)
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tuexk"]
 
 [resource]
@@ -36,4 +43,7 @@ Button/styles/hover = SubResource("StyleBoxFlat_lkt5b")
 Button/styles/normal = SubResource("StyleBoxEmpty_yssin")
 Button/styles/pressed = SubResource("StyleBoxFlat_hdw35")
 Label/fonts/font = ExtResource("1_tuexk")
+LineEdit/font_sizes/font_size = 8
+LineEdit/fonts/font = ExtResource("1_tuexk")
+LineEdit/styles/normal = SubResource("StyleBoxFlat_mnd0w")
 Panel/styles/panel = SubResource("StyleBoxEmpty_tuexk")

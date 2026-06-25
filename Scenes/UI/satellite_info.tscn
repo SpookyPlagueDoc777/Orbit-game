@@ -268,7 +268,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -978.0
-offset_bottom = -617.0
+offset_bottom = -632.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
@@ -281,7 +281,7 @@ size_flags_stretch_ratio = 0.15
 theme = ExtResource("4_yk8gx")
 
 [node name="SatelliteSprite" type="AnimatedSprite2D" parent="." unique_id=253052925]
-position = Vector2(8, 14.5)
+position = Vector2(11, 7)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"shield_satellite"
 autoplay = "shield_satellite"
@@ -289,8 +289,10 @@ autoplay = "shield_satellite"
 [node name="LineEdit" type="LineEdit" parent="." unique_id=375923887]
 layout_mode = 2
 size_flags_horizontal = 3
+size_flags_vertical = 4
 theme = ExtResource("4_yk8gx")
 text = "Satellite"
+alignment = 1
 
 [node name="UpgradeContainer" type="NinePatchRect" parent="." unique_id=1213617198]
 layout_mode = 2
@@ -307,7 +309,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 theme = ExtResource("4_yk8gx")
+theme_override_font_sizes/font_size = 8
 text = "Upgrade"
 
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]

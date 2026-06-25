@@ -390,6 +390,7 @@ text = "game won!"
 label_settings = SubResource("LabelSettings_lb5e2")
 
 [node name="GameWonTimer" type="Timer" parent="GameWon" unique_id=1487164128]
+wait_time = 4.0
 one_shot = true
 ignore_time_scale = true
 
