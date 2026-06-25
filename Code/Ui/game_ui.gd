@@ -39,5 +39,3 @@ func update_satellite_list() -> void:
 		var satelitus = SATELLITE_INFO.instantiate()
 		satellite_container.add_child(satelitus)
 		satelitus.update_info(member)
-		
-	print(satellites)

@@ -3,7 +3,14 @@ extends Node2D
 const POWER_SATELLITE = preload("uid://bvkw14d2odqso")
 const SHIELD_SATELLITE = preload("uid://kybt02uh27cp")
 const SPIN_SATELLITE = preload("uid://dlbawowx6xel6")
+const GAME_SCENE = preload("uid://cbp01vsjbcswu")
+@onready var satellites: Node2D = $"../MainNode/GameScene/Planet/Satellites"
 
+
+
+
+
+var planetrotation: float
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,6 +23,8 @@ func _process(delta: float) -> void:
 
 func launch_satellite(satellitetype: int) -> void:
 	var thesatellite
+	var gamenodes: = GAME_SCENE.instantiate()
+	print(gamenodes.get_child(1).get_child(2).name)
 	match satellitetype:
 		0:
 			thesatellite = POWER_SATELLITE.instantiate()
@@ -24,8 +33,7 @@ func launch_satellite(satellitetype: int) -> void:
 		2:
 			thesatellite = SPIN_SATELLITE.instantiate()
 	if Global.energy >= thesatellite.satenergylaunch:
-		print(Global.energy)
-		print(thesatellite.satenergylaunch)
-		add_child(thesatellite)
 		thesatellite.add_to_group("SatelliteGroup")
+		satellites.add_child(thesatellite)
+		thesatellite.spin_satellite()
 		Global.energy -= thesatellite.satenergylaunch

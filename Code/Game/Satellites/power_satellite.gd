@@ -10,7 +10,7 @@ func _ready() -> void:
 	orbitradius = 150
 	
 	## Satellite stats
-	satenergyprod = 1
+	satenergyprod = 2
 	satenergylaunch = 100
 	satspinprod = 0
 	

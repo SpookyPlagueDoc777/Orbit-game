@@ -21,6 +21,7 @@ func _process(delta: float) -> void:
 func _physics_process(delta: float) -> void:
 	if !Global.is_paused:
 		planet.rotation += Global.spin_speed * delta
+		SatelliteManager.planetrotation = planet.rotation
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventMouseButton:
@@ -30,7 +31,6 @@ func _input(event: InputEvent) -> void:
 			in_menu = false
 		if event.is_pressed():
 			if event.button_index == MOUSE_BUTTON_WHEEL_UP && !in_menu:
-				print(camera.get_local_mouse_position())
 				zoomscale = 1.5
 				zoom_at(zoomscale)
 			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN && !in_menu:

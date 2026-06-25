@@ -356,6 +356,10 @@ icon_alignment = 1
 [node name="ShopMenu" parent="Shop_ui" unique_id=565247265 instance=ExtResource("7_p8jce")]
 visible = false
 
+[node name="TextureRect2" parent="Shop_ui/ShopMenu/Control" parent_id_path=PackedInt32Array(565247265, 784231603) index="1" unique_id=605020551]
+offset_left = 0.0
+offset_right = 249.0
+
 [node name="BackButton" parent="Shop_ui/ShopMenu/BackButton" parent_id_path=PackedInt32Array(565247265, 1845986026) index="0" unique_id=1249383969]
 toggle_mode = false
 

@@ -43,6 +43,7 @@ animations = [{
 
 [node name="SpinSatellite" type="CharacterBody2D" unique_id=458181133]
 script = ExtResource("1_mopy8")
+orbitradius = 100.0
 facesplanet = true
 satenergylaunch = 400
 satspinprod = 0.005

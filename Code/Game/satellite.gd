@@ -29,6 +29,7 @@ func launch() -> void:
 	tween.set_ease(Tween.EASE_IN)
 	tween.set_trans(Tween.TRANS_SINE)
 	$".".position = Vector2(7, -64)
+	print($".".position)
 	orbitspeed = sqrt(Global.G * Global.planetmass / orbitradius)
 	tween.tween_property($".","position", Vector2(orbitradius * cos(baseangle), -orbitradius * sin(baseangle)), sqrt(orbitradius) * randf_range(0.5,2)/(5*1.75))
 	tween.emit_signal("finished")
@@ -45,11 +46,13 @@ func update_position() -> void:
 			tween.play()
 	if !launchanimation:
 		orbit_planet()
-	if facesplanet:
-		spin_satellite()
+	spin_satellite()
 
 func spin_satellite() -> void:
-	rotation = baseangle + PI/2
+	if facesplanet:
+		rotation = baseangle + PI/2
+	else:
+		rotation = -SatelliteManager.planetrotation
 
 func _on_area_2d_area_entered(area: Area2D) -> void:
 	health -= 1

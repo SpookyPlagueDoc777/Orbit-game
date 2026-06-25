@@ -7,7 +7,7 @@ func _ready() -> void:
 	satellitetype = "Spin"
 	health = 5
 	facesplanet = true
-	orbitradius = 150
+	orbitradius = 100
 	
 	## Satellite stats
 	satenergyprod = 0
