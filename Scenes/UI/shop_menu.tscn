@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://btg2cwm0n3ui" path="res://Textures/Satellites/shield satellite.png" id="5_hdw35"]
 [ext_resource type="Texture2D" uid="uid://nyea60dp2bjt" path="res://Textures/UI/Satellite inc.png" id="6_hdw35"]
 [ext_resource type="Texture2D" uid="uid://dxt8g5gymwpn5" path="res://Textures/UI/Left shop banner.png" id="7_40rfe"]
+[ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="9_63hau"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_km370"]
 atlas = ExtResource("3_2d0jm")
@@ -276,6 +277,10 @@ animations = [{
 "name": &"default",
 "speed": 10.0
 }]
+
+[sub_resource type="LabelSettings" id="LabelSettings_dlwse"]
+font = ExtResource("9_63hau")
+font_size = 8
 
 [node name="ShopMenu" type="Control" unique_id=565247265]
 layout_mode = 3
@@ -569,14 +574,31 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="SatelliteList" type="ItemList" parent="ActualButtons/SatellitesList" unique_id=1615028618]
+[node name="VBoxContainer" type="VBoxContainer" parent="ActualButtons/SatellitesList" unique_id=1033623165]
 layout_mode = 1
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -96.0
-offset_right = 96.0
+anchors_preset = -1
+anchor_left = 0.003
+anchor_right = 0.99600005
+anchor_bottom = 0.96900004
+offset_left = 0.068999946
+offset_right = -0.092041016
+offset_bottom = -0.0042304993
 grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SatelliteList" type="Label" parent="ActualButtons/SatellitesList/VBoxContainer" unique_id=1697584738]
+layout_mode = 2
+text = "Satellite list"
+label_settings = SubResource("LabelSettings_dlwse")
+horizontal_alignment = 1
+
+[node name="SatelliteScroll" type="ScrollContainer" parent="ActualButtons/SatellitesList/VBoxContainer" unique_id=682551040]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SatelliteContainer" type="VBoxContainer" parent="ActualButtons/SatellitesList/VBoxContainer/SatelliteScroll" unique_id=1619839031]
+layout_mode = 2
+size_flags_horizontal = 3
 
 [node name="BackButton" type="NinePatchRect" parent="." unique_id=1845986026]
 layout_mode = 1
