@@ -7,11 +7,11 @@ func _ready() -> void:
 	satellitetype = "Shield"
 	health = 20
 	facesplanet = false
-	orbitradius = 200
+	orbitradius = randi_range(250, 500)
 	
 	## Satellite stats
 	satenergyprod = 0
-	satenergylaunch = 600
+	satenergylaunch = 700
 	satspinprod = 0
 	
 	launch()

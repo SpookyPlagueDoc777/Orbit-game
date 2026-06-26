@@ -49,4 +49,15 @@ func update_satellite_list() -> void:
 		satellite_container2.add_child(satelitus2)
 		satelitus2.update_info(member)
 		
-	print(satellites)
+
+
+func _on_buy_energy_satellite_pressed() -> void:
+	update_satellite_list()
+
+
+func _on_buy_spin_satellite_pressed() -> void:
+	update_satellite_list()
+
+
+func _on_buy_shield_satellite_pressed() -> void:
+	update_satellite_list()

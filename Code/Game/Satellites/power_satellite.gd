@@ -7,7 +7,7 @@ func _ready() -> void:
 	satellitetype = "Power"
 	health = 2
 	facesplanet = false
-	orbitradius = 150
+	orbitradius = randi_range(110, 249)
 	
 	## Satellite stats
 	satenergyprod = 2

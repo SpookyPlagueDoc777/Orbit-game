@@ -561,7 +561,7 @@ offset_top = 2.6666718
 offset_right = 20.0
 offset_bottom = 15.666672
 grow_horizontal = 2
-text = "Energy cost: 600"
+text = "Energy cost: 700"
 label_settings = SubResource("LabelSettings_4oc0s")
 horizontal_alignment = 1
 

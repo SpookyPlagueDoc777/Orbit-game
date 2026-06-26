@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var camera: Camera2D = $Camera2D
 @onready var planet: Node2D = $Planet
+@onready var shop_menu: Control = $"../CanvasLayer/GameUI/Shop_ui/ShopMenu"
 
 var panning: bool = false
 var panoffset: Vector2
@@ -24,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		SatelliteManager.planetrotation = planet.rotation
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton:
+	if event is InputEventMouseButton && !shop_menu.visible:
 		if get_viewport().get_mouse_position().y > 510:
 			in_menu = true
 		else:

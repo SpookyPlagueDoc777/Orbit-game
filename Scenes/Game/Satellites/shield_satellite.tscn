@@ -158,7 +158,7 @@ script = ExtResource("1_b1dg2")
 satellitename = "Shield Satellite"
 health = 2.0
 facesplanet = true
-satenergylaunch = 600
+satenergylaunch = 700
 metadata/_custom_type_script = "uid://rv83iop2l27h"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=915091031]
