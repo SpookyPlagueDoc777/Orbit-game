@@ -18,6 +18,8 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	update_position()
+	satspinprod = 0.00001 * (upgrade + 1)
+	
 
 func _physics_process(delta: float) -> void:
 	second += delta

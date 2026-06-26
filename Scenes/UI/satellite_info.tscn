@@ -294,6 +294,14 @@ theme = ExtResource("4_yk8gx")
 text = "Satellite"
 alignment = 1
 
+[node name="UpgradeNum" type="Label" parent="." unique_id=756568558]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.08
+theme = ExtResource("4_yk8gx")
+text = "0"
+horizontal_alignment = 1
+
 [node name="UpgradeContainer" type="NinePatchRect" parent="." unique_id=1213617198]
 layout_mode = 2
 size_flags_horizontal = 3
@@ -316,3 +324,4 @@ theme_override_font_sizes/font_size = 8
 text = "Upgrade"
 
 [connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="UpgradeContainer/UpgradeButton" to="." method="_on_upgrade_button_pressed"]

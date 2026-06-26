@@ -80,6 +80,18 @@ offset_bottom = -83.95996
 grow_horizontal = 2
 grow_vertical = 0
 
+[node name="GameOver" parent="CanvasLayer/GameUI" index="8" unique_id=2055132133]
+text = "Game Over!"
+
+[node name="GameOverTimer" parent="CanvasLayer/GameUI/GameOver" index="0" unique_id=339133672]
+wait_time = 5.0
+
+[node name="GameWon" parent="CanvasLayer/GameUI" index="9" unique_id=2068494220]
+text = "Quota Reached!"
+
+[node name="GameWonTimer" parent="CanvasLayer/GameUI/GameWon" index="0" unique_id=1487164128]
+wait_time = 6.0
+
 [node name="Root_pause" parent="CanvasLayer" unique_id=477685508 instance=ExtResource("4_3qm64")]
 visible = false
 

@@ -18,6 +18,7 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	update_position()
+	satenergyprod = 2 * (upgrade + 1)
 
 func _physics_process(delta: float) -> void:
 	second += delta

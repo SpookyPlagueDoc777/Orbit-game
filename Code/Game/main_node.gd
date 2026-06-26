@@ -33,7 +33,7 @@ func check_timer_limit_reached() -> void:
 
 func check_quota_reached() -> void:
 	if check_quota():
-		Global.quota = randf_range(Global.quota * 1.2, Global.quota * 2)
+		Global.quota = snappedf(randf_range(Global.quota + 0.002, Global.quota * 4),0.001)
 		game_won.text = "Quota Reached!\nNew Quota: " + str(snappedf(Global.quota,0.0001))
 		game_won.visible = true
 		game_won_timer.start()
@@ -65,14 +65,18 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-#updating lables
+	#updating lables
+	if Global.is_paused && !timer.paused:
+		timer.paused = true
+	elif !Global.is_paused && timer.paused:
+		timer.paused = false
 	energy_amount.text = str(round(Global.energy))
 	current_time.text = str(TimerCenturies) + "c " + str(TimerYears) + "y " + str(TimerDays) + "d"
 	current_spin_speed.text = str(snappedf(Global.spin_speed, 0.0001)) + " rad/h"
-	spin_quota.text = str(Global.quota) + " rad/h"
+	spin_quota.text = str(snappedf(Global.quota,0.0001)) + " rad/h"
 	time_to_meet_quota.text = str(Global.time_limit_c) + "c " + str(Global.time_limit_y) + "y " + str(Global.time_limit_d) + "d"
 	
-#timer
+#Timer
 func _on_timer_timeout() -> void:
 	TimerDays += 1
 	if TimerDays >= 365:

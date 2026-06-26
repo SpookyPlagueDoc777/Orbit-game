@@ -2,6 +2,9 @@ extends HBoxContainer
 
 @onready var line_edit: LineEdit = $LineEdit
 @onready var sprite: AnimatedSprite2D = $SatelliteSprite
+@onready var upgrade_num: Label = $UpgradeNum
+@onready var upgrade_button: Button = $UpgradeContainer/UpgradeButton
+var current_price: int = 100
 
 var the_satellite
 
@@ -25,7 +28,20 @@ func update_info(satellites) -> void:
 	sprite.play()
 	line_edit.text = satellites.satellitename
 	the_satellite = satellites
+	upgrade_num.text = str(the_satellite.upgrade)
+	current_price = the_satellite.upgrade * 50 + 100
+	upgrade_button.text = "Upgrade\n" + str(current_price)
 
 
 func _on_line_edit_text_changed(new_text: String) -> void:
 	the_satellite.satellitename = new_text
+
+
+func _on_upgrade_button_pressed() -> void:
+	if current_price <= Global.energy:
+		Global.energy -= current_price
+		the_satellite.upgrade += 1
+		upgrade_num.text = str(the_satellite.upgrade)
+	current_price = the_satellite.upgrade * 50 + 100
+	print(the_satellite.upgrade)
+	upgrade_button.text = "Upgrade\n" + str(current_price)

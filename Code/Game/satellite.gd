@@ -13,6 +13,7 @@ var baseangle: float = PI/4
 @export_category("Satellite Energy")
 @export var satenergyprod: int
 @export var satenergylaunch: int
+@export var upgrade: int = 0
 @export var satspinprod: float
 var orbitspeed: float
 var launchanimation: bool = true
