@@ -14,9 +14,9 @@ extends Node
 
 
 #timer stuff
-var TimerSeconds: int = 0
-var TimerMinutes: int = 0
-var TimerHours: int = 0
+var TimerDays: int = 0
+var TimerYears: int = 0
+var TimerCenturies: int = 0
 
 func check_quota() -> bool:
 	var check: bool
@@ -27,28 +27,35 @@ func check_quota() -> bool:
 	return check
 
 func check_timer_limit_reached() -> void:
-	if TimerHours >= Global.time_limit_h:
-			if TimerMinutes >= Global.time_limit_m:
-					if TimerSeconds >= Global.time_limit_s and check_quota() == false:
-						game_over.visible = true
-						Engine.time_scale = 0.1
-						game_over_timer.start()
+	if TimerCenturies >= Global.time_limit_c && TimerYears >= Global.time_limit_y && TimerDays >= Global.time_limit_d:
+		check_quota_reached()
+		
 
 func check_quota_reached() -> void:
-	if check_quota() == true:
+	if check_quota():
+		Global.quota = randf_range(Global.quota * 1.2, Global.quota * 2)
+		game_won.text = "Quota Reached!\nNew Quota: " + str(snappedf(Global.quota,0.0001))
 		game_won.visible = true
-		Engine.time_scale = 0.1
 		game_won_timer.start()
+		Global.time_limit_y += 1
+		if Global.time_limit_y >= 100:
+			Global.time_limit_y = 0
+			Global.time_limit_c += 1
+	else:
+		game_over.visible = true
+		game_over_timer.start()
+	Engine.time_scale = 0.1
 
 func _on_game_won_timer_timeout() -> void:
 	Engine.time_scale = 1
-	Global.quota = randf_range(Global.spin_speed + 0.001, 2 * Global.quota)
+	game_won.visible = false
 	
 
 func _on_game_over_timer_timeout() -> void:
 	Engine.time_scale = 1
 	for i in satellites.get_children():
 		i.queue_free()
+	game_over.visible = false
 	get_tree().reload_current_scene()
 
 	
@@ -60,22 +67,21 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 #updating lables
 	energy_amount.text = str(round(Global.energy))
-	current_time.text = str(TimerHours) + "h " + str(TimerMinutes) + "m " + str(TimerSeconds) + "s"
-	current_spin_speed.text = str(snappedf(Global.spin_speed, 0.001)) + " rad/h"
+	current_time.text = str(TimerCenturies) + "c " + str(TimerYears) + "y " + str(TimerDays) + "d"
+	current_spin_speed.text = str(snappedf(Global.spin_speed, 0.0001)) + " rad/h"
 	spin_quota.text = str(Global.quota) + " rad/h"
-	time_to_meet_quota.text = str(Global.time_limit_h) + "h " + str(Global.time_limit_m) + "m " + str(Global.time_limit_s) + "s"
+	time_to_meet_quota.text = str(Global.time_limit_c) + "c " + str(Global.time_limit_y) + "y " + str(Global.time_limit_d) + "d"
 	
 #timer
 func _on_timer_timeout() -> void:
-	TimerSeconds += 1
-	if TimerSeconds == 60:
-		TimerSeconds = 0
-		TimerMinutes += 1
-	if TimerMinutes == 60:
-		TimerMinutes = 0
-		TimerHours += 1
+	TimerDays += 1
+	if TimerDays >= 365:
+		TimerDays = 0
+		TimerYears += 1
+	if TimerYears == 100:
+		TimerDays = 0
+		TimerCenturies += 1
 	check_timer_limit_reached()
-	check_quota_reached()
 	
 
 func _on_pause_button_toggled(toggled_on: bool) -> void:

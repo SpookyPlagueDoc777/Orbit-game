@@ -382,6 +382,7 @@ text = "game over!"
 label_settings = SubResource("LabelSettings_lb5e2")
 
 [node name="GameOverTimer" type="Timer" parent="GameOver" unique_id=339133672]
+wait_time = 0.5
 one_shot = true
 ignore_time_scale = true
 
@@ -404,7 +405,7 @@ text = "game won!"
 label_settings = SubResource("LabelSettings_lb5e2")
 
 [node name="GameWonTimer" type="Timer" parent="GameWon" unique_id=1487164128]
-wait_time = 4.0
+wait_time = 0.5
 one_shot = true
 ignore_time_scale = true
 

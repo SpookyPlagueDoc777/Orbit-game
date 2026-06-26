@@ -8,10 +8,10 @@ var is_paused: bool = true
 
 var spin_speed: float = 0
 var energy: int = 1000
-var time_limit_h: int = 1
-var time_limit_m: int = 0
-var time_limit_s: int = 0
-var quota: float = 0.5
+var time_limit_c: int = 0
+var time_limit_y: int = 1
+var time_limit_d: int = 0
+var quota: float = 0.0001
 
 
 # Called when the node enters the scene tree for the first time.
