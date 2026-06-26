@@ -18,6 +18,7 @@ func _input(event: InputEvent) -> void:
 
 func _on_button_pressed() -> void:
 	update_satellite_list()
+	SoundManager.successful_push()
 	visible = false
 	shop_menu.visible = true
 	last_state = Global.is_paused
@@ -26,6 +27,7 @@ func _on_button_pressed() -> void:
 
 func _on_back_button_pressed() -> void:
 	if visible == false:
+		SoundManager.successful_push()
 		update_satellite_list()
 		visible = true
 		shop_menu.visible = false

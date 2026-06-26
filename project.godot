@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 Global="*uid://dbaqj2vikhhb0"
 SatelliteManager="*uid://bli0kttdd7ik5"
+SoundManager="*uid://d2f2s4tygga4q"
 
 [display]
 

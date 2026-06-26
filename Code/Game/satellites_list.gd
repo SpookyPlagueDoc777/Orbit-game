@@ -33,7 +33,10 @@ func launch_satellite(satellitetype: int) -> void:
 		2:
 			thesatellite = SPIN_SATELLITE.instantiate()
 	if Global.energy >= thesatellite.satenergylaunch:
+		SoundManager.successful_push()
 		thesatellite.add_to_group("SatelliteGroup")
 		satellites.add_child(thesatellite)
 		thesatellite.spin_satellite()
 		Global.energy -= thesatellite.satenergylaunch
+	else:
+		SoundManager.unsuccessful_push()

@@ -95,6 +95,8 @@ wait_time = 6.0
 [node name="Root_pause" parent="CanvasLayer" unique_id=477685508 instance=ExtResource("4_3qm64")]
 visible = false
 
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="CanvasLayer" unique_id=1295422200]
+
 [node name="GameScene" parent="." unique_id=1484544398 instance=ExtResource("1_y60n4")]
 z_index = 1
 

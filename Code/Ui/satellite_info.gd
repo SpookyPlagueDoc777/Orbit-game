@@ -39,9 +39,12 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 
 func _on_upgrade_button_pressed() -> void:
 	if current_price <= Global.energy:
+		SoundManager.successful_push()
 		Global.energy -= current_price
 		the_satellite.upgrade += 1
 		upgrade_num.text = str(the_satellite.upgrade)
+	else:
+		SoundManager.unsuccessful_push()
 	current_price = the_satellite.upgrade * 50 + 100
 	print(the_satellite.upgrade)
 	upgrade_button.text = "Upgrade\n" + str(current_price)

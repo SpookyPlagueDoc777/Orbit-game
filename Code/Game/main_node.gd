@@ -89,5 +89,6 @@ func _on_timer_timeout() -> void:
 	
 
 func _on_pause_button_toggled(toggled_on: bool) -> void:
+	SoundManager.successful_push()
 	timer.paused = !toggled_on
 	Global.is_paused = !toggled_on
