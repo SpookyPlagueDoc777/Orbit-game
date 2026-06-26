@@ -36,6 +36,22 @@ corner_radius_bottom_left = 4
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tuexk"]
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5wavw"]
+bg_color = Color(0.6117647, 0.54509807, 0.85882354, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_svuav"]
+content_margin_left = 8.0
+content_margin_top = 8.0
+bg_color = Color(0.4, 0.34509805, 0.68235296, 1)
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
 [resource]
 Button/font_sizes/font_size = 16
 Button/fonts/font = ExtResource("1_tuexk")
@@ -47,3 +63,5 @@ LineEdit/font_sizes/font_size = 8
 LineEdit/fonts/font = ExtResource("1_tuexk")
 LineEdit/styles/normal = SubResource("StyleBoxFlat_mnd0w")
 Panel/styles/panel = SubResource("StyleBoxEmpty_tuexk")
+VScrollBar/styles/grabber = SubResource("StyleBoxFlat_5wavw")
+VScrollBar/styles/scroll = SubResource("StyleBoxFlat_svuav")

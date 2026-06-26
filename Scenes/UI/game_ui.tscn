@@ -312,6 +312,7 @@ horizontal_alignment = 1
 [node name="SatelliteScroll" type="ScrollContainer" parent="SatelliteList/VBoxContainer" unique_id=1865125485]
 layout_mode = 2
 size_flags_vertical = 3
+theme = ExtResource("5_lolt2")
 
 [node name="SatelliteContainer" type="VBoxContainer" parent="SatelliteList/VBoxContainer/SatelliteScroll" unique_id=781712359]
 layout_mode = 2
