@@ -11,7 +11,7 @@ var energy: int = 1000
 var time_limit_c: int = 0
 var time_limit_y: int = 1
 var time_limit_d: int = 0
-var quota: float = 0.0001
+var quota: float = 0.001
 
 
 # Called when the node enters the scene tree for the first time.
