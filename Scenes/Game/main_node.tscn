@@ -97,6 +97,8 @@ visible = false
 
 [node name="SFXPlayer" type="AudioStreamPlayer2D" parent="CanvasLayer" unique_id=1295422200]
 
+[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="CanvasLayer" unique_id=1051244739]
+
 [node name="GameScene" parent="." unique_id=1484544398 instance=ExtResource("1_y60n4")]
 z_index = 1
 
