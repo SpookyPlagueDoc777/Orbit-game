@@ -11,7 +11,10 @@ extends Node
 @onready var game_over_timer: Timer = $CanvasLayer/GameUI/GameOver/GameOverTimer
 @onready var game_won_timer: Timer = $CanvasLayer/GameUI/GameWon/GameWonTimer
 @onready var satellites: Node2D = $GameScene/Planet/Satellites
+@onready var pause_button: Button = $CanvasLayer/GameUI/PauseButton/PauseButton
 
+const PAUSE_BUTTON = preload("uid://bvkfsrq12bvn3")
+const PLAY_BUTTON = preload("uid://bmkpnomnr3dfm")
 
 #timer stuff
 var TimerDays: int = 0
@@ -92,3 +95,9 @@ func _on_pause_button_toggled(toggled_on: bool) -> void:
 	SoundManager.successful_push()
 	timer.paused = !toggled_on
 	Global.is_paused = !toggled_on
+	if toggled_on:
+		pause_button.icon = PAUSE_BUTTON
+	else:
+		pause_button.icon = PLAY_BUTTON
+			
+	
