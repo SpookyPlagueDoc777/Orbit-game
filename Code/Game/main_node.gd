@@ -38,7 +38,7 @@ func check_timer_limit_reached() -> void:
 
 func check_quota_reached() -> void:
 	if check_quota():
-		Global.quota = snappedf(randf_range(Global.quota + 0.002, Global.quota * 4),0.001)
+		Global.quota = snappedf(randf_range(Global.quota + 0.1, (Global.quota + 0.1) * 3),0.001)
 		game_won.text = "Quota Reached!\nNew Quota: " + str(snappedf(Global.quota,0.0001))
 		game_won.visible = true
 		game_won_timer.start()

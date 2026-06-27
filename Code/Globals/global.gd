@@ -9,7 +9,7 @@ const ENERGYSTART: int = 1000
 const TIMELIMITCSTART: int = 0
 const TIMELIMITYSTART: int = 1
 const TIMELIMITDSTART: int = 0
-const QUOTASTART: float = 0.002
+const QUOTASTART: float = 0.005
 
 var is_paused: bool = true
 
