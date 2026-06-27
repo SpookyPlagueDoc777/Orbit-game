@@ -1,6 +1,8 @@
 extends Node
 # In Petagrams
 
+signal updatelist
+
 const G: float = 66.743
 const planetmass: int = 40752
 
@@ -19,6 +21,7 @@ var time_limit_c: int = TIMELIMITCSTART
 var time_limit_y: int = TIMELIMITYSTART
 var time_limit_d: int = TIMELIMITDSTART
 var quota: float = QUOTASTART
+var upgrade_all: int = 0
 
 
 # Called when the node enters the scene tree for the first time.

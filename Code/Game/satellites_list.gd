@@ -21,8 +21,8 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func launch_satellite(satellitetype: int) -> void:
-	var thesatellite
+func launch_satellite(satellitetype: int) -> Node:
+	var thesatellite: Node
 	var gamenodes: = GAME_SCENE.instantiate()
 	print(gamenodes.get_child(1).get_child(2).name)
 	match satellitetype:
@@ -40,3 +40,4 @@ func launch_satellite(satellitetype: int) -> void:
 		Global.energy -= thesatellite.satenergylaunch
 	else:
 		SoundManager.unsuccessful_push()
+	return thesatellite

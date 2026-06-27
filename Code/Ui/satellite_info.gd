@@ -10,7 +10,7 @@ var the_satellite
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	Global.updatelist.connect(_on_update_necessary)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -28,6 +28,7 @@ func update_info(satellites) -> void:
 	sprite.play()
 	line_edit.text = satellites.satellitename
 	the_satellite = satellites
+	#Global.upgrade_all += the_satellite.upgrade * 50 + 100
 	upgrade_num.text = str(the_satellite.upgrade)
 	current_price = the_satellite.upgrade * 50 + 100
 	upgrade_button.text = "Upgrade\n" + str(current_price)
@@ -45,6 +46,14 @@ func _on_upgrade_button_pressed() -> void:
 		upgrade_num.text = str(the_satellite.upgrade)
 	else:
 		SoundManager.unsuccessful_push()
+	Global.upgrade_all += 50
 	current_price = the_satellite.upgrade * 50 + 100
 	print(the_satellite.upgrade)
 	upgrade_button.text = "Upgrade\n" + str(current_price)
+
+func _on_update_necessary() -> void:
+	line_edit.text = the_satellite.satellitename
+	upgrade_num.text = str(the_satellite.upgrade)
+	current_price = the_satellite.upgrade * 50 + 100
+	upgrade_button.text = "Upgrade\n" + str(current_price)
+	
