@@ -12,6 +12,8 @@ extends Node
 @onready var game_won_timer: Timer = $CanvasLayer/GameUI/GameWon/GameWonTimer
 @onready var satellites: Node2D = $GameScene/Planet/Satellites
 @onready var pause_button: Button = $CanvasLayer/GameUI/PauseButton/PauseButton
+@onready var planet: Node2D = $GameScene/Planet
+@onready var game_scene: Node2D = $GameScene
 
 const PAUSE_BUTTON = preload("uid://bvkfsrq12bvn3")
 const PLAY_BUTTON = preload("uid://bmkpnomnr3dfm")
@@ -45,8 +47,19 @@ func check_quota_reached() -> void:
 			Global.time_limit_y = 0
 			Global.time_limit_c += 1
 	else:
+		game_over.text = "Game Over!\nSpin Reached: " + str(Global.spin_speed)
 		game_over.visible = true
 		game_over_timer.start()
+		Global.spin_speed = Global.SPINSPEEDSTART
+		Global.energy = Global.ENERGYSTART
+		Global.time_limit_c = Global.TIMELIMITCSTART
+		Global.time_limit_y = Global.TIMELIMITYSTART
+		Global.time_limit_d = Global.TIMELIMITDSTART
+		Global.quota = Global.QUOTASTART
+		planet.rotation = 0
+		TimerDays = 0
+		TimerYears = 0
+		TimerCenturies = 0
 	Engine.time_scale = 0.1
 
 func _on_game_won_timer_timeout() -> void:
@@ -58,8 +71,9 @@ func _on_game_over_timer_timeout() -> void:
 	Engine.time_scale = 1
 	for i in satellites.get_children():
 		i.queue_free()
+	
 	game_over.visible = false
-	get_tree().reload_current_scene()
+	
 
 	
 # Called when the node enters the scene tree for the first time.

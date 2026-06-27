@@ -18,8 +18,6 @@ func _ready() -> void:
 	
 func _process(delta: float) -> void:
 	update_position()
-
-func _physics_process(delta: float) -> void:
 	second += delta
 	update_spin(delta)
 	if second > 1:

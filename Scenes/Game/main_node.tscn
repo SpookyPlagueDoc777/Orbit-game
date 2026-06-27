@@ -113,3 +113,4 @@ z_index = 1
 
 [editable path="CanvasLayer/GameUI"]
 [editable path="CanvasLayer/GameUI/Shop_ui/ShopMenu"]
+[editable path="GameScene"]
