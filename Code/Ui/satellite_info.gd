@@ -48,7 +48,6 @@ func _on_upgrade_button_pressed() -> void:
 		SoundManager.unsuccessful_push()
 	Global.upgrade_all += 50
 	current_price = the_satellite.upgrade * 50 + 100
-	print(the_satellite.upgrade)
 	upgrade_button.text = "Upgrade\n" + str(current_price)
 
 func _on_update_necessary() -> void:

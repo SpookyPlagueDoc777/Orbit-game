@@ -30,7 +30,6 @@ func launch() -> void:
 	tween.set_ease(Tween.EASE_IN)
 	tween.set_trans(Tween.TRANS_SINE)
 	$".".position = Vector2(7, -64)
-	print($".".position)
 	orbitspeed = sqrt(Global.G * Global.planetmass / orbitradius)
 	tween.tween_property($".","position", Vector2(orbitradius * cos(baseangle), -orbitradius * sin(baseangle)), sqrt(orbitradius) * randf_range(0.5,2)/(5*1.75))
 	tween.emit_signal("finished")

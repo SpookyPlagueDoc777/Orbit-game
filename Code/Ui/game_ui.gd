@@ -74,19 +74,23 @@ func add_to_main(satelitite: Node) -> void:
 func _on_buy_energy_satellite_pressed() -> void:
 	var satinfo: Node
 	satinfo = SatelliteManager.launch_satellite(0)
-	add_to_shop(satinfo)
-	add_to_main(satinfo)
+	print(satinfo)
+	if satinfo != null:
+		add_to_shop(satinfo)
+		add_to_main(satinfo)
 
 
 func _on_buy_spin_satellite_pressed() -> void:
 	var satinfo: Node
 	satinfo = SatelliteManager.launch_satellite(2)
-	add_to_shop(satinfo)
-	add_to_main(satinfo)
+	if satinfo != null:
+		add_to_shop(satinfo)
+		add_to_main(satinfo)
 
 
 func _on_buy_shield_satellite_pressed() -> void:
 	var satinfo: Node
 	satinfo = SatelliteManager.launch_satellite(1)
-	add_to_shop(satinfo)
-	add_to_main(satinfo)
+	if satinfo != null:
+		add_to_shop(satinfo)
+		add_to_main(satinfo)
