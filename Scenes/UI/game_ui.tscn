@@ -411,6 +411,7 @@ one_shot = true
 ignore_time_scale = true
 
 [connection signal="pressed" from="ShopButton/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Shop_ui/ShopMenu/ActualButtons/UpgradeAll/UpgradeAllButton" to="." method="_on_upgrade_all_button_pressed"]
 [connection signal="pressed" from="Shop_ui/ShopMenu/ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite" to="." method="_on_buy_energy_satellite_pressed"]
 [connection signal="pressed" from="Shop_ui/ShopMenu/ActualButtons/Satellites/SpinSatellite/BuySpinSatellite" to="." method="_on_buy_spin_satellite_pressed"]
 [connection signal="pressed" from="Shop_ui/ShopMenu/ActualButtons/Satellites/ShieldSatellite/BuyShieldSatellite" to="." method="_on_buy_shield_satellite_pressed"]

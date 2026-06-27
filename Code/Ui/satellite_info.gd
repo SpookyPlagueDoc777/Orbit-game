@@ -17,7 +17,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	pass
 
-func update_info(satellites) -> void:
+func update_info(satellites, double: bool) -> void:
 	match satellites.satellitetype:
 		"Spin":
 			sprite.animation = "spin_satellite"
@@ -28,10 +28,14 @@ func update_info(satellites) -> void:
 	sprite.play()
 	line_edit.text = satellites.satellitename
 	the_satellite = satellites
-	#Global.upgrade_all += the_satellite.upgrade * 50 + 100
+	if double:
+		Global.upgrade_all += (the_satellite.upgrade * 50 + 100)/2
+	else:
+		Global.upgrade_all += (the_satellite.upgrade * 50 + 100)
 	upgrade_num.text = str(the_satellite.upgrade)
 	current_price = the_satellite.upgrade * 50 + 100
 	upgrade_button.text = "Upgrade\n" + str(current_price)
+	print("Upgrade all: " + str(Global.upgrade_all))
 
 
 func _on_line_edit_text_changed(new_text: String) -> void:
@@ -41,18 +45,21 @@ func _on_line_edit_text_changed(new_text: String) -> void:
 func _on_upgrade_button_pressed() -> void:
 	if current_price <= Global.energy:
 		SoundManager.successful_push()
-		Global.energy -= current_price
-		the_satellite.upgrade += 1
-		upgrade_num.text = str(the_satellite.upgrade)
 	else:
 		SoundManager.unsuccessful_push()
-	Global.upgrade_all += 50
-	current_price = the_satellite.upgrade * 50 + 100
-	upgrade_button.text = "Upgrade\n" + str(current_price)
+	upgrade()
 
 func _on_update_necessary() -> void:
 	line_edit.text = the_satellite.satellitename
 	upgrade_num.text = str(the_satellite.upgrade)
 	current_price = the_satellite.upgrade * 50 + 100
 	upgrade_button.text = "Upgrade\n" + str(current_price)
-	
+
+func upgrade() -> void:
+	if current_price <= Global.energy:
+		Global.energy -= current_price
+		the_satellite.upgrade += 1
+		upgrade_num.text = str(the_satellite.upgrade)
+	Global.upgrade_all += 50
+	current_price = the_satellite.upgrade * 50 + 100
+	upgrade_button.text = "Upgrade\n" + str(current_price)

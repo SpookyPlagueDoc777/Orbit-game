@@ -56,6 +56,7 @@ func check_quota_reached() -> void:
 		Global.time_limit_y = Global.TIMELIMITYSTART
 		Global.time_limit_d = Global.TIMELIMITDSTART
 		Global.quota = Global.QUOTASTART
+		Global.upgrade_all = 0
 		planet.rotation = 0
 		TimerDays = 0
 		TimerYears = 0
