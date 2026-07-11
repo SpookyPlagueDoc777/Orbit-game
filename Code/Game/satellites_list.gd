@@ -4,7 +4,7 @@ const POWER_SATELLITE = preload("uid://bvkw14d2odqso")
 const SHIELD_SATELLITE = preload("uid://kybt02uh27cp")
 const SPIN_SATELLITE = preload("uid://dlbawowx6xel6")
 const GAME_SCENE = preload("uid://cbp01vsjbcswu")
-@onready var satellites: Node2D = $"../MainNode/GameScene/Planet/Satellites"
+@onready var satellites: Node2D = get_tree().get_first_node_in_group("satellites_container")
 
 
 

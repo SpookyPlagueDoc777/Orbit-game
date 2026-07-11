@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://b8x3pdo0m2gei"]
+
+[ext_resource type="Shader" uid="uid://c8v3r1e4aqnys" path="res://Shaders/main_node.gdshader" id="1_6rmd8"]
+[ext_resource type="Script" uid="uid://chi1q21dpmi1k" path="res://Code/Game/main_menu.gd" id="1_mwrvg"]
+[ext_resource type="Texture2D" uid="uid://dr3lai1e14cwb" path="res://Textures/UI/title.png" id="2_5mo3g"]
+[ext_resource type="Script" uid="uid://cpms880jwh8sb" path="res://Code/Ui/button.gd" id="3_e0asb"]
+[ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="4_v6ya1"]
+[ext_resource type="AudioStream" uid="uid://nkcnhb6kawop" path="res://Audio/SFX/click.wav" id="5_a33jk"]
+[ext_resource type="Shader" uid="uid://d782q5frqubu" path="res://Shaders/hud_overlay.gdshader" id="6_iql7g"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5mo3g"]
+shader = ExtResource("1_6rmd8")
+shader_parameter/density = 175.0
+shader_parameter/layer_parascale = 4
+shader_parameter/speedx = 1.490119991842676e-07
+shader_parameter/speedy = 0.0
+shader_parameter/star_horizontal_wave = 0.0
+shader_parameter/star_size = 3.0
+shader_parameter/twinkle_effect = 0.20000000298024
+shader_parameter/twinkle_speed = 0.3
+shader_parameter/fbm_strength = 0.21999999508256
+shader_parameter/fbm_mix = 0.07
+shader_parameter/fbm_freq = 4.0
+shader_parameter/fbm_amp = 1.5
+shader_parameter/fbm_speed = 5.0
+shader_parameter/warp_scale = 5.62999987415824
+shader_parameter/cloud_freq = 40.0
+shader_parameter/cloud_amp = 0.02
+shader_parameter/cloud_speed = 5.0
+shader_parameter/cloud_color_ci1 = 0.75
+shader_parameter/cloud_color_ci2 = 0.45
+shader_parameter/cloud_color_ci3 = 0.9
+shader_parameter/cloud_color_shiftx = 0.0
+shader_parameter/cloud_color_shifty = 0.0
+shader_parameter/background_color = Color(0.08062599, 0.002795482, 0.22340646, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mwrvg"]
+shader = ExtResource("6_iql7g")
+shader_parameter/tint_color = Color(0.4, 0.75, 1, 1)
+shader_parameter/vignette_strength = 0.6
+shader_parameter/vignette_softness = 0.8
+shader_parameter/grid_size = 60.0
+shader_parameter/grid_opacity = 0.05
+shader_parameter/scanline_speed = 0.25
+shader_parameter/scanline_width = 0.05
+shader_parameter/scanline_opacity = 0.15
+
+[node name="Main_Menu" type="Node2D" unique_id=1149850653]
+script = ExtResource("1_mwrvg")
+
+[node name="Spaceeee" type="CanvasLayer" parent="." unique_id=1532636491]
+layer = -1
+
+[node name="ShaderRect" type="ColorRect" parent="Spaceeee" unique_id=1359557727]
+z_index = -10
+material = SubResource("ShaderMaterial_5mo3g")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 15.0
+offset_top = 3.0
+offset_right = 15.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Sprite2D" parent="Spaceeee" unique_id=1248956559]
+position = Vector2(587, 149)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_5mo3g")
+
+[node name="Button" type="Button" parent="Spaceeee" unique_id=482456953]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -73.5
+offset_top = -15.0
+offset_right = 73.5
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+script = ExtResource("3_e0asb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Spaceeee/Button" unique_id=984328681]
+layout_mode = 0
+offset_left = -25.5
+offset_top = 5.0
+offset_right = 174.5
+offset_bottom = 50.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("4_v6ya1")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center][pulse color=#ffffff freq=1.0 ease=-2.0]PLAY GAME[/pulse][/center]"
+scroll_active = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Spaceeee/Button" unique_id=1604833140]
+stream = ExtResource("5_a33jk")
+
+[node name="Button2" type="Button" parent="Spaceeee" unique_id=1365877552]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -70.0
+offset_top = 73.0
+offset_right = 57.5
+offset_bottom = 137.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+script = ExtResource("3_e0asb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Spaceeee/Button2" unique_id=1330910742]
+layout_mode = 0
+offset_left = -44.5
+offset_top = 5.0
+offset_right = 182.16667
+offset_bottom = 56.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("4_v6ya1")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center][pulse color=#ffffff freq=1.0 ease=-2.0]QUIT[/pulse][/center]"
+scroll_active = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Spaceeee/Button2" unique_id=1189979338]
+stream = ExtResource("5_a33jk")
+
+[node name="overlay(still_in_progress)" type="ColorRect" parent="Spaceeee" unique_id=190387060]
+visible = false
+material = SubResource("ShaderMaterial_mwrvg")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=448421397 groups=["music_player"]]
+
+[connection signal="pressed" from="Spaceeee/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Spaceeee/Button2" to="." method="_on_button_2_pressed"]

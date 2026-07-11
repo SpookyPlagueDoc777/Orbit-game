@@ -14,9 +14,13 @@ extends Node
 @onready var pause_button: Button = $CanvasLayer/GameUI/PauseButton/PauseButton
 @onready var planet: Node2D = $GameScene/Planet
 @onready var game_scene: Node2D = $GameScene
+@onready var save_timer_auto: Timer = $save_timer_auto
+@onready var music_player: AudioStreamPlayer = $CanvasLayer/MusicPlayer
+
 
 const PAUSE_BUTTON = preload("uid://bvkfsrq12bvn3")
 const PLAY_BUTTON = preload("uid://bmkpnomnr3dfm")
+
 
 #timer stuff
 var TimerDays: int = 0
@@ -79,7 +83,10 @@ func _on_game_over_timer_timeout() -> void:
 	
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SaveManager.save_completed.connect(_on_save_completed)
 	timer.paused = true
+	SaveManager.load_game()
+	SoundManager.start()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -114,5 +121,12 @@ func _on_pause_button_toggled(toggled_on: bool) -> void:
 		pause_button.icon = PAUSE_BUTTON
 	else:
 		pause_button.icon = PLAY_BUTTON
-			
-	
+		SaveManager.save_game()  
+
+
+func _on_save_completed() -> void:
+	$CanvasLayer/GameUI.show_save_notification()
+
+
+func _on_save_timer_auto_timeout() -> void:
+	SaveManager.save_game()

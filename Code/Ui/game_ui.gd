@@ -118,3 +118,21 @@ func _on_upgrade_all_button_pressed() -> void:
 	else:
 		SoundManager.unsuccessful_push()
 		
+
+
+func _on_pause_button_pressed() -> void:
+	SaveManager.save_game()
+
+
+
+func show_save_notification() -> void:
+	var label := $SaveNotification  # adjust path if it's nested elsewhere
+
+	label.modulate.a = 0.0
+	label.scale = Vector2(0.8, 0.8)
+
+	var tween := create_tween()
+	tween.tween_property(label, "modulate:a", 1.0, 0.25)          # fade in
+	tween.parallel().tween_property(label, "scale", Vector2.ONE, 0.25).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)  # little pop
+	tween.tween_interval(1.0)                                     # hold
+	tween.tween_property(label, "modulate:a", 0.0, 0.5)            # fade out

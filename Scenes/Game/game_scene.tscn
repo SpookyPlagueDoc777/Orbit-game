@@ -23,4 +23,4 @@ visible = false
 scale = Vector2(450, 450)
 mesh = SubResource("SphereMesh_g4v7s")
 
-[node name="Satellites" type="Node2D" parent="Planet" unique_id=765053489]
+[node name="Satellites" type="Node2D" parent="Planet" unique_id=765053489 groups=["satellites_container"]]

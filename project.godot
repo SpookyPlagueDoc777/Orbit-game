@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Satellite Inc."
-run/main_scene="uid://4wn3uv8oi2ep"
+run/main_scene="uid://b8x3pdo0m2gei"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="uid://d4nwdvl6moylw"
 
@@ -20,11 +20,13 @@ config/icon="uid://d4nwdvl6moylw"
 Global="*uid://dbaqj2vikhhb0"
 SatelliteManager="*uid://bli0kttdd7ik5"
 SoundManager="*uid://d2f2s4tygga4q"
+SaveManager="*uid://b4rd11j6xaw4g"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://yqw2wrg0eh0w"
 
 [file_customization]
 
@@ -38,6 +40,8 @@ folder_colors={
 [global_group]
 
 SatelliteGroup="Contains all satellites"
+satellites_container=""
+music_player=""
 
 [physics]
 

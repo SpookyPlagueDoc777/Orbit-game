@@ -84,13 +84,13 @@ grow_vertical = 0
 [node name="PauseButton" parent="CanvasLayer/GameUI/PauseButton" parent_id_path=PackedInt32Array(138886182, 1317757567) index="0" unique_id=1003308732]
 icon = ExtResource("5_jp4ly")
 
-[node name="GameOver" parent="CanvasLayer/GameUI" index="8" unique_id=2055132133]
+[node name="GameOver" parent="CanvasLayer/GameUI" index="9" unique_id=2055132133]
 text = "Game Over!"
 
 [node name="GameOverTimer" parent="CanvasLayer/GameUI/GameOver" index="0" unique_id=339133672]
 wait_time = 5.0
 
-[node name="GameWon" parent="CanvasLayer/GameUI" index="9" unique_id=2068494220]
+[node name="GameWon" parent="CanvasLayer/GameUI" index="10" unique_id=2068494220]
 text = "Quota Reached!"
 
 [node name="GameWonTimer" parent="CanvasLayer/GameUI/GameWon" index="0" unique_id=1487164128]
@@ -101,15 +101,18 @@ visible = false
 
 [node name="SFXPlayer" type="AudioStreamPlayer2D" parent="CanvasLayer" unique_id=1295422200]
 
-[node name="MusicPlayer" type="AudioStreamPlayer2D" parent="CanvasLayer" unique_id=1051244739]
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=941535434 groups=["music_player"]]
 
 [node name="GameScene" parent="." unique_id=1484544398 instance=ExtResource("1_y60n4")]
 z_index = 1
+
+[node name="save_timer_auto" type="Timer" parent="." unique_id=341811244]
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="toggled" from="CanvasLayer/GameUI/PauseButton/PauseButton" to="." method="_on_pause_button_toggled"]
 [connection signal="timeout" from="CanvasLayer/GameUI/GameOver/GameOverTimer" to="." method="_on_game_over_timer_timeout"]
 [connection signal="timeout" from="CanvasLayer/GameUI/GameWon/GameWonTimer" to="." method="_on_game_won_timer_timeout"]
+[connection signal="timeout" from="save_timer_auto" to="." method="_on_save_timer_auto_timeout"]
 
 [editable path="CanvasLayer/GameUI"]
 [editable path="CanvasLayer/GameUI/Shop_ui/ShopMenu"]

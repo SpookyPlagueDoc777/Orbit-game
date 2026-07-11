@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://clm8fa3sfcmmk" path="res://Textures/UI/Timer icon.png" id="7_mnd0w"]
 [ext_resource type="PackedScene" uid="uid://bv011jc2j3aou" path="res://Scenes/UI/shop_menu.tscn" id="7_p8jce"]
 [ext_resource type="Texture2D" uid="uid://bvkfsrq12bvn3" path="res://Textures/UI/pause button.png" id="9_bhxso"]
+[ext_resource type="Texture2D" uid="uid://3hx262hts8k5" path="res://Textures/UI/SAVE.png" id="10_0pgsb"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wxim1"]
 font = ExtResource("3_6w80a")
@@ -352,6 +353,40 @@ toggle_mode = true
 icon = ExtResource("9_bhxso")
 icon_alignment = 1
 
+[node name="save" type="NinePatchRect" parent="." unique_id=155933135]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -332.52002
+offset_top = 0.03999996
+offset_right = -313.1867
+offset_bottom = 19.04
+scale = Vector2(3, 3)
+texture = ExtResource("1_3fiko")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="PauseButton" type="Button" parent="save" unique_id=1460198851]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.6666565
+offset_top = -7.5
+offset_right = 7.3333435
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_lolt2")
+toggle_mode = true
+icon = ExtResource("10_0pgsb")
+icon_alignment = 1
+
 [node name="Shop_ui" type="Node" parent="." unique_id=1862393372]
 
 [node name="ShopMenu" parent="Shop_ui" unique_id=565247265 instance=ExtResource("7_p8jce")]
@@ -410,7 +445,21 @@ wait_time = 0.5
 one_shot = true
 ignore_time_scale = true
 
+[node name="SaveNotification" type="Label" parent="." unique_id=500257284]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 417.48
+offset_top = -8.959999
+offset_right = 740.48
+offset_bottom = 86.04
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_6w80a")
+theme_override_font_sizes/font_size = 120
+text = "GAME SAVED"
+
 [connection signal="pressed" from="ShopButton/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="save/PauseButton" to="." method="_on_pause_button_pressed"]
 [connection signal="pressed" from="Shop_ui/ShopMenu/ActualButtons/UpgradeAll/UpgradeAllButton" to="." method="_on_upgrade_all_button_pressed"]
 [connection signal="pressed" from="Shop_ui/ShopMenu/ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite" to="." method="_on_buy_energy_satellite_pressed"]
 [connection signal="pressed" from="Shop_ui/ShopMenu/ActualButtons/Satellites/SpinSatellite/BuySpinSatellite" to="." method="_on_buy_spin_satellite_pressed"]
