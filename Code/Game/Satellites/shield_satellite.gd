@@ -15,7 +15,7 @@ func _ready() -> void:
 	
 	launch()
 	
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	update_position()
 
 

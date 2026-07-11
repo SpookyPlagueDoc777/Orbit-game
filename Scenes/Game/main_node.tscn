@@ -68,7 +68,7 @@ offset_right = -63.999878
 offset_bottom = -85.0
 grow_horizontal = 0
 
-[node name="SatellitesList" parent="CanvasLayer/GameUI" index="5" unique_id=2098349597]
+[node name="SatellitesList" parent="CanvasLayer/GameUI" index="6" unique_id=2098349597]
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -86,6 +86,14 @@ visible = false
 [node name="GameScene" parent="." unique_id=1484544398 instance=ExtResource("1_y60n4")]
 z_index = 1
 
+[node name="Satellites" parent="GameScene/Planet" parent_id_path=PackedInt32Array(1484544398, 1177193644) index="1" unique_id=765053489 groups=["satellites_container"]]
+
+[node name="AUTOSAVE_TIMER" type="Timer" parent="." unique_id=1713765282]
+wait_time = 30.0
+autostart = true
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="AUTOSAVE_TIMER" to="." method="_on_autosave_timer_timeout"]
 
 [editable path="CanvasLayer/GameUI"]
+[editable path="GameScene"]

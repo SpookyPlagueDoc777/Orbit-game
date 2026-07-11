@@ -20,6 +20,7 @@ texture = ExtResource("2_7r8ec")
 offset = Vector2(0, -15)
 
 [node name="Satellites" type="Node2D" parent="Planet" unique_id=765053489]
+unique_name_in_owner = true
 
 [node name="PowerSatellite" parent="Planet/Satellites" unique_id=1376342862 instance=ExtResource("3_7r8ec")]
 

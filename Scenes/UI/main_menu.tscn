@@ -1,0 +1,151 @@
+[gd_scene format=3 uid="uid://dadfgw5isc1c8"]
+
+[ext_resource type="Shader" uid="uid://c8v3r1e4aqnys" path="res://Shaders/main_node.gdshader" id="1_5wsvm"]
+[ext_resource type="Script" uid="uid://cjv6o0pxx7qqk" path="res://Scenes/UI/main_menu.gd" id="1_gih0s"]
+[ext_resource type="Texture2D" uid="uid://lkkx1tnic3l" path="res://Textures/PLanet x but beeeeg.png" id="2_i2xx2"]
+[ext_resource type="Shader" uid="uid://dh4usggv5grg" path="res://Scenes/UI/fake_spin.gdshader" id="2_o14dv"]
+[ext_resource type="Script" uid="uid://bgdv57tk20r8u" path="res://Scenes/UI/title.gd" id="3_mrfpk"]
+[ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="4_4pqbp"]
+[ext_resource type="Texture2D" uid="uid://rbtbal2wkyml" path="res://Textures/UI/title.png" id="4_u7lva"]
+[ext_resource type="Script" uid="uid://dqqc0ij82t4rl" path="res://Scenes/UI/button.gd" id="6_k33u3"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_i2xx2"]
+shader = ExtResource("1_5wsvm")
+shader_parameter/density = 175.0
+shader_parameter/layer_parascale = 4
+shader_parameter/speedx = 1.490119991842676e-07
+shader_parameter/speedy = 0.0
+shader_parameter/star_horizontal_wave = 0.0
+shader_parameter/star_size = 3.0
+shader_parameter/twinkle_effect = 0.20000000298024
+shader_parameter/twinkle_speed = 0.3
+shader_parameter/fbm_strength = 0.21999999508256
+shader_parameter/fbm_mix = 0.07
+shader_parameter/fbm_freq = 4.0
+shader_parameter/fbm_amp = 1.5
+shader_parameter/fbm_speed = 5.0
+shader_parameter/warp_scale = 5.62999987415824
+shader_parameter/cloud_freq = 40.0
+shader_parameter/cloud_amp = 0.02
+shader_parameter/cloud_speed = 5.0
+shader_parameter/cloud_color_ci1 = 0.75
+shader_parameter/cloud_color_ci2 = 0.45
+shader_parameter/cloud_color_ci3 = 0.9
+shader_parameter/cloud_color_shiftx = 0.0
+shader_parameter/cloud_color_shifty = 0.0
+shader_parameter/background_color = Color(0.08062599, 0.002795482, 0.22340646, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lkt5b"]
+bg_color = Color(0.6313726, 0.58431375, 0.89411765, 0.5254902)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_radius_top_left = 8
+corner_radius_top_right = 8
+corner_radius_bottom_right = 8
+corner_radius_bottom_left = 8
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_yssin"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_hdw35"]
+bg_color = Color(0.7294118, 0.9098039, 0.14901961, 0.5294118)
+border_width_left = 8
+border_width_top = 8
+border_width_right = 8
+border_width_bottom = 8
+border_color = Color(0.8, 0.8, 0.8, 0)
+border_blend = true
+corner_detail = 1
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tuexk"]
+
+[sub_resource type="Theme" id="Theme_gih0s"]
+Button/font_sizes/font_size = 64
+Button/fonts/font = ExtResource("4_4pqbp")
+Button/styles/hover = SubResource("StyleBoxFlat_lkt5b")
+Button/styles/normal = SubResource("StyleBoxEmpty_yssin")
+Button/styles/pressed = SubResource("StyleBoxFlat_hdw35")
+Label/fonts/font = ExtResource("4_4pqbp")
+Panel/styles/panel = SubResource("StyleBoxEmpty_tuexk")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_o14dv"]
+shader = ExtResource("2_o14dv")
+shader_parameter/speed = -0.10899953017749908
+shader_parameter/frequency = 1.3130000591076199
+shader_parameter/sphere_mode = false
+shader_parameter/edge_shadow = 0.5
+
+[node name="Main_menu" type="Node2D" unique_id=1753792726]
+script = ExtResource("1_gih0s")
+
+[node name="Spaceeee" type="CanvasLayer" parent="." unique_id=1569414006]
+layer = -1
+
+[node name="ShaderRect" type="ColorRect" parent="Spaceeee" unique_id=1717488687]
+z_index = -10
+material = SubResource("ShaderMaterial_i2xx2")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Title" type="Sprite2D" parent="Spaceeee" unique_id=1575011106]
+position = Vector2(587, 149)
+scale = Vector2(0.5083333, 0.5083334)
+texture = ExtResource("4_u7lva")
+script = ExtResource("3_mrfpk")
+
+[node name="play" type="Button" parent="Spaceeee" unique_id=1196465048]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -68.5
+offset_top = -33.5
+offset_right = 68.5
+offset_bottom = 33.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_gih0s")
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 84
+text = "PLAY"
+flat = true
+script = ExtResource("6_k33u3")
+
+[node name="quit" type="Button" parent="Spaceeee" unique_id=1797940937]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -67.0
+offset_top = 73.0
+offset_right = 70.0
+offset_bottom = 140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_gih0s")
+theme_override_constants/outline_size = 20
+theme_override_font_sizes/font_size = 84
+text = "Quit"
+flat = true
+script = ExtResource("6_k33u3")
+
+[node name="PLanetXButBeeeeg" type="Sprite2D" parent="." unique_id=1493661509]
+visible = false
+material = SubResource("ShaderMaterial_o14dv")
+position = Vector2(862, 401)
+texture = ExtResource("2_i2xx2")
+
+[connection signal="mouse_entered" from="Spaceeee/play" to="Spaceeee/play" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Spaceeee/play" to="Spaceeee/play" method="_on_mouse_exited"]
+[connection signal="pressed" from="Spaceeee/play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="Spaceeee/quit" to="Spaceeee/quit" method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="Spaceeee/quit" to="Spaceeee/quit" method="_on_mouse_exited"]
+[connection signal="pressed" from="Spaceeee/quit" to="." method="_on_quit_pressed"]

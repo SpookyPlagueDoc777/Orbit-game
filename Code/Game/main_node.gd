@@ -6,6 +6,7 @@ extends Node
 @onready var spin_quota: Label = $CanvasLayer/GameUI/SpinQuotaMenager/VBoxContainer/CurrentQuota
 @onready var time_to_meet_quota: Label = $CanvasLayer/GameUI/SpinQuotaMenager/VBoxContainer/TimeToMeetQuota
 @onready var current_spin_speed: Label = $CanvasLayer/GameUI/SpinIndicator/CurrentSpinSpeed
+@onready var game_ui: Control = $CanvasLayer/GameUI
 
 #timer stuff
 var TimerSeconds: int = 0
@@ -14,10 +15,12 @@ var TimerHours: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass
+	SaveManager.save_completed.connect(_on_save_completed)
+	if SaveManager.has_save():
+		SaveManager.load_game()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	energy_amount.text = str(Global.energy)
 	current_time.text = str(TimerHours) + "h " + str(TimerMinutes) + "m " + str(TimerSeconds) + "s"
 	current_spin_speed.text = str(Global.spinspeed) + " rad/h"
@@ -33,3 +36,15 @@ func _on_timer_timeout() -> void:
 	if TimerMinutes == 60:
 		TimerMinutes = 0
 		TimerHours += 1
+
+
+func _on_autosave_timer_timeout() -> void:
+	save()
+
+
+func save():
+	SaveManager.save_game()
+
+
+func _on_save_completed() -> void:
+	game_ui.show_save_notification()

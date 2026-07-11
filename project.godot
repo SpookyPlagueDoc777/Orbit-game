@@ -11,18 +11,20 @@ config_version=5
 [application]
 
 config/name="Orbit Game"
-run/main_scene="uid://4wn3uv8oi2ep"
+run/main_scene="uid://dadfgw5isc1c8"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="uid://cpwnqagwse588"
 
 [autoload]
 
 Global="*uid://dbaqj2vikhhb0"
+SaveManager="*uid://cgq7ersyw5sq6"
 
 [display]
 
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
+mouse_cursor/custom_image="uid://dod4dblwd24fv"
 
 [file_customization]
 
@@ -32,6 +34,11 @@ folder_colors={
 "res://Scenes/": "purple",
 "res://Textures/": "green"
 }
+
+[global_group]
+
+satellites=""
+satellites_container=""
 
 [physics]
 

@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://cjph45gt02jai" path="res://Textures/UI/Satellite inc logo tiny.png" id="7_bhxso"]
 [ext_resource type="Texture2D" uid="uid://clm8fa3sfcmmk" path="res://Textures/UI/Timer icon.png" id="7_mnd0w"]
 [ext_resource type="PackedScene" uid="uid://bv011jc2j3aou" path="res://Scenes/UI/shop_menu.tscn" id="7_p8jce"]
+[ext_resource type="Texture2D" uid="uid://womk1pr3xb1w" path="res://Textures/UI/SAVE.png" id="9_bhxso"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wxim1"]
 font = ExtResource("3_6w80a")
@@ -270,6 +271,40 @@ offset_bottom = 42.333336
 scale = Vector2(0.375, 0.375)
 texture = ExtResource("7_mnd0w")
 
+[node name="Save" type="NinePatchRect" parent="." unique_id=744542645]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -271.52002
+offset_right = -251.52002
+offset_bottom = 19.0
+grow_horizontal = 0
+scale = Vector2(3, 3)
+texture = ExtResource("1_3fiko")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="TextureRect" type="TextureRect" parent="Save" unique_id=917524391]
+layout_mode = 0
+offset_left = 2.333313
+offset_top = 2.3333344
+offset_right = 42.333313
+offset_bottom = 42.333336
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("9_bhxso")
+
+[node name="save_button" type="Button" parent="Save" unique_id=544248978]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+
 [node name="SatellitesList" type="NinePatchRect" parent="." unique_id=2098349597]
 layout_mode = 1
 anchors_preset = -1
@@ -311,4 +346,19 @@ grow_vertical = 0
 [node name="ShopMenu" parent="Shop_ui" unique_id=565247265 instance=ExtResource("7_p8jce")]
 visible = false
 
+[node name="SaveNotification" type="Label" parent="." unique_id=1663776729]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -87.5
+offset_right = 87.5
+offset_bottom = 53.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("3_6w80a")
+theme_override_font_sizes/font_size = 65
+text = "GAME SAVED"
+
 [connection signal="pressed" from="ShopButton/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Save/save_button" to="." method="_on_save_button_pressed"]

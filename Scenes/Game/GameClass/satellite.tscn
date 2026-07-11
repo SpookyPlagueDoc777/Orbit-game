@@ -4,7 +4,8 @@
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
 
-[node name="Satellite" type="CharacterBody2D" unique_id=1265870302]
+[node name="Satellite" type="CharacterBody2D" unique_id=1265870302 groups=["satellites"]]
+position = Vector2(4, -3)
 script = ExtResource("1_hqybh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1004951536]

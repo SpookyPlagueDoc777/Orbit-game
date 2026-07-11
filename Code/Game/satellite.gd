@@ -42,7 +42,7 @@ func update_position() -> void:
 func spin_satellite() -> void:
 	rotation = baseangle + (PI/2)
 
-func register_hit(area: Area2D) -> void:
+func register_hit(_area: Area2D) -> void:
 	print("oo")
 	health -= 1
 	if health <= 0:
