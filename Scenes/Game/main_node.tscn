@@ -6,6 +6,11 @@
 [ext_resource type="PackedScene" uid="uid://cbp01vsjbcswu" path="res://Scenes/Game/game_scene.tscn" id="1_y60n4"]
 [ext_resource type="PackedScene" uid="uid://bgsgsmwi7fk7e" path="res://Scenes/UI/settings_menu_new.tscn" id="2_mht2n"]
 [ext_resource type="PackedScene" uid="uid://btisly1528rn5" path="res://Scenes/UI/pause_menu.tscn" id="4_3qm64"]
+<<<<<<< Updated upstream
+=======
+[ext_resource type="Texture2D" uid="uid://bmkpnomnr3dfm" path="res://Textures/UI/play button.png" id="5_jp4ly"]
+[ext_resource type="Shader" uid="uid://d782q5frqubu" path="res://Shaders/hud_overlay.gdshader" id="8_ugtjl"]
+>>>>>>> Stashed changes
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bgvvt"]
 shader = ExtResource("1_3qm64")
@@ -32,6 +37,16 @@ shader_parameter/cloud_color_ci3 = 0.9
 shader_parameter/cloud_color_shiftx = 0.0
 shader_parameter/cloud_color_shifty = 0.0
 shader_parameter/background_color = Color(0.08062599, 0.002795482, 0.22340646, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_53gov"]
+shader = ExtResource("8_ugtjl")
+shader_parameter/scanline_count = 320.0
+shader_parameter/scanline_intensity = 0.15
+shader_parameter/scanline_speed = 0.25
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+shader_parameter/warp_amount = 0.2
+shader_parameter/chromatic_aberration = 0.0
 
 [node name="MainNode" type="Node" unique_id=499770951]
 script = ExtResource("1_jp4ly")
@@ -83,6 +98,15 @@ grow_vertical = 0
 [node name="Root_pause" parent="CanvasLayer" unique_id=477685508 instance=ExtResource("4_3qm64")]
 visible = false
 
+<<<<<<< Updated upstream
+=======
+[node name="SFXPlayer" type="AudioStreamPlayer2D" parent="CanvasLayer" unique_id=1295422200 groups=["sfx_player"]]
+unique_name_in_owner = true
+
+[node name="MusicPlayer" type="AudioStreamPlayer" parent="CanvasLayer" unique_id=941535434 groups=["music_player"]]
+unique_name_in_owner = true
+
+>>>>>>> Stashed changes
 [node name="GameScene" parent="." unique_id=1484544398 instance=ExtResource("1_y60n4")]
 z_index = 1
 
@@ -91,6 +115,19 @@ z_index = 1
 [node name="AUTOSAVE_TIMER" type="Timer" parent="." unique_id=1713765282]
 wait_time = 30.0
 autostart = true
+
+[node name="CRT" type="CanvasLayer" parent="." unique_id=40884207 groups=["crt"]]
+
+[node name="overlay(still_in_progress)" type="ColorRect" parent="CRT" unique_id=1189464078]
+material = SubResource("ShaderMaterial_53gov")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_right = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="AUTOSAVE_TIMER" to="." method="_on_autosave_timer_timeout"]

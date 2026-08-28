@@ -39,6 +39,12 @@ folder_colors={
 
 satellites=""
 satellites_container=""
+<<<<<<< Updated upstream
+=======
+music_player=""
+sfx_player=""
+crt=""
+>>>>>>> Stashed changes
 
 [physics]
 

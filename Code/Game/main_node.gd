@@ -21,11 +21,36 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
+<<<<<<< Updated upstream
 	energy_amount.text = str(Global.energy)
 	current_time.text = str(TimerHours) + "h " + str(TimerMinutes) + "m " + str(TimerSeconds) + "s"
 	current_spin_speed.text = str(Global.spinspeed) + " rad/h"
 	spin_quota.text = str(Global.quota)
 	time_to_meet_quota.text = str(Global.timelimit)
+=======
+	#updating lables
+	if Global.is_paused && !timer.paused:
+		timer.paused = true
+	elif !Global.is_paused && timer.paused:
+		timer.paused = false
+	energy_amount.text = str(round(Global.energy))
+	current_time.text = str(TimerCenturies) + "c " + str(TimerYears) + "y " + str(TimerDays) + "d"
+	current_spin_speed.text = str(snappedf(Global.spin_speed, 0.0001)) + " rad/h"
+	spin_quota.text = str(snappedf(Global.quota,0.0001)) + " rad/h"
+	time_to_meet_quota.text = str(Global.time_limit_c) + "c " + str(Global.time_limit_y) + "y " + str(Global.time_limit_d) + "d"
+	
+#Timer
+func _on_timer_timeout() -> void:
+	TimerDays += 1
+	if TimerDays >= 365:
+		TimerDays = 0
+		TimerYears += 1
+	if TimerYears == 100:
+		TimerDays = 0
+		TimerCenturies += 1
+	check_timer_limit_reached()
+	
+>>>>>>> Stashed changes
 
 
 func _on_timer_timeout() -> void:
