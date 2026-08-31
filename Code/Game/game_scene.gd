@@ -5,55 +5,72 @@ extends Node2D
 @onready var shop_menu: Control = $"../CanvasLayer/GameUI/Shop_ui/ShopMenu"
 
 var panning: bool = false
-var panoffset: Vector2
-var camerapos: Vector2
-var zoomscale: float
-var in_menu: bool
-# Called when the node enters the scene tree for the first time.
+var zoomscale: float = 1.0
+var in_menu: bool = false
+
+var _target_zoom: Vector2 = Vector2.ONE
+var _target_pos: Vector2 = Vector2.ZERO
+var _zoom_tween: Tween
+var _pan_tween: Tween
 
 func _ready() -> void:
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+	_target_zoom = camera.zoom
+	_target_pos = camera.position
 
 func _physics_process(delta: float) -> void:
-	if !Global.is_paused:
+	if not Global.is_paused:
 		planet.rotation += Global.spin_speed * delta
-		SatelliteManager.planetrotation = planet.rotation
+		if "planetrotation" in SatelliteManager:
+			SatelliteManager.planetrotation = planet.rotation
 
 func _input(event: InputEvent) -> void:
-	if event is InputEventMouseButton && !shop_menu.visible:
-		if get_viewport().get_mouse_position().y > 510:
-			in_menu = true
-		else:
-			in_menu = false
-		if event.is_pressed():
-			if event.button_index == MOUSE_BUTTON_WHEEL_UP && !in_menu:
-				zoomscale = 1.5
-				zoom_at(zoomscale)
-			if event.button_index == MOUSE_BUTTON_WHEEL_DOWN && !in_menu:
-				zoomscale = 0.6666666666666667
-				zoom_at(zoomscale)
-			if event.button_index == MOUSE_BUTTON_MIDDLE:
-				panoffset = camera.get_local_mouse_position()
-				camerapos = camera.get_screen_center_position()
-				panning = true
-		elif event.is_released():
-			if event.button_index == MOUSE_BUTTON_MIDDLE:
-				panning = false
-	if event is InputEventMouseMotion && panning:
-		camera.position = camerapos - (camera.get_local_mouse_position() - panoffset)
-		camera.position.x = clamp(camera.position.x, -32000, 32000)
-		camera.position.y = clamp(camera.position.y, -17000, 17000)
+	if is_instance_valid(shop_menu) and shop_menu.visible:
+		return
 
-func zoom_at(zoom_scale: float):
-	var oldglobal = camera.get_global_mouse_position()
-	camera.zoom *= Vector2(zoom_scale, zoom_scale)
-	camera.zoom.x = clamp(camera.zoom.x, 0.01734152992, 25.62890625)
-	camera.zoom.y = clamp(camera.zoom.y, 0.01734152992, 25.62890625)
-	camera.position -= camera.get_global_mouse_position()-oldglobal
-	camera.position.x = clamp(camera.position.x, -32000, 32000)
-	camera.position.y = clamp(camera.position.y, -18000, 18000)
+	if event is InputEventMouseButton:
+		var mouse_event := event as InputEventMouseButton
+		in_menu = mouse_event.position.y > 510.0
+
+		if mouse_event.is_pressed():
+			if mouse_event.button_index == MOUSE_BUTTON_WHEEL_UP and not in_menu:
+				_smooth_zoom(1.25)
+			elif mouse_event.button_index == MOUSE_BUTTON_WHEEL_DOWN and not in_menu:
+				_smooth_zoom(0.8)
+			elif mouse_event.button_index == MOUSE_BUTTON_MIDDLE:
+				panning = true
+		elif mouse_event.is_released():
+			if mouse_event.button_index == MOUSE_BUTTON_MIDDLE:
+				panning = false
+
+	elif event is InputEventMouseMotion and panning:
+		var motion_event := event as InputEventMouseMotion
+		_target_pos -= motion_event.relative / camera.zoom
+		_clamp_target_position()
+		
+		if _pan_tween and _pan_tween.is_running():
+			_pan_tween.kill()
+			
+		_pan_tween = create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		_pan_tween.tween_property(camera, "position", _target_pos, 0.1)
+
+func _smooth_zoom(zoom_factor: float) -> void:
+	var mouse_world_before := camera.get_global_mouse_position()
+	
+	_target_zoom *= zoom_factor
+	_target_zoom.x = clamp(_target_zoom.x, 0.05, 10.0)
+	_target_zoom.y = clamp(_target_zoom.y, 0.05, 10.0)
+	
+	if _zoom_tween and _zoom_tween.is_running():
+		_zoom_tween.kill()
+
+	_zoom_tween = create_tween().set_parallel(true).set_trans(Tween.TRANS_CUBIC).set_ease(Tween.EASE_OUT)
+	_zoom_tween.tween_property(camera, "zoom", _target_zoom, 0.25)
+	
+	var mouse_world_after := camera.get_global_mouse_position()
+	_target_pos += (mouse_world_before - mouse_world_after)
+	_clamp_target_position()
+	_zoom_tween.tween_property(camera, "position", _target_pos, 0.25)
+
+func _clamp_target_position() -> void:
+	_target_pos.x = clamp(_target_pos.x, -32000.0, 32000.0)
+	_target_pos.y = clamp(_target_pos.y, -18000.0, 18000.0)

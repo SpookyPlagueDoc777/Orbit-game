@@ -1,26 +1,26 @@
-extends satellite
+extends Satellite
 
-var second: float = 0
-func _ready() -> void:
-	## Satellite info(Must match export)
+func _init() -> void:
 	satellitename = "Power Satellite"
 	satellitetype = "Power"
-	health = 2
+	health = 2.0
+	max_health = 2.0
 	facesplanet = false
-	orbitradius = randi_range(110, 249)
-	
-	## Satellite stats
 	satenergyprod = 2
 	satenergylaunch = 100
-	satspinprod = 0
-	
-	launch()
-	
-func _process(delta: float) -> void:
-	update_position()
+	satspinprod = 0.0
+
+func _ready() -> void:
+	if launchanimation:
+		orbitradius = float(randi_range(110, 249))
+	super._ready()
+
+func _physics_process(delta: float) -> void:
+	update_position(delta)
 	satenergyprod = 2 * (upgrade + 1)
-	second += delta
+	
+	second_timer += delta
 	update_spin(delta)
-	if second > 1:
-		second -= 1
+	if second_timer >= 1.0:
+		second_timer -= 1.0
 		update_energy()

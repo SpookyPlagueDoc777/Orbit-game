@@ -7,6 +7,7 @@
 [ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="4_v6ya1"]
 [ext_resource type="AudioStream" uid="uid://nkcnhb6kawop" path="res://Audio/SFX/click.wav" id="5_a33jk"]
 [ext_resource type="Shader" uid="uid://d782q5frqubu" path="res://Shaders/hud_overlay.gdshader" id="6_iql7g"]
+[ext_resource type="AudioStream" uid="uid://cbnlovy7wnrfs" path="res://Audio/Music/uhag.wav" id="7_u7lnc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5mo3g"]
 shader = ExtResource("1_6rmd8")
@@ -36,14 +37,13 @@ shader_parameter/background_color = Color(0.08062599, 0.002795482, 0.22340646, 1
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mwrvg"]
 shader = ExtResource("6_iql7g")
-shader_parameter/tint_color = Color(0.4, 0.75, 1, 1)
-shader_parameter/vignette_strength = 0.6
-shader_parameter/vignette_softness = 0.8
-shader_parameter/grid_size = 60.0
-shader_parameter/grid_opacity = 0.05
+shader_parameter/scanline_count = 320.0
+shader_parameter/scanline_intensity = 0.15
 shader_parameter/scanline_speed = 0.25
-shader_parameter/scanline_width = 0.05
-shader_parameter/scanline_opacity = 0.15
+shader_parameter/vignette_intensity = 0.4
+shader_parameter/vignette_opacity = 0.5
+shader_parameter/warp_amount = 0.2
+shader_parameter/chromatic_aberration = 0.0
 
 [node name="Main_Menu" type="Node2D" unique_id=1149850653]
 script = ExtResource("1_mwrvg")
@@ -108,9 +108,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -70.0
-offset_top = 73.0
+offset_top = 130.0
 offset_right = 57.5
-offset_bottom = 137.0
+offset_bottom = 194.0
 grow_horizontal = 2
 grow_vertical = 2
 flat = true
@@ -133,8 +133,47 @@ scroll_active = false
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Spaceeee/Button2" unique_id=1189979338]
 stream = ExtResource("5_a33jk")
 
-[node name="overlay(still_in_progress)" type="ColorRect" parent="Spaceeee" unique_id=190387060]
-visible = false
+[node name="reset_progress_button" type="Button" parent="Spaceeee" unique_id=926091865]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -132.0
+offset_top = 55.0
+offset_right = 127.5
+offset_bottom = 119.0
+grow_horizontal = 2
+grow_vertical = 2
+flat = true
+script = ExtResource("3_e0asb")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Spaceeee/reset_progress_button" unique_id=428254622]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 5.0
+offset_right = 253.16669
+offset_bottom = 56.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/normal_font = ExtResource("4_v6ya1")
+theme_override_font_sizes/normal_font_size = 64
+bbcode_enabled = true
+text = "[center][pulse color=#ffffff freq=1.0 ease=-2.0]RESET PROGRESS[/pulse][/center]"
+scroll_active = false
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="Spaceeee/reset_progress_button" unique_id=1156482751]
+stream = ExtResource("5_a33jk")
+
+[node name="music" type="AudioStreamPlayer" parent="." unique_id=448421397 groups=["music_player"]]
+stream = ExtResource("7_u7lnc")
+autoplay = true
+
+[node name="sfx" type="AudioStreamPlayer" parent="." unique_id=741858080 groups=["sfx_player"]]
+
+[node name="CRT" type="CanvasLayer" parent="." unique_id=472176811]
+
+[node name="overlay(still_in_progress)" type="ColorRect" parent="CRT" unique_id=457964996 groups=["crt"]]
 material = SubResource("ShaderMaterial_mwrvg")
 anchors_preset = 15
 anchor_right = 1.0
@@ -145,7 +184,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="." unique_id=448421397 groups=["music_player"]]
-
 [connection signal="pressed" from="Spaceeee/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Spaceeee/Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Spaceeee/reset_progress_button" to="." method="_on_reset_progress_button_pressed"]
+[connection signal="finished" from="music" to="." method="_on_music_finished"]

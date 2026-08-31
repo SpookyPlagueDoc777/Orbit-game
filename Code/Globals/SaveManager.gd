@@ -26,6 +26,12 @@ func save_game(satellites_parent: Node = null, main_scene: Node = null) -> void:
 	config.set_value("global", "quota", Global.quota)
 	config.set_value("global", "upgrade_all", Global.upgrade_all)
 
+	# --- Workshop / Global Upgrades (Add any global upgrade tracking here) ---
+	if "upgrades_list" in Global:
+		config.set_value("upgrades", "purchased", Global.upgrades_list)
+	if "tech_level" in Global:
+		config.set_value("upgrades", "tech_level", Global.tech_level)
+
 	# --- Playtime ---
 	if main_scene:
 		config.set_value("timer", "days", main_scene.TimerDays)
@@ -50,6 +56,8 @@ func save_game(satellites_parent: Node = null, main_scene: Node = null) -> void:
 			"orbitspeed": sat.orbitspeed,
 			"launchanimation": sat.launchanimation,
 			"upgrade": sat.upgrade,
+			# Store optional custom upgrade arrays or levels per satellite
+			"upgrade_level": sat.get("upgrade_level") if "upgrade_level" in sat else 0,
 		})
 	config.set_value("satellites", "list", satellite_data)
 
@@ -84,6 +92,12 @@ func load_game(satellites_parent: Node = null, main_scene: Node = null) -> bool:
 	Global.upgrade_all = config.get_value("global", "upgrade_all", Global.upgrade_all)
 	Global.is_paused = true 
 
+	# --- Workshop / Global Upgrades ---
+	if "upgrades_list" in Global:
+		Global.upgrades_list = config.get_value("upgrades", "purchased", Global.upgrades_list)
+	if "tech_level" in Global:
+		Global.tech_level = config.get_value("upgrades", "tech_level", Global.tech_level)
+
 	# --- Playtime ---
 	if main_scene:
 		main_scene.TimerDays = config.get_value("timer", "days", 0)
@@ -116,13 +130,20 @@ func load_game(satellites_parent: Node = null, main_scene: Node = null) -> bool:
 		sat.satspinprod = data.get("satspinprod", 0.0)
 		sat.orbitspeed = data.get("orbitspeed", 0.0)
 		sat.upgrade = data.get("upgrade", 0)
-
+		
+		if "upgrade_level" in sat:
+			sat.upgrade_level = data.get("upgrade_level", 0)
 
 		sat.launchanimation = false
 		sat.position = Vector2(
 			sat.orbitradius * cos(sat.baseangle - PI / 2),
 			sat.orbitradius * sin(sat.baseangle - PI / 2)
 		)
+		
+		# If your satellite script has a function to recalculate graphics or stats after loading upgrades:
+		if sat.has_method("apply_upgrades"):
+			sat.apply_upgrades()
+
 		sat.spin_satellite()
 		sat.add_to_group("SatelliteGroup")
 

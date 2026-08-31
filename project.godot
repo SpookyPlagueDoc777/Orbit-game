@@ -42,6 +42,8 @@ folder_colors={
 SatelliteGroup="Contains all satellites"
 satellites_container=""
 music_player=""
+sfx_player=""
+crt=""
 
 [physics]
 

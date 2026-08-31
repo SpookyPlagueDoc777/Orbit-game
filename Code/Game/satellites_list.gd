@@ -3,41 +3,43 @@ extends Node2D
 const POWER_SATELLITE = preload("uid://bvkw14d2odqso")
 const SHIELD_SATELLITE = preload("uid://kybt02uh27cp")
 const SPIN_SATELLITE = preload("uid://dlbawowx6xel6")
-const GAME_SCENE = preload("uid://cbp01vsjbcswu")
-@onready var satellites: Node2D = get_tree().get_first_node_in_group("satellites_container")
 
+var satellites_container: Node2D = null
 
-
-
-
-var planetrotation: float
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	_find_container()
 
+func _find_container() -> void:
+	if not is_instance_valid(satellites_container):
+		satellites_container = get_tree().get_first_node_in_group("satellites_container") as Node2D
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass
+func launch_satellite(satellitetype: int) -> Satellite:
+	_find_container()
+	if not is_instance_valid(satellites_container):
+		push_error("SatelliteFactory Error: No satellites_container group node found!")
+		return null
 
-func launch_satellite(satellitetype: int) -> Node:
-	var thesatellite: Node
-	var gamenodes: = GAME_SCENE.instantiate()
+	var sat: Satellite = null
 	match satellitetype:
 		0:
-			thesatellite = POWER_SATELLITE.instantiate()
+			sat = POWER_SATELLITE.instantiate() as Satellite
 		1:
-			thesatellite = SHIELD_SATELLITE.instantiate()
+			sat = SHIELD_SATELLITE.instantiate() as Satellite
 		2:
-			thesatellite = SPIN_SATELLITE.instantiate()
-	if Global.energy >= thesatellite.satenergylaunch:
+			sat = SPIN_SATELLITE.instantiate() as Satellite
+
+	if sat == null:
+		return null
+
+	if Global.energy >= sat.satenergylaunch:
 		SoundManager.successful_push()
-		thesatellite.add_to_group("SatelliteGroup")
-		satellites.add_child(thesatellite)
-		thesatellite.spin_satellite()
-		Global.energy -= thesatellite.satenergylaunch
-		return thesatellite
+		Global.energy -= sat.satenergylaunch
+		satellites_container.add_child(sat)
+		
+		if Global.has_signal("updatelist"):
+			Global.updatelist.emit()
+		return sat
 	else:
+		sat.free()
 		SoundManager.unsuccessful_push()
 		return null
