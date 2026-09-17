@@ -38,14 +38,13 @@ font_size = 64
 
 [node name="GameUI" type="Control" unique_id=138886182]
 layout_mode = 3
-anchor_left = 0.011
-anchor_top = 0.011
-anchor_right = 0.989
-anchor_bottom = 0.989
-offset_left = -2.672
-offset_top = 0.8720002
-offset_right = -2.671997
-offset_bottom = 0.8720093
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 13.0
+offset_top = 10.0
+offset_right = -13.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_plf53")
@@ -393,7 +392,6 @@ offset_bottom = 23.255981
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_pwiya")
-toggle_mode = true
 icon = ExtResource("10_sr7wx")
 icon_alignment = 1
 
@@ -467,5 +465,10 @@ theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("4_wkbk7")
 theme_override_font_sizes/font_size = 120
 text = "GAME SAVED"
+
+[connection signal="pressed" from="ShopButton/Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="save/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="Shop_ui/ShopMenu/ActualButtons/UpgradeAll/UpgradeAllButton" to="." method="_on_upgrade_all_button_pressed"]
+[connection signal="pressed" from="Shop_ui/ShopMenu/BackButton/BackButton" to="." method="_on_back_button_pressed"]
 
 [editable path="Shop_ui/ShopMenu"]
