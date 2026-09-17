@@ -1,0 +1,463 @@
+[gd_scene format=3 uid="uid://boum8sacy4tg"]
+
+[ext_resource type="Script" uid="uid://d0wu53djn205y" path="res://Code/Ui/game_ui_old.gd" id="1_2kqnn"]
+[ext_resource type="Texture2D" uid="uid://dimb3bst8s38i" path="res://Textures/UI/UI box.png" id="1_p0iuc"]
+[ext_resource type="Texture2D" uid="uid://cj0rdqwg1vpmn" path="res://Textures/UI/spin speed icon.png" id="2_2kqnn"]
+[ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="3_nwj3y"]
+[ext_resource type="Texture2D" uid="uid://di5urho8tiwu1" path="res://Textures/UI/Energy icon.png" id="4_dsoc0"]
+[ext_resource type="Theme" uid="uid://dn5wefao8u26i" path="res://Textures/UI/workshop_theme.tres" id="5_q3ft0"]
+[ext_resource type="Texture2D" uid="uid://cjph45gt02jai" path="res://Textures/UI/Satellite inc logo tiny.png" id="6_2qrdq"]
+[ext_resource type="Texture2D" uid="uid://clm8fa3sfcmmk" path="res://Textures/UI/Timer icon.png" id="7_1swpy"]
+[ext_resource type="Texture2D" uid="uid://bvkfsrq12bvn3" path="res://Textures/UI/pause button.png" id="8_gr2qm"]
+[ext_resource type="Texture2D" uid="uid://3hx262hts8k5" path="res://Textures/UI/SAVE.png" id="9_wreh5"]
+[ext_resource type="PackedScene" uid="uid://bv011jc2j3aou" path="res://Scenes/UI/shop_menu.tscn" id="10_xug2p"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_ddexl"]
+font = ExtResource("3_nwj3y")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_nwcf0"]
+font = ExtResource("3_nwj3y")
+font_size = 12
+
+[sub_resource type="LabelSettings" id="LabelSettings_my3ie"]
+font = ExtResource("3_nwj3y")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_b4qre"]
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_0yx64"]
+font = ExtResource("3_nwj3y")
+
+[sub_resource type="LabelSettings" id="LabelSettings_wq5vr"]
+font = ExtResource("3_nwj3y")
+font_size = 8
+
+[sub_resource type="LabelSettings" id="LabelSettings_uwp3v"]
+font_size = 64
+
+[node name="game_ui_old" type="Control" unique_id=671569232]
+layout_mode = 3
+anchor_left = 0.011
+anchor_top = 0.011
+anchor_right = 0.989
+anchor_bottom = 0.989
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2kqnn")
+
+[node name="SpinIndicator" type="NinePatchRect" parent="." unique_id=917333417]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+scale = Vector2(3, 3)
+texture = ExtResource("1_p0iuc")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="SpinImg" type="TextureRect" parent="SpinIndicator" unique_id=513614600]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -15.506666
+offset_top = -18.653334
+offset_right = 16.493332
+offset_bottom = 13.346666
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+texture = ExtResource("2_2kqnn")
+stretch_mode = 2
+
+[node name="CurrentSpinSpeed" type="Label" parent="SpinIndicator" unique_id=1188339405]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -13.173333
+offset_top = -7.6533337
+offset_right = 13.826666
+offset_bottom = -0.65333366
+grow_horizontal = 2
+grow_vertical = 0
+text = "current speed"
+label_settings = SubResource("LabelSettings_ddexl")
+horizontal_alignment = 1
+text_direction = 1
+
+[node name="Energyindicator" type="NinePatchRect" parent="." unique_id=1794157141]
+layout_mode = 0
+offset_left = 99.48
+offset_top = 0.03999996
+offset_right = 173.48001
+offset_bottom = 21.369999
+scale = Vector2(3, 3)
+texture = ExtResource("1_p0iuc")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Energyindicator" unique_id=66070969]
+layout_mode = 0
+offset_left = 2.9999962
+offset_right = 59.666664
+offset_bottom = 20.82
+
+[node name="Energyicon" type="TextureRect" parent="Energyindicator/VBoxContainer" unique_id=861188912]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+offset_transform_enabled = true
+texture = ExtResource("4_dsoc0")
+stretch_mode = 2
+
+[node name="Energy" type="Label" parent="Energyindicator/VBoxContainer" unique_id=180271487]
+layout_mode = 2
+text = "Energy:"
+label_settings = SubResource("LabelSettings_nwcf0")
+horizontal_alignment = 1
+
+[node name="EnergyAmount" type="Label" parent="Energyindicator/VBoxContainer" unique_id=1770022667]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_nwcf0")
+horizontal_alignment = 1
+
+[node name="SpinQuotaMenager" type="NinePatchRect" parent="." unique_id=731395509]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -127.95999
+offset_right = 32.0
+offset_bottom = -85.30005
+grow_vertical = 0
+scale = Vector2(3, 3)
+texture = ExtResource("1_p0iuc")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SpinQuotaMenager" unique_id=1484275652]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SpinQuota" type="Label" parent="SpinQuotaMenager/VBoxContainer" unique_id=1264686381]
+layout_mode = 2
+offset_transform_enabled = true
+text = "Spin quota:"
+label_settings = SubResource("LabelSettings_my3ie")
+horizontal_alignment = 1
+
+[node name="CurrentQuota" type="Label" parent="SpinQuotaMenager/VBoxContainer" unique_id=550753210]
+layout_mode = 2
+text = "speed quota n."
+label_settings = SubResource("LabelSettings_my3ie")
+horizontal_alignment = 1
+
+[node name="Time limit" type="Label" parent="SpinQuotaMenager/VBoxContainer" unique_id=1790358895]
+layout_mode = 2
+text = "Time limit:"
+label_settings = SubResource("LabelSettings_my3ie")
+horizontal_alignment = 1
+
+[node name="TimeToMeetQuota" type="Label" parent="SpinQuotaMenager/VBoxContainer" unique_id=109003843]
+layout_mode = 2
+text = "left to meet quota"
+label_settings = SubResource("LabelSettings_my3ie")
+horizontal_alignment = 1
+
+[node name="ShopButton" type="NinePatchRect" parent="." unique_id=219713019]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 1033.48
+offset_top = -127.95999
+offset_right = 1065.48
+offset_bottom = -85.30005
+grow_vertical = 0
+scale = Vector2(3, 3)
+texture = ExtResource("1_p0iuc")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="Button" type="Button" parent="ShopButton" unique_id=1629363344]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_q3ft0")
+icon = ExtResource("6_2qrdq")
+icon_alignment = 1
+
+[node name="Label" type="Label" parent="ShopButton" unique_id=1317595177]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -19.666666
+offset_top = -17.993288
+offset_right = 20.333332
+offset_bottom = -5.326622
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("5_q3ft0")
+text = "workshop"
+label_settings = SubResource("LabelSettings_b4qre")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="Timer" type="NinePatchRect" parent="." unique_id=60625937]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -204.0
+offset_right = -136.0
+offset_bottom = 19.0
+grow_horizontal = 0
+scale = Vector2(3, 3)
+texture = ExtResource("1_p0iuc")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="CurrentTime" type="Label" parent="Timer" unique_id=734840943]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 17.160004
+offset_top = -6.3333335
+offset_right = -0.83999634
+offset_bottom = 6.333334
+grow_horizontal = 2
+grow_vertical = 2
+text = "Timer"
+label_settings = SubResource("LabelSettings_0yx64")
+horizontal_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Timer" unique_id=658174753]
+layout_mode = 0
+offset_left = 2.333313
+offset_top = 2.3333344
+offset_right = 42.333313
+offset_bottom = 42.333336
+scale = Vector2(0.375, 0.375)
+texture = ExtResource("7_1swpy")
+
+[node name="SatelliteList" type="NinePatchRect" parent="." unique_id=1590520186]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.08800001
+anchor_top = 1.0
+anchor_right = 0.91200006
+anchor_bottom = 1.0
+offset_left = 116.648026
+offset_top = -110.0
+offset_right = -579.8214
+offset_bottom = -76.986694
+grow_horizontal = 2
+grow_vertical = 0
+scale = Vector2(3, 3)
+offset_transform_enabled = true
+texture = ExtResource("1_p0iuc")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SatelliteList" unique_id=1504235594]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_right = 0.99600005
+anchor_bottom = 0.96900004
+offset_left = -1.5309999
+offset_right = -1.6920471
+offset_bottom = -0.0042266846
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SatelliteList" type="Label" parent="SatelliteList/VBoxContainer" unique_id=1174383306]
+layout_mode = 2
+text = "Satellite list"
+label_settings = SubResource("LabelSettings_wq5vr")
+horizontal_alignment = 1
+
+[node name="SatelliteScroll" type="ScrollContainer" parent="SatelliteList/VBoxContainer" unique_id=1064956888]
+layout_mode = 2
+size_flags_vertical = 3
+theme = ExtResource("5_q3ft0")
+
+[node name="SatelliteContainer" type="VBoxContainer" parent="SatelliteList/VBoxContainer/SatelliteScroll" unique_id=30974007]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="PauseButton" type="NinePatchRect" parent="." unique_id=1115408738]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -266.51996
+offset_top = 0.03999996
+offset_right = -247.18665
+offset_bottom = 19.04
+scale = Vector2(3, 3)
+texture = ExtResource("1_p0iuc")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="PauseButton" type="Button" parent="PauseButton" unique_id=593251940]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.6666565
+offset_top = -7.5
+offset_right = 7.3333435
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_q3ft0")
+toggle_mode = true
+icon = ExtResource("8_gr2qm")
+icon_alignment = 1
+
+[node name="save" type="NinePatchRect" parent="." unique_id=468161698]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -332.52002
+offset_top = 0.03999996
+offset_right = -313.1867
+offset_bottom = 19.04
+scale = Vector2(3, 3)
+texture = ExtResource("1_p0iuc")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="PauseButton" type="Button" parent="save" unique_id=2083454642]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -7.6666565
+offset_top = -7.5
+offset_right = 7.3333435
+offset_bottom = 7.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_q3ft0")
+toggle_mode = true
+icon = ExtResource("9_wreh5")
+icon_alignment = 1
+
+[node name="Shop_ui" type="Node" parent="." unique_id=1054180919]
+
+[node name="ShopMenu" parent="Shop_ui" unique_id=565247265 instance=ExtResource("10_xug2p")]
+visible = false
+
+[node name="TextureRect2" parent="Shop_ui/ShopMenu/Control" parent_id_path=PackedInt32Array(565247265, 784231603) index="1" unique_id=605020551]
+offset_left = 0.0
+offset_right = 249.0
+
+[node name="BackButton" parent="Shop_ui/ShopMenu/BackButton" parent_id_path=PackedInt32Array(565247265, 1845986026) index="0" unique_id=1249383969]
+toggle_mode = false
+
+[node name="GameOver" type="Label" parent="." unique_id=146419407]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_q3ft0")
+text = "game over!"
+label_settings = SubResource("LabelSettings_uwp3v")
+
+[node name="GameOverTimer" type="Timer" parent="GameOver" unique_id=1381236013]
+wait_time = 0.5
+one_shot = true
+ignore_time_scale = true
+
+[node name="GameWon" type="Label" parent="." unique_id=246819380]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -11.5
+offset_right = 20.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("5_q3ft0")
+text = "game won!"
+label_settings = SubResource("LabelSettings_uwp3v")
+
+[node name="GameWonTimer" type="Timer" parent="GameWon" unique_id=187774179]
+wait_time = 0.5
+one_shot = true
+ignore_time_scale = true
+
+[node name="SaveNotification" type="Label" parent="." unique_id=1247574524]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 417.48
+offset_top = -8.959999
+offset_right = 740.48
+offset_bottom = 86.04
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 20
+theme_override_fonts/font = ExtResource("3_nwj3y")
+theme_override_font_sizes/font_size = 120
+text = "GAME SAVED"
+
+[editable path="Shop_ui/ShopMenu"]

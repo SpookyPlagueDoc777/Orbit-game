@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://bgsgsmwi7fk7e" path="res://Scenes/UI/settings_menu_new.tscn" id="2_mht2n"]
 [ext_resource type="PackedScene" uid="uid://btisly1528rn5" path="res://Scenes/UI/pause_menu.tscn" id="4_3qm64"]
 [ext_resource type="Texture2D" uid="uid://bmkpnomnr3dfm" path="res://Textures/UI/play button.png" id="5_jp4ly"]
-[ext_resource type="Shader" uid="uid://d782q5frqubu" path="res://Shaders/hud_overlay.gdshader" id="8_ugtjl"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bgvvt"]
 shader = ExtResource("1_3qm64")
@@ -34,16 +33,6 @@ shader_parameter/cloud_color_ci3 = 0.9
 shader_parameter/cloud_color_shiftx = 0.0
 shader_parameter/cloud_color_shifty = 0.0
 shader_parameter/background_color = Color(0.08062599, 0.002795482, 0.22340646, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_53gov"]
-shader = ExtResource("8_ugtjl")
-shader_parameter/scanline_count = 320.0
-shader_parameter/scanline_intensity = 0.15
-shader_parameter/scanline_speed = 0.25
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.5
-shader_parameter/warp_amount = 0.2
-shader_parameter/chromatic_aberration = 0.0
 
 [node name="MainNode" type="Node" unique_id=499770951]
 script = ExtResource("1_jp4ly")
@@ -119,19 +108,6 @@ visible = false
 z_index = 1
 
 [node name="save_timer_auto" type="Timer" parent="." unique_id=341811244]
-
-[node name="CRT" type="CanvasLayer" parent="." unique_id=2057630183]
-
-[node name="overlay(still_in_progress)" type="ColorRect" parent="CRT" unique_id=585588809 groups=["crt"]]
-material = SubResource("ShaderMaterial_53gov")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_right = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="toggled" from="CanvasLayer/GameUI/PauseButton/PauseButton" to="." method="_on_pause_button_toggled"]

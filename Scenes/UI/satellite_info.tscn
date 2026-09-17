@@ -304,7 +304,7 @@ horizontal_alignment = 1
 
 [node name="UpgradeContainer" type="NinePatchRect" parent="." unique_id=1213617198]
 layout_mode = 2
-size_flags_horizontal = 3
+size_flags_horizontal = 0
 size_flags_stretch_ratio = 0.3
 texture = ExtResource("5_pb1q5")
 patch_margin_left = 8

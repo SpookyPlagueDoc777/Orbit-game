@@ -1,66 +1,66 @@
 [gd_scene format=3 uid="uid://cqi64luim3n66"]
 
-[ext_resource type="Texture2D" uid="uid://dimb3bst8s38i" path="res://Textures/UI/UI box.png" id="1_3fiko"]
 [ext_resource type="Script" uid="uid://cx47qg063vps4" path="res://Code/Ui/game_ui.gd" id="1_plf53"]
-[ext_resource type="Texture2D" uid="uid://cj0rdqwg1vpmn" path="res://Textures/UI/spin speed icon.png" id="2_vo2tu"]
-[ext_resource type="Texture2D" uid="uid://di5urho8tiwu1" path="res://Textures/UI/Energy icon.png" id="3_5b8pf"]
-[ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="3_6w80a"]
-[ext_resource type="Theme" uid="uid://dn5wefao8u26i" path="res://Textures/UI/workshop_theme.tres" id="5_lolt2"]
-[ext_resource type="Texture2D" uid="uid://cjph45gt02jai" path="res://Textures/UI/Satellite inc logo tiny.png" id="7_bhxso"]
-[ext_resource type="Texture2D" uid="uid://clm8fa3sfcmmk" path="res://Textures/UI/Timer icon.png" id="7_mnd0w"]
-[ext_resource type="PackedScene" uid="uid://bv011jc2j3aou" path="res://Scenes/UI/shop_menu.tscn" id="7_p8jce"]
-[ext_resource type="Texture2D" uid="uid://bvkfsrq12bvn3" path="res://Textures/UI/pause button.png" id="9_bhxso"]
-[ext_resource type="Texture2D" uid="uid://3hx262hts8k5" path="res://Textures/UI/SAVE.png" id="10_0pgsb"]
+[ext_resource type="Texture2D" uid="uid://45fapg42o33g" path="res://Textures/UI/New ui box.png" id="2_vo2tu"]
+[ext_resource type="Texture2D" uid="uid://c6dshkxjwcrbn" path="res://Textures/UI/Blank ui box.png" id="4_bhxso"]
+[ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="4_wkbk7"]
+[ext_resource type="Theme" uid="uid://dn5wefao8u26i" path="res://Textures/UI/workshop_theme.tres" id="6_pwiya"]
+[ext_resource type="Texture2D" uid="uid://bvkfsrq12bvn3" path="res://Textures/UI/pause button.png" id="9_llaam"]
+[ext_resource type="Texture2D" uid="uid://3hx262hts8k5" path="res://Textures/UI/SAVE.png" id="10_sr7wx"]
+[ext_resource type="PackedScene" uid="uid://bv011jc2j3aou" path="res://Scenes/UI/shop_menu.tscn" id="11_3nq5v"]
 
-[sub_resource type="LabelSettings" id="LabelSettings_wxim1"]
-font = ExtResource("3_6w80a")
-font_size = 8
+[sub_resource type="LabelSettings" id="LabelSettings_n1yqq"]
+font = ExtResource("4_wkbk7")
+font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_duafg"]
-font = ExtResource("3_6w80a")
-font_size = 12
+font = ExtResource("4_wkbk7")
+font_size = 24
 
-[sub_resource type="LabelSettings" id="LabelSettings_4oc0s"]
-font = ExtResource("3_6w80a")
-font_size = 8
+[sub_resource type="LabelSettings" id="LabelSettings_4vgf7"]
+font = ExtResource("4_wkbk7")
+font_size = 24
 
-[sub_resource type="LabelSettings" id="LabelSettings_n1yeg"]
-font_size = 8
+[sub_resource type="LabelSettings" id="LabelSettings_0tkk7"]
+font = ExtResource("4_wkbk7")
+font_size = 20
 
-[sub_resource type="LabelSettings" id="LabelSettings_chw7r"]
-font = ExtResource("3_6w80a")
+[sub_resource type="LabelSettings" id="LabelSettings_m6v8h"]
+font = ExtResource("4_wkbk7")
+font_size = 32
 
-[sub_resource type="LabelSettings" id="LabelSettings_yssin"]
-font = ExtResource("3_6w80a")
-font_size = 8
+[sub_resource type="LabelSettings" id="LabelSettings_c8va3"]
+font = ExtResource("4_wkbk7")
+font_size = 24
 
-[sub_resource type="LabelSettings" id="LabelSettings_lb5e2"]
+[sub_resource type="LabelSettings" id="LabelSettings_kg4il"]
 font_size = 64
 
 [node name="GameUI" type="Control" unique_id=138886182]
 layout_mode = 3
-anchor_left = 0.01
-anchor_top = 0.02
-anchor_right = 0.99
-anchor_bottom = 0.98
-offset_right = 0.040039063
-offset_bottom = -0.08001709
+anchor_left = 0.011
+anchor_top = 0.011
+anchor_right = 0.989
+anchor_bottom = 0.989
+offset_left = -2.672
+offset_top = 0.8720002
+offset_right = -2.671997
+offset_bottom = 0.8720093
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_plf53")
 
-[node name="SpinIndicator" type="NinePatchRect" parent="." unique_id=84642573]
+[node name="SpinIndicator" type="NinePatchRect" parent="." unique_id=2111783116]
 layout_mode = 0
-offset_right = 32.0
-offset_bottom = 32.0
-scale = Vector2(3, 3)
-texture = ExtResource("1_3fiko")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
+offset_right = 96.0
+offset_bottom = 96.0
+texture = ExtResource("2_vo2tu")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
-[node name="SpinImg" type="TextureRect" parent="SpinIndicator" unique_id=1409277920]
+[node name="SpinImg" type="TextureRect" parent="SpinIndicator" unique_id=1530868488]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -76,320 +76,330 @@ grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
 offset_transform_enabled = true
-texture = ExtResource("2_vo2tu")
 stretch_mode = 2
 
-[node name="CurrentSpinSpeed" type="Label" parent="SpinIndicator" unique_id=2023041191]
+[node name="CurrentSpinSpeed" type="Label" parent="SpinIndicator" unique_id=1634940307]
 layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -13.173333
-offset_top = -7.6533337
-offset_right = 13.826666
-offset_bottom = -0.65333366
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = 8.872002
+offset_right = 40.0
+offset_bottom = 27.872002
 grow_horizontal = 2
-grow_vertical = 0
+grow_vertical = 2
 text = "current speed"
-label_settings = SubResource("LabelSettings_wxim1")
+label_settings = SubResource("LabelSettings_n1yqq")
 horizontal_alignment = 1
 text_direction = 1
 
-[node name="Energyindicator" type="NinePatchRect" parent="." unique_id=706483220]
-layout_mode = 0
-offset_left = 99.48
-offset_top = 0.03999996
-offset_right = 173.48001
-offset_bottom = 21.369999
-scale = Vector2(3, 3)
-texture = ExtResource("1_3fiko")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
-
-[node name="VBoxContainer" type="HBoxContainer" parent="Energyindicator" unique_id=1347794911]
-layout_mode = 0
-offset_left = 2.9999962
-offset_right = 59.666664
-offset_bottom = 20.82
-
-[node name="Energyicon" type="TextureRect" parent="Energyindicator/VBoxContainer" unique_id=947956100]
-layout_mode = 2
-size_flags_horizontal = 4
-size_flags_vertical = 4
-offset_transform_enabled = true
-texture = ExtResource("3_5b8pf")
-stretch_mode = 2
-
-[node name="Energy" type="Label" parent="Energyindicator/VBoxContainer" unique_id=958141060]
-layout_mode = 2
-text = "Energy:"
-label_settings = SubResource("LabelSettings_duafg")
-horizontal_alignment = 1
-
-[node name="EnergyAmount" type="Label" parent="Energyindicator/VBoxContainer" unique_id=188364953]
-layout_mode = 2
-label_settings = SubResource("LabelSettings_duafg")
-horizontal_alignment = 1
-
-[node name="SpinQuotaMenager" type="NinePatchRect" parent="." unique_id=394366535]
+[node name="Label" type="Label" parent="SpinIndicator" unique_id=667920658]
 layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_top = -127.95999
-offset_right = 32.0
-offset_bottom = -85.30005
-grow_vertical = 0
-scale = Vector2(3, 3)
-texture = ExtResource("1_3fiko")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="SpinQuotaMenager" unique_id=323054256]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -16.0
-offset_bottom = 16.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="SpinQuota" type="Label" parent="SpinQuotaMenager/VBoxContainer" unique_id=624288827]
-layout_mode = 2
-offset_transform_enabled = true
-text = "Spin quota:"
-label_settings = SubResource("LabelSettings_4oc0s")
-horizontal_alignment = 1
-
-[node name="CurrentQuota" type="Label" parent="SpinQuotaMenager/VBoxContainer" unique_id=2094940872]
-layout_mode = 2
-text = "speed quota n."
-label_settings = SubResource("LabelSettings_4oc0s")
-horizontal_alignment = 1
-
-[node name="Time limit" type="Label" parent="SpinQuotaMenager/VBoxContainer" unique_id=980641283]
-layout_mode = 2
-text = "Time limit:"
-label_settings = SubResource("LabelSettings_4oc0s")
-horizontal_alignment = 1
-
-[node name="TimeToMeetQuota" type="Label" parent="SpinQuotaMenager/VBoxContainer" unique_id=1381222161]
-layout_mode = 2
-text = "left to meet quota"
-label_settings = SubResource("LabelSettings_4oc0s")
-horizontal_alignment = 1
-
-[node name="ShopButton" type="NinePatchRect" parent="." unique_id=1671849289]
-layout_mode = 1
-anchors_preset = 2
-anchor_top = 1.0
-anchor_bottom = 1.0
-offset_left = 1033.48
-offset_top = -127.95999
-offset_right = 1065.48
-offset_bottom = -85.30005
-grow_vertical = 0
-scale = Vector2(3, 3)
-texture = ExtResource("1_3fiko")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
-
-[node name="Button" type="Button" parent="ShopButton" unique_id=882555370]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-theme = ExtResource("5_lolt2")
-icon = ExtResource("7_bhxso")
-icon_alignment = 1
-
-[node name="Label" type="Label" parent="ShopButton" unique_id=2111020147]
-layout_mode = 1
-anchors_preset = 7
+anchors_preset = 8
 anchor_left = 0.5
-anchor_top = 1.0
+anchor_top = 0.5
 anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -19.666666
-offset_top = -17.993288
-offset_right = 20.333332
-offset_bottom = -5.326622
+anchor_bottom = 0.5
+offset_left = -24.0
+offset_top = -15.127998
+offset_right = 24.0
+offset_bottom = 7.8720016
 grow_horizontal = 2
-grow_vertical = 0
-theme = ExtResource("5_lolt2")
-text = "workshop"
-label_settings = SubResource("LabelSettings_n1yeg")
+grow_vertical = 2
+text = "\\\\SPIN\\\\"
+label_settings = SubResource("LabelSettings_duafg")
 horizontal_alignment = 1
-vertical_alignment = 2
 
-[node name="Timer" type="NinePatchRect" parent="." unique_id=478082880]
+[node name="Energyindicator" type="NinePatchRect" parent="." unique_id=28399953]
+layout_mode = 0
+offset_left = 98.328
+offset_top = 0.03999996
+offset_right = 194.328
+offset_bottom = 96.04
+texture = ExtResource("2_vo2tu")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Energyindicator" unique_id=982810131]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -22.0
+offset_top = -15.0
+offset_right = 22.0
+offset_bottom = 27.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Energy" type="Label" parent="Energyindicator/VBoxContainer" unique_id=44346662]
+layout_mode = 2
+size_flags_horizontal = 6
+text = "\\\\ENERGY\\\\"
+label_settings = SubResource("LabelSettings_4vgf7")
+horizontal_alignment = 1
+
+[node name="EnergyAmount" type="Label" parent="Energyindicator/VBoxContainer" unique_id=219463461]
+layout_mode = 2
+size_flags_horizontal = 6
+label_settings = SubResource("LabelSettings_4vgf7")
+horizontal_alignment = 1
+
+[node name="SpinQuotaMenager" type="NinePatchRect" parent="." unique_id=154501522]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -204.0
-offset_right = -136.0
-offset_bottom = 19.0
+offset_left = -195.656
+offset_top = 98.0
+offset_bottom = 162.0
 grow_horizontal = 0
-scale = Vector2(3, 3)
-texture = ExtResource("1_3fiko")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
+texture = ExtResource("4_bhxso")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
-[node name="CurrentTime" type="Label" parent="Timer" unique_id=566765429]
+[node name="VBoxContainer" type="GridContainer" parent="SpinQuotaMenager" unique_id=1401284894]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -75.5
+offset_top = -17.0
+offset_right = 75.5
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+columns = 2
+
+[node name="SpinQuota" type="Label" parent="SpinQuotaMenager/VBoxContainer" unique_id=1312138254]
+layout_mode = 2
+offset_transform_enabled = true
+text = "Spin quota:"
+label_settings = SubResource("LabelSettings_0tkk7")
+horizontal_alignment = 1
+
+[node name="CurrentQuota" type="Label" parent="SpinQuotaMenager/VBoxContainer" unique_id=1606851999]
+layout_mode = 2
+text = "speed quota n."
+label_settings = SubResource("LabelSettings_0tkk7")
+horizontal_alignment = 1
+
+[node name="Time limit" type="Label" parent="SpinQuotaMenager/VBoxContainer" unique_id=1522554610]
+layout_mode = 2
+text = "Time limit:"
+label_settings = SubResource("LabelSettings_0tkk7")
+horizontal_alignment = 1
+
+[node name="TimeToMeetQuota" type="Label" parent="SpinQuotaMenager/VBoxContainer" unique_id=1729583040]
+layout_mode = 2
+text = "left to meet quota"
+label_settings = SubResource("LabelSettings_0tkk7")
+horizontal_alignment = 1
+
+[node name="ShopButton" type="NinePatchRect" parent="." unique_id=161247865]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -130.0
+offset_top = -130.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_vo2tu")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="Button" type="Button" parent="ShopButton" unique_id=43013851]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.080000006
+anchor_top = 0.21700001
+anchor_right = 0.92600006
+anchor_bottom = 0.9250001
+offset_left = -0.05600643
+offset_top = 0.045980453
+offset_right = -0.036010742
+offset_bottom = 0.005973816
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_pwiya")
+icon_alignment = 1
+
+[node name="Timer" type="NinePatchRect" parent="." unique_id=766518046]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -195.656
+offset_bottom = 96.0
+grow_horizontal = 0
+texture = ExtResource("2_vo2tu")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="CurrentTime" type="Label" parent="Timer" unique_id=416640914]
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
-offset_left = 17.160004
-offset_top = -6.3333335
-offset_right = -0.83999634
-offset_bottom = 6.333334
+offset_top = 4.375
+offset_bottom = 37.625
 grow_horizontal = 2
 grow_vertical = 2
 text = "Timer"
-label_settings = SubResource("LabelSettings_chw7r")
+label_settings = SubResource("LabelSettings_m6v8h")
 horizontal_alignment = 1
 
-[node name="TextureRect" type="TextureRect" parent="Timer" unique_id=1737186141]
-layout_mode = 0
-offset_left = 2.333313
-offset_top = 2.3333344
-offset_right = 42.333313
-offset_bottom = 42.333336
-scale = Vector2(0.375, 0.375)
-texture = ExtResource("7_mnd0w")
-
-[node name="SatelliteList" type="NinePatchRect" parent="." unique_id=2098349597]
+[node name="CurrentTime2" type="Label" parent="Timer" unique_id=928805731]
 layout_mode = 1
-anchors_preset = -1
-anchor_top = 0.794
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -20.625
+offset_bottom = 12.625
+grow_horizontal = 2
+grow_vertical = 2
+text = "Timer"
+label_settings = SubResource("LabelSettings_m6v8h")
+horizontal_alignment = 1
+
+[node name="SatelliteList" type="NinePatchRect" parent="." unique_id=1238777326]
+layout_mode = 1
+anchors_preset = 9
+anchor_bottom = 1.0
+offset_top = 98.0
+offset_right = 194.0
+grow_vertical = 2
+offset_transform_enabled = true
+texture = ExtResource("4_bhxso")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="SatelliteList" unique_id=1141926660]
+layout_mode = 1
+anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 99.48
-offset_top = 0.1720581
-offset_right = -719.18665
-offset_bottom = -85.29993
-scale = Vector2(3, 3)
-texture = ExtResource("1_3fiko")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
-
-[node name="VBoxContainer" type="VBoxContainer" parent="SatelliteList" unique_id=1572252469]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.003
-anchor_right = 0.99600005
-anchor_bottom = 0.96900004
-offset_left = 0.068999946
-offset_right = -0.092041016
-offset_bottom = -0.0042304993
+offset_left = 10.000001
+offset_top = 10.0
+offset_right = -10.0
+offset_bottom = -10.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="SatelliteList" type="Label" parent="SatelliteList/VBoxContainer" unique_id=467945418]
+[node name="SatelliteList" type="Label" parent="SatelliteList/VBoxContainer" unique_id=265330892]
 layout_mode = 2
 text = "Satellite list"
-label_settings = SubResource("LabelSettings_yssin")
+label_settings = SubResource("LabelSettings_c8va3")
 horizontal_alignment = 1
 
-[node name="SatelliteScroll" type="ScrollContainer" parent="SatelliteList/VBoxContainer" unique_id=1865125485]
+[node name="SatelliteScroll" type="ScrollContainer" parent="SatelliteList/VBoxContainer" unique_id=816228741]
 layout_mode = 2
 size_flags_vertical = 3
-theme = ExtResource("5_lolt2")
+theme = ExtResource("6_pwiya")
 
-[node name="SatelliteContainer" type="VBoxContainer" parent="SatelliteList/VBoxContainer/SatelliteScroll" unique_id=781712359]
+[node name="SatelliteContainer" type="VBoxContainer" parent="SatelliteList/VBoxContainer/SatelliteScroll" unique_id=1488092135]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="PauseButton" type="NinePatchRect" parent="." unique_id=1317757567]
+[node name="PauseButton" type="NinePatchRect" parent="." unique_id=2127387811]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 3
 anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
-offset_left = -266.51996
-offset_top = 0.03999996
-offset_right = -247.18665
-offset_bottom = 19.04
-scale = Vector2(3, 3)
-texture = ExtResource("1_3fiko")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
+anchor_bottom = 1.0
+offset_left = -196.0
+offset_top = -130.0
+offset_right = -132.0
+offset_bottom = -66.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_vo2tu")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
-[node name="PauseButton" type="Button" parent="PauseButton" unique_id=1003308732]
+[node name="PauseButton" type="Button" parent="PauseButton" unique_id=2803533]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -7.6666565
-offset_top = -7.5
-offset_right = 7.3333435
-offset_bottom = 7.5
+offset_left = -22.656036
+offset_top = -4.7440186
+offset_right = 23.343964
+offset_bottom = 23.255981
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("5_lolt2")
+theme = ExtResource("6_pwiya")
 toggle_mode = true
-icon = ExtResource("9_bhxso")
+icon = ExtResource("9_llaam")
 icon_alignment = 1
 
-[node name="save" type="NinePatchRect" parent="." unique_id=155933135]
+[node name="save" type="NinePatchRect" parent="." unique_id=1978910484]
 layout_mode = 1
-anchors_preset = -1
+anchors_preset = 3
 anchor_left = 1.0
+anchor_top = 1.0
 anchor_right = 1.0
-offset_left = -332.52002
-offset_top = 0.03999996
-offset_right = -313.1867
-offset_bottom = 19.04
-scale = Vector2(3, 3)
-texture = ExtResource("1_3fiko")
-patch_margin_left = 8
-patch_margin_top = 8
-patch_margin_right = 8
-patch_margin_bottom = 8
+anchor_bottom = 1.0
+offset_left = -196.0
+offset_top = -64.0
+offset_right = -132.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_vo2tu")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
-[node name="PauseButton" type="Button" parent="save" unique_id=1460198851]
+[node name="PauseButton" type="Button" parent="save" unique_id=305068013]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -7.6666565
-offset_top = -7.5
-offset_right = 7.3333435
-offset_bottom = 7.5
+offset_left = -22.656036
+offset_top = -4.7440186
+offset_right = 23.343964
+offset_bottom = 23.255981
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("5_lolt2")
+theme = ExtResource("6_pwiya")
 toggle_mode = true
-icon = ExtResource("10_0pgsb")
+icon = ExtResource("10_sr7wx")
 icon_alignment = 1
 
-[node name="Shop_ui" type="Node" parent="." unique_id=1862393372]
+[node name="Shop_ui" type="Node" parent="." unique_id=1838543455]
 
-[node name="ShopMenu" parent="Shop_ui" unique_id=565247265 instance=ExtResource("7_p8jce")]
+[node name="ShopMenu" parent="Shop_ui" unique_id=565247265 instance=ExtResource("11_3nq5v")]
 visible = false
 
 [node name="TextureRect2" parent="Shop_ui/ShopMenu/Control" parent_id_path=PackedInt32Array(565247265, 784231603) index="1" unique_id=605020551]
@@ -399,7 +409,7 @@ offset_right = 249.0
 [node name="BackButton" parent="Shop_ui/ShopMenu/BackButton" parent_id_path=PackedInt32Array(565247265, 1845986026) index="0" unique_id=1249383969]
 toggle_mode = false
 
-[node name="GameOver" type="Label" parent="." unique_id=2055132133]
+[node name="GameOver" type="Label" parent="." unique_id=1279273765]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -413,16 +423,16 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("5_lolt2")
+theme = ExtResource("6_pwiya")
 text = "game over!"
-label_settings = SubResource("LabelSettings_lb5e2")
+label_settings = SubResource("LabelSettings_kg4il")
 
-[node name="GameOverTimer" type="Timer" parent="GameOver" unique_id=339133672]
+[node name="GameOverTimer" type="Timer" parent="GameOver" unique_id=662451635]
 wait_time = 0.5
 one_shot = true
 ignore_time_scale = true
 
-[node name="GameWon" type="Label" parent="." unique_id=2068494220]
+[node name="GameWon" type="Label" parent="." unique_id=281144875]
 visible = false
 layout_mode = 1
 anchors_preset = 8
@@ -436,16 +446,16 @@ offset_right = 20.0
 offset_bottom = 11.5
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("5_lolt2")
+theme = ExtResource("6_pwiya")
 text = "game won!"
-label_settings = SubResource("LabelSettings_lb5e2")
+label_settings = SubResource("LabelSettings_kg4il")
 
-[node name="GameWonTimer" type="Timer" parent="GameWon" unique_id=1487164128]
+[node name="GameWonTimer" type="Timer" parent="GameWon" unique_id=65375581]
 wait_time = 0.5
 one_shot = true
 ignore_time_scale = true
 
-[node name="SaveNotification" type="Label" parent="." unique_id=500257284]
+[node name="SaveNotification" type="Label" parent="." unique_id=1978442328]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 417.48
@@ -454,16 +464,8 @@ offset_right = 740.48
 offset_bottom = 86.04
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
-theme_override_fonts/font = ExtResource("3_6w80a")
+theme_override_fonts/font = ExtResource("4_wkbk7")
 theme_override_font_sizes/font_size = 120
 text = "GAME SAVED"
-
-[connection signal="pressed" from="ShopButton/Button" to="." method="_on_button_pressed"]
-[connection signal="pressed" from="save/PauseButton" to="." method="_on_pause_button_pressed"]
-[connection signal="pressed" from="Shop_ui/ShopMenu/ActualButtons/UpgradeAll/UpgradeAllButton" to="." method="_on_upgrade_all_button_pressed"]
-[connection signal="pressed" from="Shop_ui/ShopMenu/ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite" to="." method="_on_buy_energy_satellite_pressed"]
-[connection signal="pressed" from="Shop_ui/ShopMenu/ActualButtons/Satellites/SpinSatellite/BuySpinSatellite" to="." method="_on_buy_spin_satellite_pressed"]
-[connection signal="pressed" from="Shop_ui/ShopMenu/ActualButtons/Satellites/ShieldSatellite/BuyShieldSatellite" to="." method="_on_buy_shield_satellite_pressed"]
-[connection signal="pressed" from="Shop_ui/ShopMenu/BackButton/BackButton" to="." method="_on_back_button_pressed"]
 
 [editable path="Shop_ui/ShopMenu"]
