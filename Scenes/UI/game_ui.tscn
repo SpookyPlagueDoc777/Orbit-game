@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://45fapg42o33g" path="res://Textures/UI/New ui box.png" id="2_vo2tu"]
 [ext_resource type="Texture2D" uid="uid://c6dshkxjwcrbn" path="res://Textures/UI/Blank ui box.png" id="4_bhxso"]
 [ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="4_wkbk7"]
+[ext_resource type="Texture2D" uid="uid://bmkpnomnr3dfm" path="res://Textures/UI/play button.png" id="6_p8jce"]
 [ext_resource type="Theme" uid="uid://dn5wefao8u26i" path="res://Textures/UI/workshop_theme.tres" id="6_pwiya"]
-[ext_resource type="Texture2D" uid="uid://bvkfsrq12bvn3" path="res://Textures/UI/pause button.png" id="9_llaam"]
 [ext_resource type="Texture2D" uid="uid://3hx262hts8k5" path="res://Textures/UI/SAVE.png" id="10_sr7wx"]
 [ext_resource type="PackedScene" uid="uid://bv011jc2j3aou" path="res://Scenes/UI/shop_menu.tscn" id="11_3nq5v"]
 
@@ -358,7 +358,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_pwiya")
 toggle_mode = true
-icon = ExtResource("9_llaam")
+icon = ExtResource("6_p8jce")
 icon_alignment = 1
 
 [node name="save" type="NinePatchRect" parent="." unique_id=1978910484]

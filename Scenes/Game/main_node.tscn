@@ -6,7 +6,6 @@
 [ext_resource type="PackedScene" uid="uid://cbp01vsjbcswu" path="res://Scenes/Game/game_scene.tscn" id="1_y60n4"]
 [ext_resource type="PackedScene" uid="uid://bgsgsmwi7fk7e" path="res://Scenes/UI/settings_menu_new.tscn" id="2_mht2n"]
 [ext_resource type="PackedScene" uid="uid://btisly1528rn5" path="res://Scenes/UI/pause_menu.tscn" id="4_3qm64"]
-[ext_resource type="Texture2D" uid="uid://bmkpnomnr3dfm" path="res://Textures/UI/play button.png" id="5_jp4ly"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_bgvvt"]
 shader = ExtResource("1_3qm64")
@@ -57,45 +56,16 @@ grow_vertical = 2
 [node name="SettingsMenu" parent="CanvasLayer" unique_id=21338912 instance=ExtResource("2_mht2n")]
 visible = false
 
-[node name="GameUI" parent="CanvasLayer" unique_id=138886182 node_paths=PackedStringArray("camera_2d") instance=ExtResource("1_oo0cf")]
-camera_2d = NodePath("../../GameScene/Camera2D")
-
-[node name="ShopButton" parent="CanvasLayer/GameUI" index="3" unique_id=1671849289]
-anchors_preset = 3
-anchor_left = 1.0
+[node name="GameUI" parent="CanvasLayer" unique_id=138886182 instance=ExtResource("1_oo0cf")]
+anchors_preset = 15
+anchor_left = 0.0
+anchor_top = 0.0
 anchor_right = 1.0
-offset_left = -95.99988
-offset_top = -127.65991
-offset_right = -63.999878
-offset_bottom = -85.0
-grow_horizontal = 0
-
-[node name="SatelliteList" parent="CanvasLayer/GameUI" index="5" unique_id=2098349597]
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-offset_left = -465.02
-offset_top = -125.95996
-offset_right = -155.01999
-offset_bottom = -83.95996
-grow_horizontal = 2
-grow_vertical = 0
-
-[node name="PauseButton" parent="CanvasLayer/GameUI/PauseButton" parent_id_path=PackedInt32Array(138886182, 1317757567) index="0" unique_id=1003308732]
-icon = ExtResource("5_jp4ly")
-
-[node name="GameOver" parent="CanvasLayer/GameUI" index="9" unique_id=2055132133]
-text = "Game Over!"
-
-[node name="GameOverTimer" parent="CanvasLayer/GameUI/GameOver" index="0" unique_id=339133672]
-wait_time = 5.0
-
-[node name="GameWon" parent="CanvasLayer/GameUI" index="10" unique_id=2068494220]
-text = "Quota Reached!"
-
-[node name="GameWonTimer" parent="CanvasLayer/GameUI/GameWon" index="0" unique_id=1487164128]
-wait_time = 6.0
+anchor_bottom = 1.0
+offset_left = 0.0
+offset_top = 0.0
+offset_right = 0.0
+offset_bottom = 0.0
 
 [node name="Root_pause" parent="CanvasLayer" unique_id=477685508 instance=ExtResource("4_3qm64")]
 visible = false
@@ -111,8 +81,6 @@ z_index = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="toggled" from="CanvasLayer/GameUI/PauseButton/PauseButton" to="." method="_on_pause_button_toggled"]
-[connection signal="timeout" from="CanvasLayer/GameUI/GameOver/GameOverTimer" to="." method="_on_game_over_timer_timeout"]
-[connection signal="timeout" from="CanvasLayer/GameUI/GameWon/GameWonTimer" to="." method="_on_game_won_timer_timeout"]
 [connection signal="timeout" from="save_timer_auto" to="." method="_on_save_timer_auto_timeout"]
 
 [editable path="CanvasLayer/GameUI"]
