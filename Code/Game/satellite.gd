@@ -31,7 +31,8 @@ const FONT = preload("uid://dr3nm75s2psu5")
 
 var baseangle: float = PI / 4.0
 var orbitspeed: float = 0.0
-var launchanimation: bool = true
+var launchanimation: bool = false
+var inorbit: bool = false
 var tween: Tween = null
 var second_timer: float = 0.0
 var _anim_tween: Tween = null
@@ -49,7 +50,12 @@ func _enter_tree() -> void:
 
 func _ready() -> void:
 	process_mode = PROCESS_MODE_ALWAYS
-	launch()
+	position = Vector2(7, -64)
+	scale = Vector2.ZERO
+
+func _process(delta: float) -> void:
+	if !Global.is_paused && !launchanimation && !inorbit:
+		launch()
 
 
 func get_clean_display_name() -> String:
@@ -257,3 +263,4 @@ func _on_area_2d_area_entered(_area: Area2D) -> void:
 
 func _on_animation_finished() -> void:
 	launchanimation = false
+	inorbit = true
