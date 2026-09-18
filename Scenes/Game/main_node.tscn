@@ -82,6 +82,8 @@ z_index = 1
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="toggled" from="CanvasLayer/GameUI/PauseButton/PauseButton" to="." method="_on_pause_button_toggled"]
+[connection signal="timeout" from="CanvasLayer/GameUI/GameOver/GameOverTimer" to="." method="_on_game_over_timer_timeout"]
+[connection signal="timeout" from="CanvasLayer/GameUI/GameWon/GameWonTimer" to="." method="_on_game_won_timer_timeout"]
 [connection signal="timeout" from="save_timer_auto" to="." method="_on_save_timer_auto_timeout"]
 
 [editable path="CanvasLayer/GameUI"]
