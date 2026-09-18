@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://m1cwwnee04y8" path="res://Textures/Satellites/Power satellite.png" id="3_2d0jm"]
 [ext_resource type="Texture2D" uid="uid://45fapg42o33g" path="res://Textures/UI/New ui box.png" id="4_63hau"]
 [ext_resource type="Texture2D" uid="uid://b1wam20ihd7kx" path="res://Textures/Satellites/Spin satellite.png" id="4_lkt5b"]
+[ext_resource type="Texture2D" uid="uid://b5sb0aldoffbi" path="res://Textures/UI/UI box GREEN.png" id="5_dlwse"]
 [ext_resource type="Texture2D" uid="uid://btg2cwm0n3ui" path="res://Textures/Satellites/shield satellite.png" id="5_hdw35"]
 [ext_resource type="Texture2D" uid="uid://nyea60dp2bjt" path="res://Textures/UI/Satellite inc.png" id="6_hdw35"]
 [ext_resource type="Texture2D" uid="uid://dxt8g5gymwpn5" path="res://Textures/UI/Left shop banner.png" id="7_40rfe"]
@@ -369,6 +370,23 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
+[node name="NinePatchRect" type="NinePatchRect" parent="ActualButtons/UpgradeAll" unique_id=542140543]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.226807
+offset_top = 2.0
+offset_right = -10.773193
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_dlwse")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
 [node name="UpgradeAllButton" type="Button" parent="ActualButtons/UpgradeAll" unique_id=1037438536]
 layout_mode = 1
 anchors_preset = 15
@@ -382,6 +400,7 @@ grow_horizontal = 2
 grow_vertical = 2
 offset_transform_enabled = true
 theme = ExtResource("1_lkt5b")
+theme_override_colors/font_color = Color(0.47058824, 0.39215687, 0.7764706, 1)
 text = "UPGRADE"
 
 [node name="Satellites" type="HBoxContainer" parent="ActualButtons" unique_id=1506906877]
