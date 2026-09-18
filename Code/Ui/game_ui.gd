@@ -49,7 +49,7 @@ func _on_save_load_completed(_success: bool) -> void:
 
 func _process(_delta: float) -> void:
 	if shop_menu.visible and is_instance_valid(upgrade_all_button):
-		upgrade_all_button.text = "Upgrade All!    " + str(Global.upgrade_all)
+		upgrade_all_button.text = "UPGRADE ALL SATELLITES NOW FOR JUST " + str(Global.upgrade_all) + " ENERGY!"
 
 
 func _input(event: InputEvent) -> void:

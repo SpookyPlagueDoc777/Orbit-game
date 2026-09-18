@@ -6,7 +6,6 @@
 [ext_resource type="Script" uid="uid://cpms880jwh8sb" path="res://Code/Ui/button.gd" id="3_e0asb"]
 [ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="4_v6ya1"]
 [ext_resource type="AudioStream" uid="uid://nkcnhb6kawop" path="res://Audio/SFX/click.wav" id="5_a33jk"]
-[ext_resource type="Shader" uid="uid://d782q5frqubu" path="res://Shaders/hud_overlay.gdshader" id="6_iql7g"]
 [ext_resource type="AudioStream" uid="uid://cbnlovy7wnrfs" path="res://Audio/Music/uhag.wav" id="7_u7lnc"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_5mo3g"]
@@ -35,16 +34,6 @@ shader_parameter/cloud_color_shiftx = 0.0
 shader_parameter/cloud_color_shifty = 0.0
 shader_parameter/background_color = Color(0.08062599, 0.002795482, 0.22340646, 1)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_mwrvg"]
-shader = ExtResource("6_iql7g")
-shader_parameter/scanline_count = 320.0
-shader_parameter/scanline_intensity = 0.15
-shader_parameter/scanline_speed = 0.25
-shader_parameter/vignette_intensity = 0.4
-shader_parameter/vignette_opacity = 0.5
-shader_parameter/warp_amount = 0.2
-shader_parameter/chromatic_aberration = 0.0
-
 [node name="Main_Menu" type="Node2D" unique_id=1149850653]
 script = ExtResource("1_mwrvg")
 
@@ -57,10 +46,10 @@ material = SubResource("ShaderMaterial_5mo3g")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 15.0
-offset_top = 3.0
-offset_right = 15.0
-offset_bottom = 3.0
+offset_left = -1.0
+offset_top = 2.0
+offset_right = -1.0
+offset_bottom = 2.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -170,19 +159,6 @@ stream = ExtResource("7_u7lnc")
 autoplay = true
 
 [node name="sfx" type="AudioStreamPlayer" parent="." unique_id=741858080 groups=["sfx_player"]]
-
-[node name="CRT" type="CanvasLayer" parent="." unique_id=472176811]
-
-[node name="overlay(still_in_progress)" type="ColorRect" parent="CRT" unique_id=457964996 groups=["crt"]]
-material = SubResource("ShaderMaterial_mwrvg")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 1.0
-offset_right = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
 
 [connection signal="pressed" from="Spaceeee/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Spaceeee/Button2" to="." method="_on_button_2_pressed"]

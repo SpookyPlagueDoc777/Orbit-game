@@ -281,7 +281,7 @@ size_flags_stretch_ratio = 0.15
 theme = ExtResource("4_yk8gx")
 
 [node name="SatelliteSprite" type="AnimatedSprite2D" parent="." unique_id=253052925]
-position = Vector2(13, 7)
+position = Vector2(10, 13.5)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"shield_satellite"
 autoplay = "shield_satellite"
@@ -304,7 +304,7 @@ horizontal_alignment = 1
 
 [node name="UpgradeContainer" type="NinePatchRect" parent="." unique_id=1213617198]
 layout_mode = 2
-size_flags_horizontal = 0
+size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.3
 texture = ExtResource("5_pb1q5")
 patch_margin_left = 8
