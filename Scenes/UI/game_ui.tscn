@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://45fapg42o33g" path="res://Textures/UI/New ui box.png" id="2_vo2tu"]
 [ext_resource type="Texture2D" uid="uid://c6dshkxjwcrbn" path="res://Textures/UI/Blank ui box.png" id="4_bhxso"]
 [ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="4_wkbk7"]
+[ext_resource type="Texture2D" uid="uid://cpwnqagwse588" path="res://Textures/UI/Satellite inc logo.png" id="6_mnd0w"]
 [ext_resource type="Texture2D" uid="uid://bmkpnomnr3dfm" path="res://Textures/UI/play button.png" id="6_p8jce"]
 [ext_resource type="Theme" uid="uid://dn5wefao8u26i" path="res://Textures/UI/workshop_theme.tres" id="6_pwiya"]
 [ext_resource type="Texture2D" uid="uid://3hx262hts8k5" path="res://Textures/UI/SAVE.png" id="10_sr7wx"]
@@ -24,6 +25,9 @@ font_size = 24
 [sub_resource type="LabelSettings" id="LabelSettings_0tkk7"]
 font = ExtResource("4_wkbk7")
 font_size = 20
+
+[sub_resource type="LabelSettings" id="LabelSettings_4oc0s"]
+line_spacing = -5.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_m6v8h"]
 font = ExtResource("4_wkbk7")
@@ -238,7 +242,45 @@ offset_bottom = 0.005973816
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_pwiya")
+icon = ExtResource("6_mnd0w")
 icon_alignment = 1
+
+[node name="Label" type="Label" parent="ShopButton" unique_id=63319415]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.5
+offset_top = -27.0
+offset_right = 43.5
+offset_bottom = -9.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("6_pwiya")
+text = "COMPANY WORKSHOP"
+label_settings = SubResource("LabelSettings_4oc0s")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ShopButton" unique_id=1175522028]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -43.5
+offset_top = -101.0
+offset_right = 43.5
+offset_bottom = -83.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("6_pwiya")
+text = "GET MORE SATELLITES
+NOW!"
+label_settings = SubResource("LabelSettings_4oc0s")
+horizontal_alignment = 1
 
 [node name="Timer" type="NinePatchRect" parent="." unique_id=766518046]
 layout_mode = 1
