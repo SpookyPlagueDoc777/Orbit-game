@@ -2,10 +2,13 @@ extends VBoxContainer
 
 @onready var line_edit: LineEdit = $VBoxContainer/LineEdit
 @onready var sprite: AnimatedSprite2D = $VBoxContainer/SatelliteSprite
-@onready var upgrade_num: Label = $VBoxContainer/Label
+@onready var upgrade_num: Label = $VBoxContainer/UpgradeNum
 @onready var upgrade_button: Button = $VBoxContainer/UpgradeContainer/UpgradeButton
+@onready var hp_bar: ProgressBar = $HPContainer/HPBar
+@onready var repair_button: Button = $VBoxContainer/RepairContainer/RepairButton
 
-var current_price: int = 100
+var current_price_upgrade: int = 100
+var current_price_repair: int = 100
 var the_satellite: Node = null
 
 
@@ -13,6 +16,10 @@ func _ready() -> void:
 	if Global.has_signal("updatelist"):
 		Global.updatelist.connect(_on_update_necessary)
 
+func _process(delta: float) -> void:
+	current_price_repair =round((1 - clamp(the_satellite.health/the_satellite.max_health, 0, 1)) * the_satellite.satenergylaunch * 0.6)
+	hp_bar.value = clamp(the_satellite.health/the_satellite.max_health, 0, 1)
+	repair_button.text = "Repair\n" + str(current_price_repair)
 
 func setup_info(satellites: Node, double: bool = false) -> void:
 	update_info(satellites, double)
@@ -37,8 +44,8 @@ func update_info(satellites: Node, double: bool = false) -> void:
 	if is_instance_valid(line_edit):
 		line_edit.text = satellites.satellitename
 		
-	current_price = the_satellite.upgrade * 50 + 100
-	var calculated_cost := current_price / 2 if double else current_price
+	current_price_upgrade = the_satellite.upgrade * 50 + 100
+	var calculated_cost := current_price_upgrade / 2 if double else current_price_upgrade
 	Global.upgrade_all += calculated_cost
 	
 	_update_ui_labels(false)
@@ -52,8 +59,8 @@ func _update_ui_labels(animate: bool = false) -> void:
 	var new_num := str(the_satellite.upgrade)
 	upgrade_num.text = new_num
 	
-	current_price = the_satellite.upgrade * 50 + 100
-	upgrade_button.text = "Upgrade\n" + str(current_price)
+	current_price_upgrade = the_satellite.upgrade * 50 + 100
+	upgrade_button.text = "Upgrade\n" + str(current_price_upgrade)
 
 	if animate and old_num != new_num:
 		_animate_level_punch()
@@ -68,9 +75,9 @@ func _on_upgrade_button_pressed() -> void:
 	if not is_instance_valid(the_satellite):
 		return
 		
-	current_price = the_satellite.upgrade * 50 + 100
+	current_price_upgrade = the_satellite.upgrade * 50 + 100
 
-	if current_price <= Global.energy:
+	if current_price_upgrade <= Global.energy:
 		SoundManager.successful_push()
 		
 		# UI Button punch animation
@@ -88,15 +95,37 @@ func _on_upgrade_button_pressed() -> void:
 		shake_tween.tween_property(upgrade_button, "position:x", upgrade_button.position.x - 5.0, 0.04)
 		shake_tween.tween_property(upgrade_button, "position:x", upgrade_button.position.x, 0.04)
 
+func _on_repair_button_pressed() -> void:
+	if not is_instance_valid(the_satellite):
+		return
+	
+	if current_price_repair <= Global.energy && current_price_repair > 0:
+		SoundManager.successful_push()
+		
+		# UI Button punch animation
+		var btn_tween := create_tween().set_trans(Tween.TRANS_QUAD).set_ease(Tween.EASE_OUT)
+		btn_tween.tween_property(repair_button, "scale", Vector2(0.9, 0.9), 0.05)
+		btn_tween.tween_property(repair_button, "scale", Vector2.ONE, 0.1)
+
+		repair()
+	else:
+		SoundManager.unsuccessful_push()
+		
+		# Denied button shake animation
+		var shake_tween := create_tween().set_trans(Tween.TRANS_SINE)
+		shake_tween.tween_property(repair_button, "position:x", repair_button.position.x + 5.0, 0.04)
+		shake_tween.tween_property(repair_button, "position:x", repair_button.position.x - 5.0, 0.04)
+		shake_tween.tween_property(repair_button, "position:x", repair_button.position.x, 0.04)
+		
 
 func upgrade() -> void:
 	if not is_instance_valid(the_satellite):
 		return
 
-	current_price = the_satellite.upgrade * 50 + 100
+	current_price_upgrade = the_satellite.upgrade * 50 + 100
 
-	if current_price <= Global.energy:
-		Global.energy -= current_price
+	if current_price_upgrade <= Global.energy:
+		Global.energy -= current_price_upgrade
 		the_satellite.upgrade += 1
 		
 		_spawn_row_popup("+1 LVL!", Color(1.0, 0.9, 0.1))
@@ -109,6 +138,23 @@ func upgrade() -> void:
 		if Global.has_signal("updatelist"):
 			Global.updatelist.emit()
 
+func repair() -> void:
+	if not is_instance_valid(the_satellite):
+		return
+
+	if current_price_repair <= Global.energy:
+		Global.energy -= current_price_repair
+		the_satellite.health = the_satellite.max_health
+		
+		_spawn_row_popup("Repaired", Color(0.0, 0.735, 0.075))
+		_update_ui_labels(true)
+		
+		# THIS BROADCASTS TO THE WORLD AND TRIGGERS THE SATELLITE'S BOUNCE/GLOW/TEXT
+		#if Global.has_signal("satellite_upgraded"):
+			#Global.satellite_upgraded.emit(the_satellite)
+		
+		if Global.has_signal("updatelist"):
+			Global.updatelist.emit()
 
 func _on_update_necessary() -> void:
 	if is_instance_valid(the_satellite):

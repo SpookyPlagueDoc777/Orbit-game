@@ -132,6 +132,9 @@ func update_position(delta: float = 0.0) -> void:
 		
 	spin_satellite()
 
+func update_hp() -> void:
+	if health > 0.1:
+		health -= 0.005
 
 func orbit_planet(delta: float) -> void:
 	if orbitradius <= 0.0:
@@ -158,7 +161,7 @@ func update_spin(delta: float) -> void:
 func update_energy() -> void:
 	if Global.is_paused or launchanimation:
 		return
-	Global.energy += satenergyprod
+	Global.energy += satenergyprod * clampf(health/max_health + 0.25, 0, 1)
 
 
 func take_damage(amount: float) -> void:

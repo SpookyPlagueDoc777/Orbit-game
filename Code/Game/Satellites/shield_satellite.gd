@@ -18,8 +18,10 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	update_position(delta)
 	
-	second_timer += delta
+	if !Global.is_paused:
+		second_timer += delta
 	update_spin(delta)
 	if second_timer >= 1.0:
 		second_timer -= 1.0
 		update_energy()
+		update_hp()

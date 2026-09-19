@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://b1wam20ihd7kx" path="res://Textures/Satellites/Spin satellite.png" id="3_hj66n"]
 [ext_resource type="Theme" uid="uid://dn5wefao8u26i" path="res://Textures/UI/workshop_theme.tres" id="4_yk8gx"]
 [ext_resource type="Texture2D" uid="uid://dimb3bst8s38i" path="res://Textures/UI/UI box.png" id="5_pb1q5"]
-[ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="7_hj66n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_km370"]
 atlas = ExtResource("1_ou6jr")
@@ -264,10 +263,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="LabelSettings" id="LabelSettings_duafg"]
-font = ExtResource("7_hj66n")
-font_size = 20
-
 [node name="SatelliteInfo" type="VBoxContainer" unique_id=247986615]
 anchors_preset = 15
 anchor_right = 1.0
@@ -283,6 +278,7 @@ script = ExtResource("1_5itan")
 [node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=1319755833]
 layout_mode = 2
 size_flags_horizontal = 3
+alignment = 1
 
 [node name="Label" type="Label" parent="VBoxContainer" unique_id=838029287]
 layout_mode = 2
@@ -291,7 +287,7 @@ size_flags_stretch_ratio = 0.15
 theme = ExtResource("4_yk8gx")
 
 [node name="SatelliteSprite" type="AnimatedSprite2D" parent="VBoxContainer" unique_id=253052925]
-position = Vector2(11, 12)
+position = Vector2(9, 11.75)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"shield_satellite"
 autoplay = "shield_satellite"
@@ -354,13 +350,28 @@ theme = ExtResource("4_yk8gx")
 theme_override_font_sizes/font_size = 12
 text = "Repair"
 
-[node name="Hpbar" type="Label" parent="." unique_id=390551004]
+[node name="HPContainer" type="HBoxContainer" parent="." unique_id=929522663]
 layout_mode = 2
-size_flags_vertical = 3
-text = "hp bar"
-label_settings = SubResource("LabelSettings_duafg")
-horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="HPContainer" unique_id=1072487939]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+theme = ExtResource("4_yk8gx")
+
+[node name="HPBar" type="ProgressBar" parent="HPContainer" unique_id=596653852]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.46
+max_value = 1.0
+show_percentage = false
+
+[node name="Label2" type="Label" parent="HPContainer" unique_id=1752323886]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.15
+theme = ExtResource("4_yk8gx")
 
 [connection signal="text_changed" from="VBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
 [connection signal="pressed" from="VBoxContainer/UpgradeContainer/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/RepairContainer/RepairButton" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/RepairContainer/RepairButton" to="." method="_on_repair_button_pressed"]
