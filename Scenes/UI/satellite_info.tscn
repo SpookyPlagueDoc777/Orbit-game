@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://b1wam20ihd7kx" path="res://Textures/Satellites/Spin satellite.png" id="3_hj66n"]
 [ext_resource type="Theme" uid="uid://dn5wefao8u26i" path="res://Textures/UI/workshop_theme.tres" id="4_yk8gx"]
 [ext_resource type="Texture2D" uid="uid://dimb3bst8s38i" path="res://Textures/UI/UI box.png" id="5_pb1q5"]
+[ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="7_hj66n"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_km370"]
 atlas = ExtResource("1_ou6jr")
@@ -263,30 +264,39 @@ animations = [{
 "speed": 10.0
 }]
 
-[node name="SatelliteInfo" type="HBoxContainer" unique_id=586943003]
+[sub_resource type="LabelSettings" id="LabelSettings_duafg"]
+font = ExtResource("7_hj66n")
+font_size = 20
+
+[node name="SatelliteInfo" type="VBoxContainer" unique_id=247986615]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_right = -978.0
+offset_top = -17.5
+offset_right = -967.0
 offset_bottom = -632.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
 script = ExtResource("1_5itan")
 
-[node name="Label" type="Label" parent="." unique_id=838029287]
+[node name="VBoxContainer" type="HBoxContainer" parent="." unique_id=1319755833]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="Label" type="Label" parent="VBoxContainer" unique_id=838029287]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.15
 theme = ExtResource("4_yk8gx")
 
-[node name="SatelliteSprite" type="AnimatedSprite2D" parent="." unique_id=253052925]
-position = Vector2(10, 13.5)
+[node name="SatelliteSprite" type="AnimatedSprite2D" parent="VBoxContainer" unique_id=253052925]
+position = Vector2(11, 12)
 sprite_frames = SubResource("SpriteFrames_g4v7s")
 animation = &"shield_satellite"
 autoplay = "shield_satellite"
 
-[node name="LineEdit" type="LineEdit" parent="." unique_id=375923887]
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer" unique_id=375923887]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 4
@@ -294,7 +304,7 @@ theme = ExtResource("4_yk8gx")
 text = "Satellite"
 alignment = 1
 
-[node name="UpgradeNum" type="Label" parent="." unique_id=756568558]
+[node name="UpgradeNum" type="Label" parent="VBoxContainer" unique_id=756568558]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.08
@@ -302,7 +312,7 @@ theme = ExtResource("4_yk8gx")
 text = "0"
 horizontal_alignment = 1
 
-[node name="UpgradeContainer" type="NinePatchRect" parent="." unique_id=1213617198]
+[node name="UpgradeContainer" type="NinePatchRect" parent="VBoxContainer" unique_id=1213617198]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.3
@@ -312,7 +322,7 @@ patch_margin_top = 8
 patch_margin_right = 8
 patch_margin_bottom = 8
 
-[node name="UpgradeButton" type="Button" parent="UpgradeContainer" unique_id=437231952]
+[node name="UpgradeButton" type="Button" parent="VBoxContainer/UpgradeContainer" unique_id=437231952]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -320,8 +330,37 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("4_yk8gx")
-theme_override_font_sizes/font_size = 8
+theme_override_font_sizes/font_size = 12
 text = "Upgrade"
 
-[connection signal="text_changed" from="LineEdit" to="." method="_on_line_edit_text_changed"]
-[connection signal="pressed" from="UpgradeContainer/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
+[node name="RepairContainer" type="NinePatchRect" parent="VBoxContainer" unique_id=1688328277]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.3
+texture = ExtResource("5_pb1q5")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="RepairButton" type="Button" parent="VBoxContainer/RepairContainer" unique_id=980155376]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("4_yk8gx")
+theme_override_font_sizes/font_size = 12
+text = "Repair"
+
+[node name="Hpbar" type="Label" parent="." unique_id=390551004]
+layout_mode = 2
+size_flags_vertical = 3
+text = "hp bar"
+label_settings = SubResource("LabelSettings_duafg")
+horizontal_alignment = 1
+
+[connection signal="text_changed" from="VBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="VBoxContainer/UpgradeContainer/UpgradeButton" to="." method="_on_upgrade_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/RepairContainer/RepairButton" to="." method="_on_upgrade_button_pressed"]

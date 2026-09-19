@@ -470,7 +470,6 @@ label_settings = SubResource("LabelSettings_kg4il")
 [node name="GameOverTimer" type="Timer" parent="GameOver" unique_id=662451635]
 wait_time = 0.5
 one_shot = true
-ignore_time_scale = true
 
 [node name="GameWon" type="Label" parent="." unique_id=281144875]
 visible = false
@@ -493,7 +492,6 @@ label_settings = SubResource("LabelSettings_kg4il")
 [node name="GameWonTimer" type="Timer" parent="GameWon" unique_id=65375581]
 wait_time = 0.5
 one_shot = true
-ignore_time_scale = true
 
 [node name="SaveNotification" type="Label" parent="." unique_id=1978442328]
 modulate = Color(1, 1, 1, 0)

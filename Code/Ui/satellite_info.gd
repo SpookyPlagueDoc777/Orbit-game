@@ -1,9 +1,9 @@
-extends HBoxContainer
+extends VBoxContainer
 
-@onready var line_edit: LineEdit = $LineEdit
-@onready var sprite: AnimatedSprite2D = $SatelliteSprite
-@onready var upgrade_num: Label = $UpgradeNum
-@onready var upgrade_button: Button = $UpgradeContainer/UpgradeButton
+@onready var line_edit: LineEdit = $VBoxContainer/LineEdit
+@onready var sprite: AnimatedSprite2D = $VBoxContainer/SatelliteSprite
+@onready var upgrade_num: Label = $VBoxContainer/Label
+@onready var upgrade_button: Button = $VBoxContainer/UpgradeContainer/UpgradeButton
 
 var current_price: int = 100
 var the_satellite: Node = null
