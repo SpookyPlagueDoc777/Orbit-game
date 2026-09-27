@@ -11,8 +11,9 @@ func _init() -> void:
 	satspinprod = 0.0
 
 func _ready() -> void:
-	if launchanimation:
-		orbitradius = float(randi_range(110, 249))
+	orbitradius = float(randi_range(110, 249))
+	#if launchanimation:
+		#pass
 	super._ready()
 
 func _physics_process(delta: float) -> void:
