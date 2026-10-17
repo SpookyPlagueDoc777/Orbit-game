@@ -2,8 +2,8 @@
 
 [ext_resource type="Shader" uid="uid://c8v3r1e4aqnys" path="res://Shaders/main_node.gdshader" id="1_6rmd8"]
 [ext_resource type="Script" uid="uid://chi1q21dpmi1k" path="res://Code/Game/main_menu.gd" id="1_mwrvg"]
-[ext_resource type="Texture2D" uid="uid://dr3lai1e14cwb" path="res://Textures/UI/title.png" id="2_5mo3g"]
 [ext_resource type="Script" uid="uid://cpms880jwh8sb" path="res://Code/Ui/button.gd" id="3_e0asb"]
+[ext_resource type="Texture2D" uid="uid://cj4h4yycm1gkg" path="res://Textures/UI/Satellite inc logo writing.png" id="3_mwrvg"]
 [ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="4_v6ya1"]
 [ext_resource type="AudioStream" uid="uid://nkcnhb6kawop" path="res://Audio/SFX/click.wav" id="5_a33jk"]
 [ext_resource type="AudioStream" uid="uid://cbnlovy7wnrfs" path="res://Audio/Music/uhag.wav" id="7_u7lnc"]
@@ -54,9 +54,9 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Title" type="Sprite2D" parent="Spaceeee" unique_id=1248956559]
-position = Vector2(587, 149)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_5mo3g")
+position = Vector2(587, 186.00002)
+scale = Vector2(5, 5)
+texture = ExtResource("3_mwrvg")
 
 [node name="Button" type="Button" parent="Spaceeee" unique_id=482456953]
 anchors_preset = 8
@@ -65,20 +65,26 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -73.5
-offset_top = -15.0
+offset_top = 28.0
 offset_right = 73.5
-offset_bottom = 15.0
+offset_bottom = 58.0
 grow_horizontal = 2
 grow_vertical = 2
 flat = true
 script = ExtResource("3_e0asb")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Spaceeee/Button" unique_id=984328681]
-layout_mode = 0
-offset_left = -25.5
-offset_top = 5.0
-offset_right = 174.5
-offset_bottom = 50.0
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -100.0
+offset_top = -45.0
+offset_right = 100.0
+grow_horizontal = 2
+grow_vertical = 0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("4_v6ya1")
@@ -97,20 +103,27 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -70.0
-offset_top = 130.0
+offset_top = 173.0
 offset_right = 57.5
-offset_bottom = 194.0
+offset_bottom = 237.0
 grow_horizontal = 2
 grow_vertical = 2
 flat = true
 script = ExtResource("3_e0asb")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Spaceeee/Button2" unique_id=1330910742]
-layout_mode = 0
-offset_left = -44.5
-offset_top = 5.0
-offset_right = 182.16667
-offset_bottom = 56.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.333336
+offset_top = -25.5
+offset_right = 113.333336
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("4_v6ya1")
@@ -129,20 +142,27 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -132.0
-offset_top = 55.0
+offset_top = 98.0
 offset_right = 127.5
-offset_bottom = 119.0
+offset_bottom = 162.0
 grow_horizontal = 2
 grow_vertical = 2
 flat = true
 script = ExtResource("3_e0asb")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Spaceeee/reset_progress_button" unique_id=428254622]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 5.0
-offset_right = 253.16669
-offset_bottom = 56.0
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -117.08334
+offset_top = -25.5
+offset_right = 117.08334
+offset_bottom = 25.5
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 20
 theme_override_fonts/normal_font = ExtResource("4_v6ya1")

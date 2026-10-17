@@ -363,6 +363,7 @@ theme = ExtResource("4_yk8gx")
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_stretch_ratio = 0.46
+theme = ExtResource("4_yk8gx")
 max_value = 1.0
 show_percentage = false
 
