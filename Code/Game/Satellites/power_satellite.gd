@@ -12,8 +12,6 @@ func _init() -> void:
 
 func _ready() -> void:
 	orbitradius = float(randi_range(110, 249))
-	#if launchanimation:
-		#pass
 	super._ready()
 
 func _physics_process(delta: float) -> void:

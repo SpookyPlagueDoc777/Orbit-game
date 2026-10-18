@@ -32,7 +32,7 @@ func _ready() -> void:
 func _on_individual_satellite_upgraded(sat_node: Node) -> void:
 	if is_instance_valid(sat_node):
 		# 1. World Popup over satellite in game space
-		spawn_floating_text(sat_node.global_position, "LVL UP! [" + str(sat_node.upgrade) + "]", Color(1.0, 0.9, 0.1))
+		#spawn_floating_text(sat_node.global_position, "LVL UP! [" + str(sat_node.upgrade) + "]", Color(1.0, 0.9, 0.1))
 		
 		# 2. Center-screen floating popup
 		var sat_name: String = sat_node.get_clean_display_name() if sat_node.has_method("get_clean_display_name") else sat_node.name.to_upper()

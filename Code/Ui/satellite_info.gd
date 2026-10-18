@@ -128,7 +128,7 @@ func upgrade() -> void:
 		Global.energy -= current_price_upgrade
 		the_satellite.upgrade += 1
 		
-		_spawn_row_popup("+1 LVL!", Color(1.0, 0.9, 0.1))
+		#_spawn_row_popup("+1 LVL!", Color(1.0, 0.9, 0.1))
 		_update_ui_labels(true)
 		
 		# THIS BROADCASTS TO THE WORLD AND TRIGGERS THE SATELLITE'S BOUNCE/GLOW/TEXT
@@ -163,7 +163,7 @@ func _on_update_necessary() -> void:
 
 
 func _animate_level_punch() -> void:
-	upgrade_num.pivot_offset = upgrade_num.size / 2.0
+	#upgrade_num.pivot_offset = upgrade_num.size / 2.0
 	
 	var tween := create_tween().set_parallel(true).set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
 	upgrade_num.scale = Vector2(1.6, 1.6)
@@ -176,8 +176,8 @@ func _animate_level_punch() -> void:
 func _spawn_row_popup(txt: String, color: Color) -> void:
 	var label := Label.new()
 	label.text = txt
-	label.global_position = upgrade_button.global_position + Vector2(-10, -10)
-	label.z_index = 100
+	label.global_position = upgrade_button.global_position*0.62 + Vector2(-320,-170)
+	label.z_index = 300
 	
 	label.add_theme_color_override("font_color", color)
 	label.add_theme_color_override("font_outline_color", Color.BLACK)
