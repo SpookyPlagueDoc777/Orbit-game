@@ -1,0 +1,813 @@
+[gd_scene format=3 uid="uid://ds4nbah3c6j53"]
+
+[ext_resource type="Theme" uid="uid://dn5wefao8u26i" path="res://Textures/UI/workshop_theme.tres" id="1_heb5n"]
+[ext_resource type="Texture2D" uid="uid://nyea60dp2bjt" path="res://Textures/UI/Satellite inc.png" id="2_6up0w"]
+[ext_resource type="Texture2D" uid="uid://dxt8g5gymwpn5" path="res://Textures/UI/Left shop banner.png" id="3_31ls0"]
+[ext_resource type="Texture2D" uid="uid://45fapg42o33g" path="res://Textures/UI/New ui box.png" id="4_wm1f4"]
+[ext_resource type="Texture2D" uid="uid://b5sb0aldoffbi" path="res://Textures/UI/UI box GREEN.png" id="5_d5a4x"]
+[ext_resource type="Texture2D" uid="uid://dimb3bst8s38i" path="res://Textures/UI/UI box.png" id="6_1gvaq"]
+[ext_resource type="Texture2D" uid="uid://m1cwwnee04y8" path="res://Textures/Satellites/Power satellite.png" id="7_3bkcd"]
+[ext_resource type="Texture2D" uid="uid://b1wam20ihd7kx" path="res://Textures/Satellites/Spin satellite.png" id="8_6q36b"]
+[ext_resource type="Texture2D" uid="uid://btg2cwm0n3ui" path="res://Textures/Satellites/shield satellite.png" id="9_3hhne"]
+[ext_resource type="FontFile" uid="uid://dr3nm75s2psu5" path="res://Textures/fonts/m3x6.ttf" id="10_8g3wk"]
+[ext_resource type="Texture2D" uid="uid://c6dshkxjwcrbn" path="res://Textures/UI/Blank ui box.png" id="11_8brh1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_km370"]
+atlas = ExtResource("7_3bkcd")
+region = Rect2(0, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lkt5b"]
+atlas = ExtResource("7_3bkcd")
+region = Rect2(10, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hdw35"]
+atlas = ExtResource("7_3bkcd")
+region = Rect2(20, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_40rfe"]
+atlas = ExtResource("7_3bkcd")
+region = Rect2(30, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8gxsv"]
+atlas = ExtResource("7_3bkcd")
+region = Rect2(40, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_63hau"]
+atlas = ExtResource("7_3bkcd")
+region = Rect2(50, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dlwse"]
+atlas = ExtResource("7_3bkcd")
+region = Rect2(60, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ow78v"]
+atlas = ExtResource("7_3bkcd")
+region = Rect2(70, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xehea"]
+atlas = ExtResource("7_3bkcd")
+region = Rect2(80, 0, 10, 10)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_p8pme"]
+atlas = ExtResource("7_3bkcd")
+region = Rect2(90, 0, 10, 10)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hcgf7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_km370")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lkt5b")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hdw35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_40rfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8gxsv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_63hau")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dlwse")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ow78v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xehea")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_p8pme")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_w5a2s"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_f52an"]
+font_size = 24
+
+[sub_resource type="LabelSettings" id="LabelSettings_vutgg"]
+line_spacing = 0.02
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_18laf"]
+atlas = ExtResource("8_6q36b")
+region = Rect2(0, 0, 20, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1t63e"]
+atlas = ExtResource("8_6q36b")
+region = Rect2(20, 0, 20, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_twkm8"]
+atlas = ExtResource("8_6q36b")
+region = Rect2(40, 0, 20, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jrcdi"]
+atlas = ExtResource("8_6q36b")
+region = Rect2(60, 0, 20, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_u015v"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_18laf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1t63e")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_twkm8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jrcdi")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lktu3"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(0, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cbrc"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(12, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_56hqn"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(24, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_35imt"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(36, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r6mmi"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(48, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77ckn"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(60, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ynaav"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(72, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b56lu"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(84, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_egyhu"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(96, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2v541"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(108, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnv6q"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(120, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pvucs"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(132, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajf2w"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(144, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eut25"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(156, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oivvi"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(168, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyhql"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(180, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nrrrk"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(192, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rqwbq"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(204, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nb7n1"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(216, 0, 12, 12)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_il7fq"]
+atlas = ExtResource("9_3hhne")
+region = Rect2(228, 0, 12, 12)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e4vul"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lktu3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cbrc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_56hqn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_35imt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r6mmi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77ckn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ynaav")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b56lu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_egyhu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2v541")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnv6q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pvucs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajf2w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eut25")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oivvi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyhql")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nrrrk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rqwbq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nb7n1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_il7fq")
+}],
+"loop": 1,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_nnfyh"]
+font = ExtResource("10_8g3wk")
+font_size = 18
+
+[node name="Old_shopmenu" type="Control" unique_id=412971892]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("1_heb5n")
+
+[node name="Control" type="Control" parent="." unique_id=2125122089]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="TextureRect" type="TextureRect" parent="Control" unique_id=217998657]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -555.0
+offset_top = 15.0
+offset_right = 558.25977
+offset_bottom = 163.04004
+grow_horizontal = 2
+texture = ExtResource("2_6up0w")
+
+[node name="TextureRect2" type="TextureRect" parent="Control" unique_id=1225702618]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.023000002
+anchor_top = 1.0
+anchor_right = 0.023000002
+anchor_bottom = 1.0
+offset_left = -0.4960022
+offset_top = -475.0
+offset_right = 248.504
+grow_vertical = 0
+size_flags_horizontal = 3
+texture = ExtResource("3_31ls0")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Control" unique_id=211956020]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -258.0
+offset_top = -148.0
+offset_right = 258.0
+offset_bottom = 57.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_wm1f4")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="ActualButtons" type="VBoxContainer" parent="." unique_id=1895689311]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -258.2268
+offset_top = -445.0
+offset_right = 258.2268
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="UpgradeAll" type="NinePatchRect" parent="ActualButtons" unique_id=1165820374]
+layout_mode = 2
+size_flags_vertical = 0
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ActualButtons/UpgradeAll" unique_id=614113969]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 11.226807
+offset_top = 2.0
+offset_right = -10.773193
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_d5a4x")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="UpgradeAllButton" type="Button" parent="ActualButtons/UpgradeAll" unique_id=1563746586]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.226807
+offset_top = -1.5
+offset_right = -9.773193
+offset_bottom = 1.5
+grow_horizontal = 2
+grow_vertical = 2
+offset_transform_enabled = true
+theme = ExtResource("1_heb5n")
+theme_override_colors/font_color = Color(0.47058824, 0.39215687, 0.7764706, 1)
+text = "UPGRADE"
+
+[node name="Satellites" type="HBoxContainer" parent="ActualButtons" unique_id=207520421]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.5
+
+[node name="EnergySatellite" type="NinePatchRect" parent="ActualButtons/Satellites" unique_id=461655230]
+layout_mode = 2
+size_flags_horizontal = 3
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="BuyEnergySatellite" type="Button" parent="ActualButtons/Satellites/EnergySatellite" unique_id=511742027]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 12.226807
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite" unique_id=1250276752]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -3.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite/Control" unique_id=769973594]
+layout_mode = 0
+offset_left = -53.386597
+offset_top = -48.5
+offset_right = 51.613403
+offset_bottom = -28.5
+texture = ExtResource("6_1gvaq")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite/Control" unique_id=1510839453]
+layout_mode = 0
+offset_left = -79.3866
+offset_top = 37.5
+offset_right = 81.6134
+offset_bottom = 94.5
+texture = ExtResource("6_1gvaq")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite/Control" unique_id=882565174]
+position = Vector2(-0.5, 2.5)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_hcgf7")
+autoplay = "default"
+
+[node name="SatelliteName" type="Label" parent="ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite" unique_id=397106663]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -9.000008
+offset_right = 15.0
+offset_bottom = -2.6666718
+grow_horizontal = 2
+grow_vertical = 0
+text = "Power satellite"
+label_settings = SubResource("LabelSettings_w5a2s")
+horizontal_alignment = 1
+
+[node name="EnergyCost" type="Label" parent="ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite" unique_id=1473462510]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -48.0
+offset_top = 2.6666718
+offset_right = 48.0
+offset_bottom = 21.666672
+grow_horizontal = 2
+text = "Energy cost: 100"
+label_settings = SubResource("LabelSettings_f52an")
+horizontal_alignment = 1
+
+[node name="SatelliteDesc" type="Label" parent="ActualButtons/Satellites/EnergySatellite/BuyEnergySatellite" unique_id=1172544350]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.5
+offset_top = 52.0
+offset_right = 76.5
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This satellite passively generates more
+energy for our glorious company to 
+launch even MORE satellites!"
+label_settings = SubResource("LabelSettings_vutgg")
+horizontal_alignment = 1
+
+[node name="SpinSatellite" type="NinePatchRect" parent="ActualButtons/Satellites" unique_id=1022516507]
+layout_mode = 2
+size_flags_horizontal = 3
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="BuySpinSatellite" type="Button" parent="ActualButtons/Satellites/SpinSatellite" unique_id=1814966501]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="ActualButtons/Satellites/SpinSatellite/BuySpinSatellite" unique_id=1730840665]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 1.6666565
+offset_right = 1.6666565
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ActualButtons/Satellites/SpinSatellite/BuySpinSatellite/Control" unique_id=1935030214]
+position = Vector2(1.0601807, 1.5)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_u015v")
+autoplay = "default"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ActualButtons/Satellites/SpinSatellite/BuySpinSatellite/Control" unique_id=909041227]
+layout_mode = 0
+offset_left = -54.386597
+offset_top = -51.5
+offset_right = 50.613403
+offset_bottom = -31.5
+texture = ExtResource("6_1gvaq")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="ActualButtons/Satellites/SpinSatellite/BuySpinSatellite/Control" unique_id=1217021957]
+layout_mode = 0
+offset_left = -80.3866
+offset_top = 34.5
+offset_right = 80.6134
+offset_bottom = 91.5
+texture = ExtResource("6_1gvaq")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="SatelliteName" type="Label" parent="ActualButtons/Satellites/SpinSatellite/BuySpinSatellite" unique_id=163374765]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -9.000008
+offset_right = 15.0
+offset_bottom = -2.6666718
+grow_horizontal = 2
+grow_vertical = 0
+text = "Spin satellite"
+label_settings = SubResource("LabelSettings_w5a2s")
+horizontal_alignment = 1
+
+[node name="EnergyCost" type="Label" parent="ActualButtons/Satellites/SpinSatellite/BuySpinSatellite" unique_id=503686214]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 2.6666718
+offset_right = 20.0
+offset_bottom = 15.666672
+grow_horizontal = 2
+text = "Energy cost: 400"
+label_settings = SubResource("LabelSettings_f52an")
+horizontal_alignment = 1
+
+[node name="SatelliteDesc" type="Label" parent="ActualButtons/Satellites/SpinSatellite/BuySpinSatellite" unique_id=928169791]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -74.5
+offset_top = -6.0
+offset_right = 78.5
+offset_bottom = 32.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "This satellite passively generates spin,
+so that we may spin faster and more
+vigorously then anyone else!"
+label_settings = SubResource("LabelSettings_vutgg")
+horizontal_alignment = 1
+
+[node name="ShieldSatellite" type="NinePatchRect" parent="ActualButtons/Satellites" unique_id=1287046215]
+layout_mode = 2
+size_flags_horizontal = 3
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="BuyShieldSatellite" type="Button" parent="ActualButtons/Satellites/ShieldSatellite" unique_id=1223673013]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -9.772995
+offset_bottom = -12.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+
+[node name="Control" type="Control" parent="ActualButtons/Satellites/ShieldSatellite/BuyShieldSatellite" unique_id=1089604953]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ActualButtons/Satellites/ShieldSatellite/BuyShieldSatellite/Control" unique_id=1310621886]
+position = Vector2(-0.006668091, 0.66667557)
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_e4vul")
+autoplay = "default"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="ActualButtons/Satellites/ShieldSatellite/BuyShieldSatellite/Control" unique_id=1517694168]
+layout_mode = 0
+offset_left = -53.386597
+offset_top = -51.5
+offset_right = 51.613403
+offset_bottom = -31.5
+texture = ExtResource("6_1gvaq")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="NinePatchRect2" type="NinePatchRect" parent="ActualButtons/Satellites/ShieldSatellite/BuyShieldSatellite/Control" unique_id=1617844821]
+layout_mode = 0
+offset_left = -80.3866
+offset_top = 34.5
+offset_right = 80.6134
+offset_bottom = 91.5
+texture = ExtResource("6_1gvaq")
+patch_margin_left = 8
+patch_margin_top = 8
+patch_margin_right = 8
+patch_margin_bottom = 8
+
+[node name="SatelliteName" type="Label" parent="ActualButtons/Satellites/ShieldSatellite/BuyShieldSatellite" unique_id=2085447637]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -15.0
+offset_top = -9.000008
+offset_right = 15.0
+offset_bottom = -2.6666718
+grow_horizontal = 2
+grow_vertical = 0
+text = "shield satellite"
+label_settings = SubResource("LabelSettings_w5a2s")
+horizontal_alignment = 1
+
+[node name="EnergyCost" type="Label" parent="ActualButtons/Satellites/ShieldSatellite/BuyShieldSatellite" unique_id=1101511028]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_top = 2.6666718
+offset_right = 20.0
+offset_bottom = 15.666672
+grow_horizontal = 2
+text = "Energy cost: 700"
+label_settings = SubResource("LabelSettings_f52an")
+horizontal_alignment = 1
+
+[node name="SatelliteDesc" type="Label" parent="ActualButtons/Satellites/ShieldSatellite/BuyShieldSatellite" unique_id=1119954527]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -76.5
+offset_top = 52.0
+offset_right = 76.5
+offset_bottom = 90.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "This satellite... does nothing.
+we don't even know why we make these
+in the first place"
+label_settings = SubResource("LabelSettings_vutgg")
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="ActualButtons" unique_id=802166656]
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="ActualButtons" unique_id=1923467193]
+layout_mode = 2
+
+[node name="SatellitesList" type="NinePatchRect" parent="ActualButtons" unique_id=1696755329]
+layout_mode = 2
+size_flags_vertical = 3
+texture = ExtResource("4_wm1f4")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ActualButtons/SatellitesList" unique_id=1194717731]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.003
+anchor_right = 0.99600005
+anchor_bottom = 0.96900004
+offset_left = 8.678802
+offset_top = 4.0
+offset_right = -7.7092285
+offset_bottom = -2.3120117
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="SatelliteList" type="Label" parent="ActualButtons/SatellitesList/VBoxContainer" unique_id=629941068]
+layout_mode = 2
+text = "Satellites owned"
+label_settings = SubResource("LabelSettings_nnfyh")
+horizontal_alignment = 1
+
+[node name="SatelliteScroll" type="ScrollContainer" parent="ActualButtons/SatellitesList/VBoxContainer" unique_id=707440154]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="SatelliteContainer" type="VBoxContainer" parent="ActualButtons/SatellitesList/VBoxContainer/SatelliteScroll" unique_id=22448311]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="BackButton" type="NinePatchRect" parent="." unique_id=1582242260]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -173.0
+offset_top = -85.0
+offset_right = -24.0
+offset_bottom = -21.0
+texture = ExtResource("11_8brh1")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="BackButton" type="Button" parent="BackButton" unique_id=1809947029]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 0.9990001
+offset_bottom = -2.9360046
+theme = ExtResource("1_heb5n")
+toggle_mode = true
+text = "BACK 
+(BUY MORE LATER)"

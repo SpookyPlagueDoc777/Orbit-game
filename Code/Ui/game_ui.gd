@@ -8,8 +8,8 @@ var last_state: bool
 @onready var shop_menu: Control = $Shop_ui/ShopMenu
 @onready var pause_button: Button = $PauseButton/PauseButton
 @onready var satellite_container: VBoxContainer = $SatelliteList/VBoxContainer/SatelliteScroll/SatelliteContainer
-@onready var satellite_container2: VBoxContainer = $Shop_ui/ShopMenu/ActualButtons/SatellitesList/VBoxContainer/SatelliteScroll/SatelliteContainer
-@onready var upgrade_all_button: Button = $Shop_ui/ShopMenu/ActualButtons/UpgradeAll/UpgradeAllButton
+@onready var satellite_container2: VBoxContainer = $Shop_ui/ShopMenu/ActualShop/SatellitesList/VBoxContainer/SatelliteScroll/SatelliteContainer
+@onready var upgrade_all_button: Button = $Shop_ui/ShopMenu/ActualShop/SatellitesBuy/VBoxContainer/UpgradeAll/UpgradeAllButton
 @onready var save_button: Button = $save/PauseButton
 
 # Camera reference for Screen Shake
