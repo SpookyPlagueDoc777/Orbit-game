@@ -154,6 +154,7 @@ horizontal_alignment = 1
 [node name="EnergyAmount" type="Label" parent="Energyindicator/VBoxContainer" unique_id=219463461]
 layout_mode = 2
 size_flags_horizontal = 6
+text = "energy"
 label_settings = SubResource("LabelSettings_4vgf7")
 horizontal_alignment = 1
 
@@ -164,6 +165,7 @@ anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -195.656
 offset_top = 98.0
+offset_right = 0.34399414
 offset_bottom = 162.0
 grow_horizontal = 0
 texture = ExtResource("4_bhxso")
@@ -219,7 +221,7 @@ anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -130.0
+offset_left = -196.0
 offset_top = -130.0
 grow_horizontal = 0
 grow_vertical = 0
@@ -289,6 +291,7 @@ anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
 offset_left = -195.656
+offset_right = 0.34399414
 offset_bottom = 96.0
 grow_horizontal = 0
 texture = ExtResource("2_vo2tu")
@@ -368,17 +371,14 @@ size_flags_horizontal = 3
 
 [node name="PauseButton" type="NinePatchRect" parent="." unique_id=2127387811]
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -196.0
-offset_top = -130.0
-offset_right = -132.0
-offset_bottom = -66.0
+offset_left = -328.0
+offset_top = 98.0
+offset_right = -264.0
+offset_bottom = 162.0
 grow_horizontal = 0
-grow_vertical = 0
 texture = ExtResource("2_vo2tu")
 patch_margin_left = 32
 patch_margin_top = 32
@@ -393,9 +393,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -22.656036
-offset_top = -4.7440186
+offset_top = -6.7440186
 offset_right = 23.343964
-offset_bottom = 23.255981
+offset_bottom = 25.255981
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_pwiya")
@@ -403,18 +403,22 @@ toggle_mode = true
 icon = ExtResource("6_p8jce")
 icon_alignment = 1
 
+[node name="Label" type="Label" parent="PauseButton" unique_id=2037888562]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 52.0
+offset_bottom = 29.0
+theme = ExtResource("6_pwiya")
+theme_override_font_sizes/font_size = 12
+text = "Pause"
+
 [node name="save" type="NinePatchRect" parent="." unique_id=1978910484]
 layout_mode = 1
-anchors_preset = 3
-anchor_left = 1.0
-anchor_top = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -196.0
-offset_top = -64.0
-offset_right = -132.0
-grow_horizontal = 0
-grow_vertical = 0
+offset_left = 196.0
+offset_top = 98.0
+offset_right = 260.0
+offset_bottom = 162.0
 texture = ExtResource("2_vo2tu")
 patch_margin_left = 32
 patch_margin_top = 32
@@ -438,18 +442,26 @@ theme = ExtResource("6_pwiya")
 icon = ExtResource("10_sr7wx")
 icon_alignment = 1
 
+[node name="Label" type="Label" parent="save" unique_id=376325506]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 52.0
+offset_bottom = 29.0
+theme = ExtResource("6_pwiya")
+theme_override_font_sizes/font_size = 12
+text = "Save"
+
 [node name="FastForward" type="NinePatchRect" parent="." unique_id=1885585186]
 layout_mode = 1
-anchors_preset = 3
+anchors_preset = 1
 anchor_left = 1.0
-anchor_top = 1.0
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -64.0
-offset_top = -196.0
-offset_bottom = -132.0
+offset_left = -262.0
+offset_top = 98.0
+offset_right = -198.0
+offset_bottom = 162.0
 grow_horizontal = 0
-grow_vertical = 0
 texture = ExtResource("2_vo2tu")
 patch_margin_left = 32
 patch_margin_top = 32
@@ -463,16 +475,26 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -19.00003
-offset_top = -6.7440186
-offset_right = 44.99997
-offset_bottom = 25.255981
+offset_left = -23.0
+offset_top = -7.0
+offset_right = 23.0
+offset_bottom = 25.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("6_pwiya")
 toggle_mode = true
 icon = ExtResource("9_bhxso")
 icon_alignment = 1
+
+[node name="Label" type="Label" parent="FastForward" unique_id=488472248]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 6.0
+offset_right = 52.0
+offset_bottom = 29.0
+theme = ExtResource("6_pwiya")
+theme_override_font_sizes/font_size = 12
+text = "FFW"
 
 [node name="Shop_ui" type="Node" parent="." unique_id=1838543455]
 
@@ -538,6 +560,20 @@ theme_override_constants/outline_size = 20
 theme_override_fonts/font = ExtResource("4_wkbk7")
 theme_override_font_sizes/font_size = 120
 text = "GAME SAVED"
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1854667191]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+offset_left = 196.0
+offset_right = -198.0
+offset_bottom = 96.0
+grow_horizontal = 2
+texture = ExtResource("4_bhxso")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
 
 [connection signal="pressed" from="ShopButton/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="save/PauseButton" to="." method="_on_pause_button_pressed"]
