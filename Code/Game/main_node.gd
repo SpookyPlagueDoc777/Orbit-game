@@ -20,11 +20,17 @@ const PLAY_BUTTON = preload("uid://bmkpnomnr3dfm")
 @onready var save_timer_auto: Timer = $save_timer_auto
 @onready var music_player: AudioStreamPlayer = $CanvasLayer/MusicPlayer
 @onready var game_ui: Control = $CanvasLayer/GameUI
-
+@onready var events_clock: Timer = $EventsClock
 
 var timer_days: int = 0
 var timer_years: int = 0
 var timer_centuries: int = 0
+
+var events: Dictionary = {
+	"Meteor shower" = 0, #insert here code for making the event work, delete the 0
+	"Solar flare" = 0,  #insert here code for making the event work, delete the 0
+	"Large object flyby" = 0  #insert here code for making the event work, delete the 0
+}
 
 var TimerDays: int:
 	get: return timer_days
@@ -44,7 +50,7 @@ var _energy_tween: Tween
 func _ready() -> void:
 	if SaveManager.has_signal("save_completed"):
 		SaveManager.save_completed.connect(_on_save_completed)
-	
+		
 	timer.paused = true
 	SaveManager.load_game()
 	SoundManager.start()
@@ -52,6 +58,17 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	if Global.is_paused != timer.paused:
 		timer.paused = Global.is_paused
+
+#events
+	if timer_years >= 1:
+		events_clock.start() #starts possibility of having events
+		
+
+func _on_events_clock_timeout() -> void: #set up random chance of having an event
+	var event_chance_roll = randi_range(0, 100) #any of these numbers can be modified
+	if event_chance_roll == 100:
+		pass #call random event from event dictionary
+		#maybe make a nested dictionary with even more events that are meant to be more rare then others
 
 	_animate_energy_label()
 	current_time.text = "%dc %dy %dd" % [timer_centuries, timer_years, timer_days]
