@@ -15,6 +15,7 @@ const FONT = preload("uid://dr3nm75s2psu5")
 @export_category("Flash Effect Colors")
 @export var damage_flash_color: Color = Color(1.0, 0.2, 0.2, 1.0)
 @export var upgrade_flash_color: Color = Color(2.0, 1.8, 0.3, 1.0)
+@export var repair_flash_color: Color = Color(0.039, 0.969, 0.297, 1.0)
 
 @export_category("Satellite Energy & Production")
 @export var satenergyprod: int = 0
@@ -46,6 +47,9 @@ func _enter_tree() -> void:
 	if Global.has_signal("satellite_upgraded"):
 		if not Global.satellite_upgraded.is_connected(_on_satellite_upgraded):
 			Global.satellite_upgraded.connect(_on_satellite_upgraded)
+	if Global.has_signal("satellite_repaired"):
+		if not Global.satellite_repaired.is_connected(_on_satellite_repaired):
+			Global.satellite_repaired.connect(_on_satellite_repaired)
 
 
 func _ready() -> void:
@@ -88,6 +92,12 @@ func _on_satellite_upgraded(sat_node: Node) -> void:
 	if sat_node == self:
 		play_upgrade_animation()
 		spawn_satellite_floating_text(get_clean_display_name() + " +1", upgrade_flash_color)
+		
+
+func _on_satellite_repaired(sat_node: Node) -> void:
+	if sat_node == self:
+		play_repair_animation()
+		spawn_satellite_floating_text("This one.", repair_flash_color)
 
 
 func _physics_process(delta: float) -> void:
@@ -213,6 +223,25 @@ func play_upgrade_animation() -> void:
 	
 	_anim_tween.tween_property(target_node, "scale", Vector2(1.35, 1.35), 0.12)
 	_anim_tween.tween_property(target_node, "modulate", upgrade_flash_color, 0.12)
+	
+	_anim_tween.chain().set_parallel(true).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
+	_anim_tween.tween_property(target_node, "scale", Vector2.ONE, 0.18)
+	_anim_tween.tween_property(target_node, "modulate", Color.WHITE, 0.18)
+
+func play_repair_animation() -> void:
+	if not is_inside_tree():
+		return
+
+	if _anim_tween and _anim_tween.is_valid():
+		_anim_tween.kill()
+
+	var target_node: CanvasItem = sprite if sprite else self
+
+	_anim_tween = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS).set_parallel(true)
+	_anim_tween.set_trans(Tween.TRANS_BACK).set_ease(Tween.EASE_OUT)
+	
+	_anim_tween.tween_property(target_node, "scale", Vector2(1.35, 1.35), 0.12)
+	_anim_tween.tween_property(target_node, "modulate", repair_flash_color, 0.12)
 	
 	_anim_tween.chain().set_parallel(true).set_trans(Tween.TRANS_SINE).set_ease(Tween.EASE_IN_OUT)
 	_anim_tween.tween_property(target_node, "scale", Vector2.ONE, 0.18)

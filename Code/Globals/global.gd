@@ -5,6 +5,7 @@ extends Node
 signal updatelist
 @warning_ignore("unused_signal")
 signal satellite_upgraded(sat_node: Node)
+signal satellite_repaired(sat_node: Node)
 
 const G: float = 66.743
 const planetmass: int = 40752

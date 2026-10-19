@@ -146,12 +146,15 @@ func repair() -> void:
 		Global.energy -= current_price_repair
 		the_satellite.health = the_satellite.max_health
 		
-		_spawn_row_popup("Repaired", Color(0.0, 0.735, 0.075))
-		_update_ui_labels(true)
+		#_spawn_row_popup("Repaired", Color(0.0, 0.735, 0.075))
+		#_update_ui_labels(true)
 		
 		# THIS BROADCASTS TO THE WORLD AND TRIGGERS THE SATELLITE'S BOUNCE/GLOW/TEXT
 		#if Global.has_signal("satellite_upgraded"):
 			#Global.satellite_upgraded.emit(the_satellite)
+		if Global.has_signal("satellite_repaired"):
+			Global.satellite_repaired.emit(the_satellite)
+			print("AA")
 		
 		if Global.has_signal("updatelist"):
 			Global.updatelist.emit()

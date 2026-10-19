@@ -27,6 +27,10 @@ func _ready() -> void:
 	if Global.has_signal("satellite_upgraded"):
 		Global.satellite_upgraded.connect(_on_individual_satellite_upgraded)
 		
+	if Global.has_signal("satellite_repaired"):
+		Global.satellite_repaired.connect(_on_individual_satellite_repaired)
+		
+		
 	call_deferred("rebuild_all_satellite_lists")
 
 
@@ -37,12 +41,24 @@ func _on_individual_satellite_upgraded(sat_node: Node) -> void:
 		
 		# 2. Center-screen floating popup
 		var sat_name: String = sat_node.get_clean_display_name() if sat_node.has_method("get_clean_display_name") else sat_node.name.to_upper()
-		spawn_center_floating_text(sat_name + " UPGRADED!", Color(1.0, 0.9, 0.1))
+		spawn_center_floating_text(sat_name + " UPGRADED!", Color(0.0, 0.984, 0.102, 1.0))
 		
 		# 3. Juice / Feedback
 		shake_camera(14.0, 0.25)
 		call_deferred("rebuild_all_satellite_lists")
 
+func _on_individual_satellite_repaired(sat_node: Node) -> void:
+	if is_instance_valid(sat_node):
+		# 1. World Popup over satellite in game space
+		#spawn_floating_text(sat_node.global_position, "LVL UP! [" + str(sat_node.upgrade) + "]", Color(1.0, 0.9, 0.1))
+		
+		# 2. Center-screen floating popup
+		var sat_name: String = sat_node.get_clean_display_name() if sat_node.has_method("get_clean_display_name") else sat_node.name.to_upper()
+		spawn_center_floating_text(sat_name + " REPAIRED!", Color(0.0, 0.984, 0.102, 1.0))
+		
+		# 3. Juice / Feedback
+		shake_camera(14.0, 0.25)
+		call_deferred("rebuild_all_satellite_lists")
 
 func _on_save_load_completed(_success: bool) -> void:
 	rebuild_all_satellite_lists()

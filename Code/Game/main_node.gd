@@ -70,12 +70,6 @@ func _on_events_clock_timeout() -> void: #set up random chance of having an even
 		pass #call random event from event dictionary
 		#maybe make a nested dictionary with even more events that are meant to be more rare then others
 
-	_animate_energy_label()
-	current_time.text = "%dc %dy %dd" % [timer_centuries, timer_years, timer_days]
-	current_spin_speed.text = "%s rad/h" % str(snappedf(Global.spin_speed, 0.0001))
-	spin_quota.text = "%s rad/h" % str(snappedf(Global.quota, 0.0001))
-	time_to_meet_quota.text = "%dc %dy %dd" % [Global.time_limit_c, Global.time_limit_y, Global.time_limit_d]
-
 func _animate_energy_label() -> void:
 	var target_val := roundf(Global.energy)
 	if absf(_displayed_energy - target_val) > 0.1:
@@ -169,6 +163,12 @@ func _on_timer_timeout() -> void:
 			timer_centuries += 1
 			
 	check_timer_limit_reached()
+	
+	_animate_energy_label()
+	current_time.text = "%dc %dy %dd" % [timer_centuries, timer_years, timer_days]
+	current_spin_speed.text = "%s rad/h" % str(snappedf(Global.spin_speed, 0.0001))
+	spin_quota.text = "%s rad/h" % str(snappedf(Global.quota, 0.0001))
+	time_to_meet_quota.text = "%dc %dy %dd" % [Global.time_limit_c, Global.time_limit_y, Global.time_limit_d]
 
 func _on_pause_button_toggled(toggled_on: bool) -> void:
 	SoundManager.successful_push()
