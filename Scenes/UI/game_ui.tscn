@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cpwnqagwse588" path="res://Textures/UI/Satellite inc logo.png" id="6_mnd0w"]
 [ext_resource type="Texture2D" uid="uid://bmkpnomnr3dfm" path="res://Textures/UI/play button.png" id="6_p8jce"]
 [ext_resource type="Theme" uid="uid://dn5wefao8u26i" path="res://Textures/UI/workshop_theme.tres" id="6_pwiya"]
+[ext_resource type="Texture2D" uid="uid://bm7me184ba2pu" path="res://Textures/UI/fast_forward.png" id="9_bhxso"]
 [ext_resource type="Texture2D" uid="uid://3hx262hts8k5" path="res://Textures/UI/SAVE.png" id="10_sr7wx"]
 [ext_resource type="PackedScene" uid="uid://bv011jc2j3aou" path="res://Scenes/UI/shop_menu.tscn" id="11_3nq5v"]
 
@@ -437,6 +438,42 @@ theme = ExtResource("6_pwiya")
 icon = ExtResource("10_sr7wx")
 icon_alignment = 1
 
+[node name="FastForward" type="NinePatchRect" parent="." unique_id=1885585186]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -64.0
+offset_top = -196.0
+offset_bottom = -132.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("2_vo2tu")
+patch_margin_left = 32
+patch_margin_top = 32
+patch_margin_right = 32
+patch_margin_bottom = 32
+
+[node name="FastForwardButton" type="Button" parent="FastForward" unique_id=425568955]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.00003
+offset_top = -6.7440186
+offset_right = 44.99997
+offset_bottom = 25.255981
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_pwiya")
+toggle_mode = true
+icon = ExtResource("9_bhxso")
+icon_alignment = 1
+
 [node name="Shop_ui" type="Node" parent="." unique_id=1838543455]
 
 [node name="ShopMenu" parent="Shop_ui" unique_id=565247265 instance=ExtResource("11_3nq5v")]
@@ -504,6 +541,7 @@ text = "GAME SAVED"
 
 [connection signal="pressed" from="ShopButton/Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="save/PauseButton" to="." method="_on_pause_button_pressed"]
+[connection signal="pressed" from="FastForward/FastForwardButton" to="." method="_on_fast_forward_button_pressed"]
 [connection signal="pressed" from="Shop_ui/ShopMenu/ActualShop/SatellitesBuy/VBoxContainer/ScrollContainer/GridContainer/EnergySatellite/Button" to="." method="_on_buy_energy_satellite_pressed"]
 [connection signal="pressed" from="Shop_ui/ShopMenu/ActualShop/SatellitesBuy/VBoxContainer/ScrollContainer/GridContainer/SpinSatellite/Button" to="." method="_on_buy_spin_satellite_pressed"]
 [connection signal="pressed" from="Shop_ui/ShopMenu/ActualShop/SatellitesBuy/VBoxContainer/ScrollContainer/GridContainer/ShieldSatellite/Button" to="." method="_on_buy_shield_satellite_pressed"]

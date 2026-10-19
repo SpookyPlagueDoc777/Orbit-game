@@ -11,6 +11,7 @@ var last_state: bool
 @onready var satellite_container2: VBoxContainer = $Shop_ui/ShopMenu/ActualShop/SatellitesList/VBoxContainer/SatelliteScroll/SatelliteContainer
 @onready var upgrade_all_button: Button = $Shop_ui/ShopMenu/ActualShop/SatellitesBuy/VBoxContainer/UpgradeAll/UpgradeAllButton
 @onready var save_button: Button = $save/PauseButton
+@onready var fast_forward_speed = 2
 
 # Camera reference for Screen Shake
 @export var camera_2d: Camera2D	
@@ -306,3 +307,10 @@ func spawn_center_floating_text(text_value: String, color: Color) -> void:
 		.set_trans(Tween.TRANS_QUAD)
 		
 	tween.chain().finished.connect(label.queue_free)
+
+
+func _on_fast_forward_button_pressed() -> void:
+	if Engine.time_scale != fast_forward_speed:
+		Engine.time_scale = fast_forward_speed
+	else:
+		Engine.time_scale = 1
